@@ -1,11 +1,33 @@
+@font-face {
+  font-family: easVHS;
+  src: url(src/assets/PixelOperatorMono8.ttf);
+}
+
+@font-face {
+  font-family: easVHSbold;
+  src: url(src/assets/PixelOperatorMonoHB8.ttf);
+}
+
 :root {
+  --white: rgb(255, 255, 255);
+  --green: rgb(177, 255, 174);
+  --green-pale: rgb(201, 255, 199);
+  --green-black: rgb(24, 30, 23);
+  --green-black-bg: rgb(15, 20, 15, 0.7);
+  --green-box-shadow-1: 0px 0px 15px 3px rgb(201, 255, 199, 0.2);
+  --green-box-shadow-2: 0px 0px 15px 3px rgb(201, 255, 199, 0.4);
+  --green-box-shadow-3: 0px 0px 15px 2px rgba(215, 255, 213, 0.4);
+  --red: rgb(255, 0, 0);
+  --red-box-shadow-1: 0px 0px 15px 3px rgb(255, 0, 0, 0.4);
+
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: easVHS;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: var(--green-pale);
+  background-color: #000000;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,21 +35,57 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body{
+@keyframes blur {
+  0% {
+    filter:blur(0px);
+  }
+  4% {
+    filter: blur(4px);
+  }
+  4.1% {
+    filter:blur(0px);
+  }
+  100% {
+    filter:blur(0px);
+  }
+}
+
+body {
   margin: 0;
   position: relative;
   height: 100vh;
   width: 100vw;
 }
 
+.static-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: auto;
+  width: 100%;
+  opacity: 0.07;
+}
+
 .map {
   position: relative;
   height: 100vh;
   width: 100vw;
+  background-color: var(--green-black-bg);
+  animation: blur 20s ease-in-out infinite;
+}
+
+h3 {
+  font-family: easVHSbold;
+  font-size: 10px;
+  margin-top: 0;
 }
 
 p {
-  font-size: 12px;
+  font-size: 6px;
+}
+
+.info-wrap {
+  margin-top: 10px;
 }
 
 .helldivers-grid {
@@ -37,6 +95,23 @@ p {
   height: auto;
   width: 940px;
   opacity: 0.1;
+  filter: blur1(2px);
+}
+
+
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  2% {
+    opacity: 0.8;
+  }
+  3% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .planet {
@@ -45,7 +120,167 @@ p {
   height: 5px;
   width: 5px;
   border-radius: 180px;
-  background-color:darkcyan;
+  background-color: var(--green-pale);
   top: calc(50% - 5px);
   left: calc(50% - 5px);
+  box-shadow: var(--green-box-shadow-3);
+}
+
+.planet-inactive {
+  animation: flicker 15s ease-in-out infinite;
+}
+
+.planet-earth {
+  background-color: --green;
+}
+
+.planet-earth::before {
+  display: block;
+  content: 'SUPER EARTH';
+  position: absolute;
+  top: calc(100% + 15px);
+  left: calc(50% - 80px);
+  font-size: 7px;
+  font-family: easVHSbold;
+  width: 160px;
+  text-align: center;
+  color: white;
+  text-shadow: 1px -1px 16px rgba(177,255,174,1);
+  z-index: 1;
+}
+
+.planet-earth::after {
+  display: block;
+  content: '';
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  left: -13px;
+  top: -13px;
+  border-radius: 180px;
+  background-color: var(--white);
+  box-shadow: var(--green-box-shadow-2);
+}
+
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(0);
+    opacity: 0.2;
+  }
+  20% {
+    transform: scale(12);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(12);
+    opacity: 0;
+  }
+}
+
+.planet-active {
+  background-color: red;
+  transition: 0.5s ease-in-out;
+  box-shadow: var(--red-box-shadow-1);
+}
+
+.planet-active .radar,
+.planet-active .pie-chart {
+  display: block;
+  position: absolute;
+  height: 5px;
+  width: 5px;
+  border-radius: 180px;
+  background-color: red;
+}
+
+.planet-active .radar {
+  animation: scaleAnimation 2s ease-in-out infinite;
+  opacity: 0;
+  transition: 0.2s;  
+}
+
+.planet-active .pie-chart {
+  display: block;
+  position: absolute;
+  transform: scale(2);
+  box-shadow: var(--red-box-shadow-1);
+  transition: 0.3s ease-in-out;
+}
+
+.planet-active .name {
+  position: relative;
+  margin-top: 8px;
+  text-wrap: nowrap;
+  opacity: 1;
+}
+
+.planet-info {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+  position: absolute;
+  top: 3px;
+  left: 2px;
+  width: 250px;
+  background-color: var(--green-black);
+  padding: 5px;
+  border: solid 1px var(--green-pale);
+  color: var(--green-pale);
+  box-shadow: var(--green-box-shadow-1);
+}
+
+.planet-info p {
+  font-size: 6px;
+}
+
+.planet-active:hover,
+.planet-active-view {
+  z-index: 99999999;
+}
+
+.planet-active:hover > .name,
+.planet-active-view > .name  {
+  opacity: 0;
+}
+
+.planet-active:hover > .planet-info,
+.planet-active-view  > .planet-info {
+  visibility: visible;
+  opacity: 1;
+}
+
+.planet-active:hover > .radar,
+.planet-active-view > .radar  {
+  animation: none;
+}
+
+.planet-active:hover > .pie-chart,
+.planet-active-view > .pie-chart  {
+  transform: scale(5);
+}
+
+/* DEMO-SPECIFIC STYLES */
+.typewriter {
+  color: #fff;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
 }
