@@ -1,4 +1,4 @@
-export default function Planet ({ planetIndex, name, description, owner, playerCount, positionX, positionY, sector, activeCampaign, health, autoActive, ...props }) {
+export default function Planet ({ planetIndex, name, description, owner, playerCount, positionX, positionY, sector, activeCampaign, health, ...props }) {
     const x = positionX * 450;
     const y = -positionY * 450;
     const healthPercentage = health !== '' ? 100 - parseInt((health/1000000)*100) : null;
@@ -25,7 +25,7 @@ export default function Planet ({ planetIndex, name, description, owner, playerC
 
     return (
         <div className={
-            activeCampaign === name ? `planet planet-active ${autoActive ? 'planet-active-view' : ''}`
+            activeCampaign === name ? 'planet planet-active'
             : name === "SUPER EARTH" ? 'planet planet-earth'
             : 'planet planet-inactive'} style={planetStyles}>
             
@@ -34,7 +34,7 @@ export default function Planet ({ planetIndex, name, description, owner, playerC
             {activeCampaign === name ? 
                 <>
                 <span class="pie-chart" style={pieChartStyles}></span>
-                    <p className="name">{autoActive}</p>
+                    <p className="name">{name}</p>
                     <div className="planet-info">
                         <h3>{name}</h3>
                         <p>Under {owner} control</p>

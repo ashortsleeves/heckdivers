@@ -50,7 +50,6 @@ const [planets, setPlanets] = useState([]);
 
   return (
     <>
-      <h1>{activeIndex}</h1>
       <VideoComponent/>
 
       <TransformWrapper>
@@ -89,7 +88,6 @@ const [planets, setPlanets] = useState([]);
                     sector={planet.sector}
                     activeCampaign={campaign.planet.name}
                     health={planet.health}
-                    autoActive={planet.index === activeIndex ? true : false}
                     />
                 ))}
               </div>

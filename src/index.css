@@ -234,29 +234,24 @@ p {
   font-size: 6px;
 }
 
-.planet-active:hover,
-.planet-active-view {
+.planet-active:hover {
   z-index: 99999999;
 }
 
-.planet-active:hover > .name,
-.planet-active-view > .name  {
+.planet-active:hover > .name {
   opacity: 0;
 }
 
-.planet-active:hover > .planet-info,
-.planet-active-view  > .planet-info {
+.planet-active:hover > .planet-info {
   visibility: visible;
   opacity: 1;
 }
 
-.planet-active:hover > .radar,
-.planet-active-view > .radar  {
+.planet-active:hover > .radar  {
   animation: none;
 }
 
-.planet-active:hover > .pie-chart,
-.planet-active-view > .pie-chart  {
+.planet-active:hover > .pie-chart {
   transform: scale(5);
 }
 
