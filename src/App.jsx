@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Component } from 'react'
 import Planet from './components/Planet';
 import './App.css'
 import grid from './assets/grid.webp';
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 function App() {
 const [campaigns, setCampaigns] = useState([]);
@@ -22,40 +23,43 @@ const [planets, setPlanets] = useState([]);
   }, []);
 
     return (
-      <div className='map'>
-        <img className="helldivers-grid" src={grid} alt="helldivers grid"/>
-        {planets
-          .map((planet, index) => (
-            <Planet
-              key={index}
-              name={planet.name}
-              positionX={planet.position.x}
-              positionY={planet.position.y}
-              sector={planet.sector}
-              activeCampaign=''
-              health=''
-              />
-          ))}
-        {campaigns.map((campaign, index) => (
-          <div key={index}>
+      <TransformWrapper>
+        <TransformComponent>
+        <div className='map'>
+          <img className="helldivers-grid" src={grid} alt="helldivers grid"/>
           {planets
-          .filter(planet => planet.name === campaign.planet.name)
-          .map((planet, index) => (
-            <Planet
-              key={index}
-              name={planet.name}
-              positionX={planet.position.x}
-              positionY={planet.position.y}
-              sector={planet.sector}
-              activeCampaign={campaign.planet.name}
-              health={planet.health}
-              />
+            .map((planet, index) => (
+              <Planet
+                key={index}
+                name={planet.name}
+                positionX={planet.position.x}
+                positionY={planet.position.y}
+                sector={planet.sector}
+                activeCampaign=''
+                health=''
+                />
+            ))}
+          {campaigns.map((campaign, index) => (
+            <div key={index}>
+            {planets
+            .filter(planet => planet.name === campaign.planet.name)
+            .map((planet, index) => (
+              <Planet
+                key={index}
+                name={planet.name}
+                positionX={planet.position.x}
+                positionY={planet.position.y}
+                sector={planet.sector}
+                activeCampaign={campaign.planet.name}
+                health={planet.health}
+                />
+            ))}
+
+            </div>
           ))}
-
-          </div>
-        ))}
-
-      </div>
+        </div>
+        </TransformComponent>
+      </TransformWrapper>
     );
 }
 export default App;
