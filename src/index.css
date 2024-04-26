@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 @font-face {
   font-family: easVHS;
   src: url(src/assets/PixelOperatorMono8.ttf);
@@ -12,11 +16,13 @@
   --white: rgb(255, 255, 255);
   --green: rgb(177, 255, 174);
   --green-pale: rgb(201, 255, 199);
+  --green-pale-dark: rgb(113, 129, 112);
   --green-black: rgb(24, 30, 23);
   --green-black-bg: rgb(15, 20, 15, 0.7);
   --green-box-shadow-1: 0px 0px 15px 3px rgb(201, 255, 199, 0.2);
   --green-box-shadow-2: 0px 0px 15px 3px rgb(201, 255, 199, 0.4);
   --green-box-shadow-3: 0px 0px 15px 2px rgba(215, 255, 213, 0.4);
+  --green-box-shadow-4: 0px 0px 15px 2px rgba(215, 255, 213, 0.1);
   --red: rgb(255, 0, 0);
   --red-box-shadow-1: 0px 0px 15px 3px rgb(255, 0, 0, 0.4);
 
@@ -62,13 +68,12 @@
   }
 }
 
-
-
 body {
   margin: 0;
   position: relative;
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
 }
 
 .static-bg {
@@ -80,6 +85,10 @@ body {
   opacity: 0.04;
 }
 
+.react-transform-wrapper {
+  /* padding-left: 360px!important; */
+}
+
 .map {
   position: relative;
   height: 100vh;
@@ -88,8 +97,8 @@ body {
   animation: blur 10s ease-in-out infinite;
 }
 
-.map:before,
-.map:after {
+.wrapWrapper:before,
+.wrapWrapper:after {
   display: block;
   content: '';
   position: absolute;
@@ -106,12 +115,29 @@ body {
   animation: vhsLine 14s ease-in-out infinite;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  font-family: easVHSbold;
+  margin-top: 0;
+}
 
+h1 {
+  text-transform: uppercase;
+  font-family: easVHS;
+}
+
+h1 span {
+
+}
+
+h2 {
+  font-size: 12px;
+}
 
 h3 {
-  font-family: easVHSbold;
   font-size: 10px;
-  margin-top: 0;
 }
 
 p {
@@ -132,6 +158,13 @@ p {
   filter: blur1(2px);
 }
 
+.earthGIF {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  height: auto;
+  width: 50px;
+}
 
 @keyframes flicker {
   0% {
@@ -165,7 +198,18 @@ p {
 }
 
 .planet-earth {
-  background-color: --green;
+  display: block;
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  margin-left: -13px;
+  margin-top: -13px;
+  border-radius: 180px;
+  box-shadow: var(--green-box-shadow-2);
+  background-image: url(src/assets/earth.gif);
+  background-size: 45px;
+  background-position: center;
+  filter: grayscale();
 }
 
 .planet-earth::before {
@@ -189,11 +233,12 @@ p {
   position: absolute;
   height: 30px;
   width: 30px;
-  left: -13px;
-  top: -13px;
+  left: 0;
+  top: 0;
   border-radius: 180px;
-  background-color: var(--white);
+  background-color: var(--green-pale);
   box-shadow: var(--green-box-shadow-2);
+  opacity: 0.8;
 }
 
 @keyframes scaleAnimation {
@@ -303,18 +348,18 @@ p {
 .news-feed {
   position: fixed;
   top: 0;
+  bottom: 0;
   left: 0;
-  padding: 60px;
+  padding: 30px;
   width: 300px;
-  transform: scale(0.7);
-}
-
-.news-feed p {
-  font-size: 2px;
-  font-family: monospace;
+  /* border-right: solid 2px var(--green-pale-dark); */
+  color: var(--green-pale);
+  /* box-shadow: var(--green-box-shadow-1); */
+  box-sizing: border-box;
 }
 
 .typewriter {
+  font-size: 8px;
   color:#0000;
   background:
     linear-gradient(-90deg,var(--green-pale) 5px,#0000 0) 10px 0,
@@ -333,4 +378,20 @@ p {
 }
 @keyframes b{
   50% {background-position:0 -100%,0 0}
+}
+
+.major-order,
+.breaking-news {
+  padding: 15px;
+  margin-bottom: 25px;
+}
+
+.major-order p {
+  font-size: 8px;
+  line-height: 1.5rem;
+}
+
+.breaking-news p {
+  font-family: monospace;
+  line-height: 1px;
 }

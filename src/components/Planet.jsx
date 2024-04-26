@@ -20,8 +20,6 @@ export default function Planet ({ planetIndex, name, description, owner, playerC
             rgb(255, 103, 103) 100%
           )`
     }
-    
-    
 
     return (
         <div className={
@@ -33,7 +31,7 @@ export default function Planet ({ planetIndex, name, description, owner, playerC
 
             {activeCampaign === name ? 
                 <>
-                <span class="pie-chart" style={pieChartStyles}></span>
+                <span className="pie-chart" style={pieChartStyles}></span>
                     <p className="name">{name}</p>
                     <div className="planet-info">
                         <h3>{name}</h3>
