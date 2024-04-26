@@ -85,10 +85,6 @@ body {
   opacity: 0.04;
 }
 
-.react-transform-wrapper {
-  /* padding-left: 360px!important; */
-}
-
 .map {
   position: relative;
   height: 100vh;
@@ -156,14 +152,6 @@ p {
   width: 940px;
   opacity: 0.1;
   filter: blur1(2px);
-}
-
-.earthGIF {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  height: auto;
-  width: 50px;
 }
 
 @keyframes flicker {
@@ -352,9 +340,7 @@ p {
   left: 0;
   padding: 30px;
   width: 360px;
-  /* border-right: solid 2px var(--green-pale-dark); */
   color: var(--green-pale);
-  /* box-shadow: var(--green-box-shadow-1); */
   box-sizing: border-box;
 }
 
@@ -394,4 +380,52 @@ p {
 .breaking-news p {
   font-family: monospace;
   line-height: 1px;
+}
+
+.planets-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--green-black-bg);
+}
+
+.planets-loading h2 {
+  font-size: 24px;
+  z-index: 999;
+  text-align: center;
+  text-shadow: 1px -1px 16px rgba(0,0,0,1);
+}
+
+.planets-loading::before,
+.planets-loading::after {
+  display: block;
+  content: '';
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  top: calc(50% - 100px);
+  left: calc(50% - 100px);
+  border-radius: 180px;
+  box-shadow: var(--green-box-shadow-2);
+  z-index: 1;
+}
+
+.planets-loading::before {
+  background-image: url(src/assets/earth.gif);
+  background-size: 350px;
+  background-position: center;
+  filter: grayscale();
+}
+
+.planets-loading::after {
+  border-radius: 180px;
+  background-color: var(--green-pale);
+  box-shadow: var(--green-box-shadow-2);
+  opacity: 0.8;
+  z-index: 2;
 }
