@@ -50,15 +50,6 @@ const [majorOrder, setMajorOrder] = useState([]);
     return () => clearInterval(intervalId);
   }, []);
 
-  const [time, setTime] = useState(Date.now());
-
-  useEffect(() => {
-    const interval = setInterval(() => setTime(Date.now() - 1714152191100), 80);
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
-
   return (
     <>
       <VideoComponent/>
@@ -117,12 +108,13 @@ const [majorOrder, setMajorOrder] = useState([]);
           ))}
         </div>
         <div className="breaking-news">
-          <h3>BREAKING NEWS: {time}</h3>
+          <h3>BREAKING NEWS:</h3>
           {newsFeed.map((news, index) => (
 
             index === activeIndex ? <span className="typewriter" style={{'--n':news.message.length}} key={index}>{news.message}</span> : null
-          ))}</div>
+          ))}
         </div>
+      </div>
     </>
   );
 }
