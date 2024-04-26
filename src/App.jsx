@@ -8,6 +8,7 @@ import VideoComponent from './components/VideoComponent';
 function App() {
 const [campaigns, setCampaigns] = useState([]);
 const [planets, setPlanets] = useState([]);
+const [newsFeed, setNewsFeed] = useState([]);
 
   useEffect(() => {
     fetch('https://api.helldivers2.dev/api/v1/campaigns')
@@ -23,20 +24,19 @@ const [planets, setPlanets] = useState([]);
       .catch(error => console.error(error));
   }, []);
 
-
-
-
-
-
-
-
+  useEffect(() => {
+    fetch('https://api.helldivers2.dev/raw/api/NewsFeed/801')
+      .then(response => response.json())
+      .then(newsFeed => setNewsFeed(newsFeed))
+      .catch(error => console.error(error));
+  }, []);
 
   const [activeIndex, setActiveIndex] = useState(0); // Keep track of the index of the active component
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setActiveIndex(prevIndex => (prevIndex + 1) % 1000); // Rotate through components
-    }, 1000); // Rotate every 20 seconds
+      setActiveIndex(prevIndex => (prevIndex + 1) % 10); // Rotate through components
+    }, 10000); // Rotate every 20 seconds
 
     return () => clearInterval(intervalId);
   }, []);
@@ -95,6 +95,12 @@ const [planets, setPlanets] = useState([]);
           </div>
         </TransformComponent>
       </TransformWrapper>
+
+      <div class="news-feed">
+      {newsFeed.map((news, index) => (
+        
+        index === activeIndex ? <span className="typewriter" style={{'--n':news.message.length}} key={index}>{news.message}</span> : null
+      ))}</div>
     </>
   );
 }
