@@ -43,7 +43,7 @@ export default function Planet ({ planetIndex, name, description, owner, playerC
                         <p>{description}</p>
                     </div>
                 </>
-            : ''}
+            : <p className="name name-hover">{name}</p>}
         </div>
     );  
 }
