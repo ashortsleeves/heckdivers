@@ -4,12 +4,12 @@
 
 @font-face {
   font-family: easVHS;
-  src: url(src/assets/PixelOperatorMono8.ttf);
+  src: url(./assets/PixelOperatorMono8.ttf);
 }
 
 @font-face {
   font-family: easVHSbold;
-  src: url(src/assets/PixelOperatorMonoHB8.ttf);
+  src: url(./assets/PixelOperatorMonoHB8.ttf);
 }
 
 :root {
@@ -124,10 +124,6 @@ h1 {
   font-family: easVHS;
 }
 
-h1 span {
-
-}
-
 h2 {
   font-size: 12px;
 }
@@ -194,7 +190,7 @@ p {
   margin-top: -13px;
   border-radius: 180px;
   box-shadow: var(--green-box-shadow-2);
-  background-image: url(src/assets/earth.gif);
+  background-image: url(./assets/earth.gif);
   background-size: 45px;
   background-position: center;
   filter: grayscale();
@@ -392,6 +388,7 @@ p {
   left: 0;
   right: 0;
   background-color: var(--green-black-bg);
+  z-index: 99999999;
 }
 
 .planets-loading h2 {
@@ -416,7 +413,7 @@ p {
 }
 
 .planets-loading::before {
-  background-image: url(src/assets/earth.gif);
+  background-image: url(./assets/earth.gif);
   background-size: 350px;
   background-position: center;
   filter: grayscale();
