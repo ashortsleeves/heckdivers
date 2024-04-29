@@ -121,7 +121,8 @@ function App() {
           
           {newsFeed.map((news, index) =>
             index === activeIndex ? (
-              <span className="typewriter" style={{ '--n': news.message.length }} key={index}>
+              
+              <span className="typewriter" style={{ '--n': (news.message.length ? news.message.length : 700)}} key={index}>
                 {news.message}
               </span>
             ) : null
