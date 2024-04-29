@@ -1,3 +1,5 @@
+import './Planet.css';
+
 export default function Planet ({ planetIndex, name, description, owner, playerCount, positionX, positionY, sector, activeCampaign, health, ...props }) {
     const x = positionX * 450;
     const y = -positionY * 450;
