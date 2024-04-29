@@ -1,6 +1,6 @@
 # HECKDIVERS
 
-![Heckdivers Logo](https://github.com/ashortsleeves/heckdivers/blob/main/public/favicon-96x96.png)
+![Heckdivers Logo](https://raw.githubusercontent.com/ashortsleeves/heckdivers/maestro/public/screenshot.png)
 
 Heckdivers is a web application built with React and Vite that provides information and statistics for the game Helldivers II.
 
@@ -47,3 +47,8 @@ Contributions are welcome! Please feel free to submit issues or pull requests.
 ## License
 
 GNU General Public License v3.0 - see the [LICENSE](https://github.com/ashortsleeves/heckdivers/blob/maestro/LICENSE.txt) file for details.
+
+## Acknowledgements
+Heckdivers relies on the [helldivers-2/api](https://github.com/helldivers-2/api), a community driven API for Helldivers 2. 
+
+Zoom in/out functionality is provided by [react-zoom-pan-pinch](https://github.com/BetterTyped/react-zoom-pan-pinch), a library to support easy zoom, pan, pinch on html dom elements.
