@@ -38,13 +38,12 @@ export default function NewsFeed() {
       }, []);
 
     return (
-        <div className="news-feed">
-            
+        <div className="news-feed">            
             {majorOrder.length > 0 ? (
             majorOrder.map((order, index) => (
                 <div className="major-order"> 
                     <div key={index}>
-                        <h2>MAJOR ORDER</h2>
+                    <h2><span>*</span> MAJOR ORDER <span>*</span></h2>
                         <p>{order.briefing}</p>
                     </div>
                 </div>
@@ -53,14 +52,14 @@ export default function NewsFeed() {
             
             <div className="breaking-news">
                 {newsFeed.length > 0 ? (
-                    <h3>BREAKING NEWS:</h3>
+                    <h3>BREAKING NEWS<span>:</span></h3>
                 ) : (
                     <p>Retrieving Super Earth News...</p>
                 )}
 
                 {newsFeed.map((news, index) =>
                     index === activeIndex ? (
-                        <span className="typewriter" style={{ '--n': (news.message.length !== undefined ? news.message.length : 700)}} key={index}>
+                        <span className="typewriter" style={{ '--n': (news && news.message && news.message.length !== undefined ? news.message.length : 700)}} key={index}>
                             {news.message}
                         </span>
                     ) : null
