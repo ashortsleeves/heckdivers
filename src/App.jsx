@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Planet from './components/Planet';
 import NewsFeed from './components/NewsFeed';
 import VideoComponent from './components/VideoComponent';
+import DefaultZoomTools from './components/DefaultZoomTools';
 import planetsData from './planets.json';
 import './App.css';
 import grid from './assets/grid.webp';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
-
 
 function App() {
   const [campaigns, setCampaigns] = useState([]);
@@ -32,12 +32,34 @@ function App() {
     return () => clearInterval(intervalId);
   }, []);
 
+
+  function handleZoomClick(targetButtonID) {
+    const secondButton = document.getElementById(targetButtonID);
+
+    if (secondButton) {
+      // Programmatically trigger a click event on the second button
+      secondButton.click();
+      console.log(targetButtonID);
+    }
+  }
+
   return (
     <>
+      <div className='button-controls'>
+        <button onClick={() => handleZoomClick('zIn')}>+</button>
+        <button onClick={() => handleZoomClick('zOut')}>-</button>
+        <button onClick={() => handleZoomClick('zReset')}>x</button>
+        <div>
+          <a href="https://heckdivers.net" target="_blank">heckdivers.net</a>
+          <a href="https://github.com/ashortsleeves" target="_blank">github</a>
+        </div>
+
+      </div>
       <VideoComponent />
       <div className="wrapWrapper">
         <TransformWrapper>
           <TransformComponent>
+            <DefaultZoomTools/>
             <div className="map">
               <img className="helldivers-grid" src={grid} alt="helldivers grid" />
               {planets.map((planet, index) => (
@@ -80,8 +102,7 @@ function App() {
         </TransformWrapper>
       </div>
 
-      <NewsFeed />
-      
+      <NewsFeed/>
       {planets.length <= 0 || campaigns.length <= 0 ? <div className='planets-loading'><h2>CONNECTING TO SUPER EARTH</h2></div> : ''}
     </>
   );
