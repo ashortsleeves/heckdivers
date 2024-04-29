@@ -53,9 +53,7 @@ export default function NewsFeed() {
             <div className="breaking-news">
                 {newsFeed.length > 0 ? (
                     <h3>BREAKING NEWS<span>:</span></h3>
-                ) : (
-                    <p>Retrieving Super Earth News...</p>
-                )}
+                ) : ''}
 
                 {newsFeed.map((news, index) =>
                     index === activeIndex ? (
