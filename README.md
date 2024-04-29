@@ -1,4 +1,4 @@
-# Heckdivers
+# HECKDIVERS
 
 ![Heckdivers Logo](https://github.com/ashortsleeves/heckdivers/blob/main/public/favicon-96x96.png)
 
@@ -46,4 +46,4 @@ Contributions are welcome! Please feel free to submit issues or pull requests.
 
 ## License
 
-GNU General Public License v3.0 - see the [LICENSE](https://github.com/ashortsleeves/heckdivers/blob/main/LICENSE) file for details.
+GNU General Public License v3.0 - see the [LICENSE](https://github.com/ashortsleeves/heckdivers/blob/maestro/LICENSE.txt) file for details.
