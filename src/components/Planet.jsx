@@ -1,9 +1,10 @@
 import './Planet.css';
 
-export default function Planet ({ planetIndex, name, description, owner, playerCount, positionX, positionY, sector, activeCampaign, health, ...props }) {
+export default function Planet ({ planetIndex, name, description, owner, playerCount, positionX, positionY, sector, activeCampaign, health, maxHealth, ...props }) {
     const x = positionX * 450;
     const y = -positionY * 450;
-    const healthPercentage = health !== '' ? 100 - parseInt((health/1000000)*100) : null;
+    const healthPercentage = health !== '' ? 100 - ((health/maxHealth)*100) : null;
+
 
     const planetStyles = { 
         transform: `translate(${x}px, ${y}px)`,
@@ -23,6 +24,10 @@ export default function Planet ({ planetIndex, name, description, owner, playerC
           )`
     }
 
+    const nameStyles = {
+        animation: `blink ${planetIndex / 5}s linear infinite`
+    }
+
     return (
         <div className={
             activeCampaign === name ? 'planet planet-active'
@@ -34,12 +39,12 @@ export default function Planet ({ planetIndex, name, description, owner, playerC
             {activeCampaign === name ? 
                 <>
                 <span className="pie-chart" style={pieChartStyles}></span>
-                    <p className="name">{name}</p>
+                    <p className="name" style={nameStyles}>{name}</p>
                     <div className="planet-info">
                         <h3>{name}</h3>
                         <p>Under {owner} control</p>
                         <p>{playerCount} Helldivers</p>
-                        <p className="name">{healthPercentage}% Liberated</p>
+                        <p>{Math.round(healthPercentage * 10000) / 10000}% Liberated</p>
                         <p>{description}</p>
                     </div>
                 </>

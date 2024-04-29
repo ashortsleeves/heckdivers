@@ -30,24 +30,6 @@
   50% {background-position:0 -100%,0 0}
 }
 
-@keyframes blink {
-  0% {
-    opacity: 0;
-  }
-  1% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 1;
-  }
-  51% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 .major-order,
 .breaking-news {
   padding: 15px;

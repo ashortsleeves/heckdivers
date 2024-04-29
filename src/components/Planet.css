@@ -107,8 +107,8 @@
   .planet-active .name {
     position: relative;
     margin-top: 8px;
-    text-wrap: nowrap;
-    opacity: 1;
+    /* text-wrap: nowrap; */
+    opacity: 0;
   }
   
   .planet .name-hover {
@@ -146,7 +146,7 @@
   }
   
   .planet-active:hover > .name {
-    opacity: 0;
+    display: none;
   }
   
   .planet-active:hover > .planet-info {

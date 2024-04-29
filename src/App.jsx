@@ -69,7 +69,8 @@ function App() {
                         positionY={planet.position.y}
                         sector={planet.sector}
                         activeCampaign={campaign.planet.name}
-                        health={planet.health}
+                        health={campaign.planet.health}
+                        maxHealth={campaign.planet.maxHealth}
                       />
                     ))}
                 </div>
