@@ -14,13 +14,13 @@
 
 :root {
   --white: rgb(255, 255, 255);
-  --green: rgb(177, 255, 174);
-  --green-pale: rgb(201, 255, 199);
-  --green-pale-dark: rgb(113, 129, 112);
-  --green-black: rgb(24, 30, 23);
+  --green: #b1ffae;
+  --green-pale: #c9ffc7;
+  --green-pale-dark: #718170;
+  --green-black: #181e17;
   --green-black-bg: rgb(15, 20, 15, 0.7);
-  --green-box-shadow-1: 0px 0px 15px 3px rgb(201, 255, 199, 0.2);
-  --green-box-shadow-2: 0px 0px 15px 3px rgb(201, 255, 199, 0.4);
+  --green-box-shadow-1: 0px 0px 15px 3px rgba(201, 255, 199, 0.2);
+  --green-box-shadow-2: 0px 0px 15px 3px rgba(201, 255, 199, 0.4);
   --green-box-shadow-3: 0px 0px 15px 2px rgba(215, 255, 213, 0.4);
   --green-box-shadow-4: 0px 0px 15px 2px rgba(215, 255, 213, 0.1);
   --red: rgb(255, 0, 0);
