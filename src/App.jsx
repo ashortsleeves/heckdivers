@@ -4,7 +4,6 @@ import NewsFeed from './components/NewsFeed';
 import VideoComponent from './components/VideoComponent';
 import DefaultZoomTools from './components/DefaultZoomTools';
 import planetsData from './planets.json';
-import './App.css';
 import grid from './assets/grid.webp';
 import reloadImg from './assets/reload.svg'
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
