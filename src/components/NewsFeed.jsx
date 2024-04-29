@@ -41,7 +41,7 @@ export default function NewsFeed() {
         <div className="news-feed">            
             {majorOrder.length > 0 ? (
             majorOrder.map((order, index) => (
-                <div className="major-order"> 
+                <div className="major-order" key="index">
                     <div key={index}>
                     <h2><span>*</span> MAJOR ORDER <span>*</span></h2>
                         <p>{order.briefing}</p>
