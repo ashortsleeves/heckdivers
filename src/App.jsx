@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import Planet from './components/Planet';
 import NewsFeed from './components/NewsFeed';
+import VideoComponent from './components/VideoComponent';
+import planetsData from './planets.json';
 import './App.css';
 import grid from './assets/grid.webp';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
-import VideoComponent from './components/VideoComponent';
+
 
 function App() {
   const [campaigns, setCampaigns] = useState([]);
-  const [planets, setPlanets] = useState([]);
+  const planets = planetsData;
 
   // Fetch data from APIs and update state
   const fetchData = async () => {
@@ -16,10 +18,6 @@ function App() {
       const campaignsResponse = await fetch('https://api.helldivers2.dev/api/v1/campaigns');
       const campaignsData = await campaignsResponse.json();
       setCampaigns(campaignsData);
-
-      const planetsResponse = await fetch('https://api.helldivers2.dev/api/v1/planets');
-      const planetsData = await planetsResponse.json();
-      setPlanets(planetsData);
 
     } catch (error) {
       console.error('Error fetching data:', error);
