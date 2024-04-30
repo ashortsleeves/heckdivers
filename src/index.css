@@ -107,8 +107,12 @@ body {
   position: relative;
   height: 100vh;
   width: 100vw;
-  /* background-color: var(--green-black-bg); */
-  animation: blur 10s ease-in-out infinite;
+}
+
+@media screen and (min-width: 1200px) {
+  .map {
+    animation: blur 10s ease-in-out infinite;
+  }
 }
 
 .wrapWrapper:before,
@@ -368,4 +372,10 @@ p {
   text-align: right;
   color: var(--green-pale-dark);
   text-decoration: none;
+}
+
+@media screen and (max-width: 1159px) {
+  .button-controls {
+    display: none;
+  }
 }

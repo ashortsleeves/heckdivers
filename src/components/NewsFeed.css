@@ -72,3 +72,9 @@
 .breaking-news h3 span {
   animation: blink 1.2s linear infinite;
 }
+
+@media screen and (max-width: 1159px) {
+  .news-feed {
+    display: none;
+  }
+}
