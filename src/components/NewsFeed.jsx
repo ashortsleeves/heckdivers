@@ -5,14 +5,16 @@ export default function NewsFeed() {
     const [newsFeed, setNewsFeed] = useState([]);
     const [majorOrder, setMajorOrder] = useState([]);
     const [activeIndex, setActiveIndex] = useState(0); // Keep track of the index of the active component
-
+    const headers = {"X-Super-Client": "Heckdivers", "X-Super-Contact": "gh/ashortsleeves"}
+    
+    
     const fetchData = async () => {
         try {
-            const majorOrderResponse = await fetch('https://api.helldivers2.dev/api/v1/assignments');
+            const majorOrderResponse = await fetch('https://api.helldivers2.dev/api/v1/assignments', {headers: headers});
             const majorOrderData = await majorOrderResponse.json();
             setMajorOrder(majorOrderData);
 
-            const newsFeedResponse = await fetch('https://api.helldivers2.dev/raw/api/NewsFeed/801');
+            const newsFeedResponse = await fetch('https://api.helldivers2.dev/raw/api/NewsFeed/801', {headers: headers});
             const newsFeedData = await newsFeedResponse.json();
             setNewsFeed(newsFeedData);
       
