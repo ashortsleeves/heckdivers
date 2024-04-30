@@ -6,6 +6,7 @@ import DefaultZoomTools from './components/DefaultZoomTools';
 import planetsData from './planets.json';
 import grid from './assets/grid.webp';
 import reloadImg from './assets/reload.svg'
+
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 
 function App() {
@@ -101,6 +102,7 @@ function App() {
         
         <div>
           <a href="https://heckdivers.net" target="_blank">heckdivers.net</a>
+          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3235505289" target="_blank">wallpaper engine</a>
           <a href="https://github.com/ashortsleeves" target="_blank">github</a>
         </div>
 

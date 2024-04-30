@@ -374,6 +374,10 @@ p {
   text-decoration: none;
 }
 
+.button-controls a:hover {
+  color: var(--green);
+}
+
 @media screen and (max-width: 1159px) {
   .button-controls {
     display: none;

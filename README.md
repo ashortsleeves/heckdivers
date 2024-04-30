@@ -4,6 +4,8 @@
 
 Heckdivers is a web application built with React and Vite that provides information and statistics for the game Helldivers II.
 
+[Set Heckdivers as your live desktop background using Wallpaper Engine!](https://steamcommunity.com/sharedfiles/filedetails/?id=3235505289)
+
 ## Features
 
 - Displays information about planets in the game.
@@ -52,3 +54,6 @@ GNU General Public License v3.0 - see the [LICENSE](https://github.com/ashortsle
 Heckdivers relies on the [helldivers-2/api](https://github.com/helldivers-2/api), a community driven API for Helldivers 2. 
 
 Zoom in/out functionality is provided by [react-zoom-pan-pinch](https://github.com/BetterTyped/react-zoom-pan-pinch), a library to support easy zoom, pan, pinch on html dom elements.
+
+## Future Features/Requested Features
+Have a request? Drop a message on the [Steam Workshop Page](https://steamcommunity.com/sharedfiles/filedetails/?id=3235505289)
