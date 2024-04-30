@@ -57,3 +57,13 @@ Zoom in/out functionality is provided by [react-zoom-pan-pinch](https://github.c
 
 ## Future Features/Requested Features
 Have a request? Drop a message on the [Steam Workshop Page](https://steamcommunity.com/sharedfiles/filedetails/?id=3235505289)
+
+Planned Feature Updates:
+
+-support for higher resolution screens
+-options menu
+-Text size adjusters
+-color picker
+-enable/disable retro-terminal animations
+-different background options
+
