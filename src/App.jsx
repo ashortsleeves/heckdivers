@@ -7,6 +7,7 @@ import planetsData from './planets.json';
 import grid from './assets/grid.webp';
 import reloadImg from './assets/reload.svg'
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
+const headers = {"X-Super-Client": "Heckdivers", "X-Super-Contact": "gh/ashortsleeves"}
 
 function App() {
   const [campaigns, setCampaigns] = useState([]);
@@ -15,7 +16,7 @@ function App() {
   // Fetch data from APIs and update state
   const fetchData = async () => {
     try {
-      const campaignsResponse = await fetch('https://api.helldivers2.dev/api/v1/campaigns');
+      const campaignsResponse = await fetch('https://api.helldivers2.dev/api/v1/campaigns', {headers: headers});
       const campaignsData = await campaignsResponse.json();
       setCampaigns(campaignsData);
 
