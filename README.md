@@ -60,10 +60,9 @@ Have a request? Drop a message on the [Steam Workshop Page](https://steamcommuni
 
 Planned Feature Updates:
 
--support for higher resolution screens
--options menu
--Text size adjusters
--color picker
--enable/disable retro-terminal animations
--different background options
-
+- support for higher resolution screens
+- options menu
+- Text size adjusters
+- color picker
+- enable/disable retro-terminal animations
+- different background options
