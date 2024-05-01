@@ -5,7 +5,9 @@ export default function Planet ({ planetIndex, name, description, owner, playerC
     const y = -positionY * 450;
     const healthPercentage = health !== '' ? 100 - ((health/maxHealth)*100) : null;
 
-    const ownerColor = owner === 'Terminids' ? 'rgb(250, 250, 0)' : 'rgb(255, 103, 103)';
+    const ownerColor = owner === 'Terminids' ? 'rgb(250, 250, 0)' :
+    owner === 'Humans' ? 'rgb(177, 255, 174)' :
+    'rgb(255, 103, 103)';
 
     const heckDiverColor = owner === 'Terminids' ? 'rgb(104, 198, 101)' : 'rgb(177, 255, 174)';
 
