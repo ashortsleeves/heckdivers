@@ -76,8 +76,8 @@ function App() {
                         key={index}
                         planetIndex={planet.index}
                         description={planet.biome.description}
-                        owner={planet.currentOwner}
-                        playerCount={planet.statistics.playerCount}
+                        owner={campaign.planet.currentOwner}
+                        playerCount={campaign.planet.statistics.playerCount}
                         name={planet.name}
                         positionX={planet.position.x}
                         positionY={planet.position.y}
