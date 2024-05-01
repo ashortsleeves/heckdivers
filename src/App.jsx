@@ -6,6 +6,7 @@ import DefaultZoomTools from './components/DefaultZoomTools';
 import planetsData from './planets.json';
 import grid from './assets/grid.webp';
 import reloadImg from './assets/reload.svg'
+import saturnImg from './assets/planet-space-icon.svg';
 
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 const headers = {"X-Super-Client": "Heckdivers", "X-Super-Contact": "gh/ashortsleeves"}
@@ -13,6 +14,17 @@ const headers = {"X-Super-Client": "Heckdivers", "X-Super-Contact": "gh/ashortsl
 function App() {
   const [campaigns, setCampaigns] = useState([]);
   const planets = planetsData;
+  const [isRotating, setIsRotating] = useState(false);
+
+  const toggleRotation = () => {
+    setIsRotating(!isRotating);
+  };
+
+  if (isRotating) {
+    document.body.classList.add('rotate-active');
+  } else {
+    document.body.classList.remove('rotate-active');
+  }
 
   // Fetch data from APIs and update state
   const fetchData = async () => {
@@ -99,6 +111,7 @@ function App() {
       <div className='button-controls'>
         <button onClick={() => handleZoomClick('zIn')}>+ <span>Zoom In</span></button>
         <button onClick={() => handleZoomClick('zOut')}>- <span>Zoom Out</span></button>
+        <button onClick={toggleRotation}><img src={saturnImg} alt="Saturn Icon"/> <span>Toggle Rotation</span></button>
         <button onClick={() => location.reload()}><img src={reloadImg} alt="reload network"/> <span>Reload Network</span></button>
         
         <div>

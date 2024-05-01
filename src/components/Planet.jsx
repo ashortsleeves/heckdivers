@@ -28,26 +28,29 @@ export default function Planet ({ planetIndex, name, description, owner, playerC
     }
 
     return (
+
         <div className={
             activeCampaign === name ? 'planet planet-active'
             : name === "SUPER EARTH" ? 'planet planet-earth'
             : 'planet planet-inactive'} style={planetStyles}>
-            
-            {radarStyles ? <span className="radar" style={radarStyles}></span> : ''}
 
-            {activeCampaign === name ? 
-                <>
-                <span className="pie-chart" style={pieChartStyles}></span>
-                    <p className="name" style={nameStyles}>{name}</p>
-                    <div className="planet-info">
-                        <h3>{name}</h3>
-                        <p>Under {owner} control</p>
-                        <p>{playerCount} Helldivers</p>
-                        <p>{Math.round(healthPercentage * 10000) / 10000}% Liberated</p>
-                        <p>{description}</p>
-                    </div>
-                </>
-            : <p className="name name-hover">{name}</p>}
+            <div className='planet-wrap'>
+                {radarStyles ? <span className="radar" style={radarStyles}></span> : ''}
+
+                {activeCampaign === name ? 
+                    <>
+                    <span className="pie-chart" style={pieChartStyles}></span>
+                        <p className="name" style={nameStyles}>{name}</p>
+                        <div className="planet-info">
+                            <h3>{name}</h3>
+                            <p>Under {owner} control</p>
+                            <p>{playerCount} Helldivers</p>
+                            <p>{Math.round(healthPercentage * 10000) / 10000}% Liberated</p>
+                            <p>{description}</p>
+                        </div>
+                    </>
+                : <p className="name name-hover">{name}</p>}
+            </div>
         </div>
     );  
 }
