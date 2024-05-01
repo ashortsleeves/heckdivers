@@ -3,6 +3,7 @@ import Planet from './components/Planet';
 import NewsFeed from './components/NewsFeed';
 import VideoComponent from './components/VideoComponent';
 import DefaultZoomTools from './components/DefaultZoomTools';
+import SkyFury from './components/SkyFury';
 import planetsData from './planets.json';
 import grid from './assets/grid.webp';
 import reloadImg from './assets/reload.svg'
@@ -15,6 +16,7 @@ function App() {
   const [campaigns, setCampaigns] = useState([]);
   const planets = planetsData;
   const [isRotating, setIsRotating] = useState(false);
+  
 
   const toggleRotation = () => {
     setIsRotating(!isRotating);
@@ -25,6 +27,13 @@ function App() {
   } else {
     document.body.classList.remove('rotate-active');
   }
+
+  const playVideo = () => {
+    const player = document.getElementById('skyFury');
+    if (player) {
+      player.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+    }
+  };
 
   // Fetch data from APIs and update state
   const fetchData = async () => {
@@ -60,6 +69,7 @@ function App() {
   return (
     <>
       <VideoComponent />
+      <SkyFury />
       <div className="wrapWrapper">
         <TransformWrapper>
           <TransformComponent>
@@ -113,13 +123,13 @@ function App() {
         <button onClick={() => handleZoomClick('zOut')}>- <span>Zoom Out</span></button>
         <button onClick={toggleRotation}><img src={saturnImg} alt="Saturn Icon"/> <span>Toggle Rotation</span></button>
         <button onClick={() => location.reload()}><img src={reloadImg} alt="reload network"/> <span>Reload Network</span></button>
+        <button id="playSkyfury" onClick={playVideo}>Play Video</button>
         
         <div>
           <a href="https://heckdivers.net" target="_blank">heckdivers.net</a>
           <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3235505289" target="_blank">wallpaper engine</a>
           <a href="https://github.com/ashortsleeves" target="_blank">github</a>
         </div>
-
       </div>
     </>
   );
