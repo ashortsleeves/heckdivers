@@ -94,6 +94,10 @@
   box-shadow: 0px 0px 77px 38px rgba(255, 0, 0, 0.1);
 }
 
+.planet-Humans {
+  box-shadow: var(--green-box-shadow-3);
+}
+
 .planet-active .planet-wrap {
   background-color: red;
   transition: 0.5s ease-in-out;
@@ -131,6 +135,15 @@
 
 .planet-active.planet-Terminids .planet-wrap .pie-chart {
   box-shadow: var(--yellow);
+}
+
+.planet-active.planet-Humans .planet-wrap .radar,
+.planet-active.planet-Humans .planet-wrap .pie-chart {
+  background-color: var(--green);
+}
+
+.planet-active.planet-Humans .planet-wrap .pie-chart {
+  box-shadow: var(--green-box-shadow-3);
 }
 
 .planet-active .name {
