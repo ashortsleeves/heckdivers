@@ -5,7 +5,6 @@ export default function Planet ({ planetIndex, name, description, owner, playerC
     const y = -positionY * 450;
     const healthPercentage = health !== '' ? 100 - ((health/maxHealth)*100) : null;
 
-
     const planetStyles = { 
         transform: `translate(${x}px, ${y}px)`,
         animationDelay: `${planetIndex * 10}ms`,

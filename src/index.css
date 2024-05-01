@@ -383,3 +383,11 @@ p {
     display: none;
   }
 }
+
+@media screen and (min-width: 3000px) {
+  .button-controls {
+    transform: scale(2);
+    bottom: 180px;
+    right: 120px;
+  }
+}

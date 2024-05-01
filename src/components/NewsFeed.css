@@ -78,3 +78,22 @@
     display: none;
   }
 }
+
+@media screen and (min-width: 3000px) {
+  .news-feed {
+    width: 630px;
+  }
+
+  .major-order p,
+  .breaking-news .typewriter  {
+    font-size: 20px;
+  }
+
+  .major-order h2 {
+    font-size: 36px;
+  }
+
+  .breaking-news h3 {
+    font-size: 30px;
+  }
+}

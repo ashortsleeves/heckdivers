@@ -6,8 +6,7 @@ export default function NewsFeed() {
     const [majorOrder, setMajorOrder] = useState([]);
     const [activeIndex, setActiveIndex] = useState(0); // Keep track of the index of the active component
     const headers = {"X-Super-Client": "Heckdivers", "X-Super-Contact": "gh/ashortsleeves"}
-    
-    
+
     const fetchData = async () => {
         try {
             const majorOrderResponse = await fetch('https://api.helldivers2.dev/api/v1/assignments', {headers: headers});
