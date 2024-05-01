@@ -5,6 +5,10 @@ export default function Planet ({ planetIndex, name, description, owner, playerC
     const y = -positionY * 450;
     const healthPercentage = health !== '' ? 100 - ((health/maxHealth)*100) : null;
 
+    const ownerColor = owner === 'Terminids' ? 'rgb(250, 250, 0)' : 'rgb(255, 103, 103)';
+
+    const heckDiverColor = owner === 'Terminids' ? 'rgb(104, 198, 101)' : 'rgb(177, 255, 174)';
+
     const planetStyles = { 
         transform: `translate(${x}px, ${y}px)`,
         animationDelay: `${planetIndex * 10}ms`,
@@ -16,10 +20,10 @@ export default function Planet ({ planetIndex, name, description, owner, playerC
 
     const pieChartStyles = {
         background: `conic-gradient(
-            rgb(177, 255, 174) 0,
-            rgb(177, 255, 174) ${healthPercentage}%,
-            rgb(255, 103, 103) 0,
-            rgb(255, 103, 103) 100%
+            ${heckDiverColor} 0,
+            ${heckDiverColor} ${healthPercentage}%,
+            ${ownerColor} 0,
+            ${ownerColor} 100%
           )`
     }
 
@@ -30,7 +34,7 @@ export default function Planet ({ planetIndex, name, description, owner, playerC
     return (
 
         <div className={
-            activeCampaign === name ? 'planet planet-active'
+            activeCampaign === name ? 'planet planet-active planet-'+ owner
             : name === "SUPER EARTH" ? 'planet planet-earth'
             : 'planet planet-inactive'} style={planetStyles}>
 
