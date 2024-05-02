@@ -8,6 +8,7 @@ import planetsData from './planets.json';
 import grid from './assets/grid.webp';
 import reloadImg from './assets/reload.svg'
 import saturnImg from './assets/planet-space-icon.svg';
+import liberTea from './assets/liber-tea.svg'
 
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 const headers = {"X-Super-Client": "Heckdivers", "X-Super-Contact": "gh/ashortsleeves"}
@@ -28,11 +29,11 @@ function App() {
     document.body.classList.remove('rotate-active');
   }
 
-  const playVideo = () => {
-    const player = document.getElementById('skyFury');
-    if (player) {
-      player.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-    }
+  const [isSkyFuryLoaded, setIsSkyFuryLoaded] = useState(false);
+
+  const toggleSkyFury = () => {
+    setIsSkyFuryLoaded(!isSkyFuryLoaded);
+    toggleRotation();
   };
 
   // Fetch data from APIs and update state
@@ -69,7 +70,7 @@ function App() {
   return (
     <>
       <VideoComponent />
-      <SkyFury />
+      {isSkyFuryLoaded && <SkyFury />}
       <div className="wrapWrapper">
         <TransformWrapper>
           <TransformComponent>
@@ -123,7 +124,7 @@ function App() {
         <button onClick={() => handleZoomClick('zOut')}>- <span>Zoom Out</span></button>
         <button onClick={toggleRotation}><img src={saturnImg} alt="Saturn Icon"/> <span>Toggle Rotation</span></button>
         <button onClick={() => location.reload()}><img src={reloadImg} alt="reload network"/> <span>Reload Network</span></button>
-        <button id="playSkyfury" onClick={playVideo}>Play Video</button>
+        <button onClick={toggleSkyFury}><img src={liberTea} alt="how about a nice cup of LIBER-TEA?"></img> <span class="liber-tea">How about a nice cup of LIBER-TEA?</span></button>
         
         <div>
           <a href="https://heckdivers.net" target="_blank">heckdivers.net</a>
