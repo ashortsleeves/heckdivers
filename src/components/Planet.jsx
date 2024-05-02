@@ -7,9 +7,11 @@ export default function Planet ({ planetIndex, name, description, owner, playerC
 
     const ownerColor = owner === 'Terminids' ? 'rgb(250, 250, 0)' :
     owner === 'Humans' ? 'rgb(177, 255, 174)' :
+    owner === 'Illuminate' ? 'rgb(0, 157, 255)' :
     'rgb(255, 103, 103)';
 
-    const heckDiverColor = owner === 'Terminids' ? 'rgb(104, 198, 101)' : 'rgb(177, 255, 174)';
+    const heckDiverColor = owner === 'Terminids' ? 'rgb(104, 198, 101)' :
+    'rgb(177, 255, 174)';
 
     const planetStyles = { 
         transform: `translate(${x}px, ${y}px)`,
@@ -49,6 +51,7 @@ export default function Planet ({ planetIndex, name, description, owner, playerC
                         <p className="name" style={nameStyles}>{name}</p>
                         <div className="planet-info">
                             <h3>{name}</h3>
+                            <h4>{sector} Sector</h4>
                             <p>Under {owner} control</p>
                             <p>{playerCount} Helldivers</p>
                             <p>{Math.round(healthPercentage * 10000) / 10000}% Liberated</p>

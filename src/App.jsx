@@ -9,12 +9,15 @@ import reloadImg from './assets/reload.svg'
 import saturnImg from './assets/planet-space-icon.svg';
 
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
+import IlluminateAreHere from './components/IlluminateAreHere';
+
 const headers = {"X-Super-Client": "Heckdivers", "X-Super-Contact": "gh/ashortsleeves"}
 
 function App() {
   const [campaigns, setCampaigns] = useState([]);
   const planets = planetsData;
   const [isRotating, setIsRotating] = useState(false);
+  const [showIlluminate, setShowIlluminate] = useState(false);
 
   const toggleRotation = () => {
     setIsRotating(!isRotating);
@@ -33,6 +36,10 @@ function App() {
       const campaignsData = await campaignsResponse.json();
       setCampaigns(campaignsData);
 
+      // Check if Illuminate are present
+      const illuminatePresent = campaignsData.some(campaign => campaign.planet.currentOwner === 'Illuminate');
+      setShowIlluminate(illuminatePresent);
+
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -42,24 +49,30 @@ function App() {
   useEffect(() => {
     fetchData(); // Fetch data initially
     const intervalId = setInterval(fetchData, 10000); // Fetch data every minute
-    console.log('fetch data attempt')
     return () => clearInterval(intervalId);
   }, []);
 
+  useEffect(() => {
+    const showIlluminateTimer = setTimeout(() => {
+      setShowIlluminate(false);
+    }, 2000); // Show IlluminateAreHere for 10 seconds
+
+    return () => clearTimeout(showIlluminateTimer);
+  }, [showIlluminate]);
 
   function handleZoomClick(targetButtonID) {
     const secondButton = document.getElementById(targetButtonID);
 
     if (secondButton) {
-      // Programmatically trigger a click event on the second button
+      // Trigger a click event on the second button
       secondButton.click();
-      console.log(targetButtonID);
     }
   }
 
   return (
     <>
       <VideoComponent />
+      {showIlluminate && <IlluminateAreHere />}
       <div className="wrapWrapper">
         <TransformWrapper>
           <TransformComponent>
@@ -98,7 +111,8 @@ function App() {
                         health={campaign.planet.health}
                         maxHealth={campaign.planet.maxHealth}
                       />
-                    ))}
+                    ))
+                  }
                 </div>
               ))}
             </div>

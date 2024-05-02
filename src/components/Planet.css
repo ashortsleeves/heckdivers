@@ -94,6 +94,10 @@
   box-shadow: 0px 0px 77px 38px rgba(255, 0, 0, 0.1);
 }
 
+.planet-Illuminate {
+  box-shadow: 0px 0px 77px 38px rgba(0, 157, 255, 0.1);
+}
+
 .planet-Humans {
   box-shadow: var(--green-box-shadow-3);
 }
@@ -146,6 +150,16 @@
   box-shadow: var(--green-box-shadow-3);
 }
 
+.planet-active.planet-Illuminate .planet-wrap .radar,
+.planet-active.planet-Illuminate .planet-wrap .pie-chart {
+  background-color: rgba(0, 157, 255, 1);
+}
+
+.planet-active.planet-Illuminate .planet-wrap .pie-chart {
+  box-shadow: 0px 0px 77px 38px rgba(0, 157, 255, 0.07);
+}
+
+
 .planet-active .name {
   position: relative;
   margin-top: 8px;
@@ -177,6 +191,11 @@
   border: solid 1px var(--green-pale);
   color: var(--green-pale);
   box-shadow: var(--green-box-shadow-1);
+}
+
+.planet-info h4 {
+  font-size: 8px;
+  text-transform: uppercase;
 }
 
 .planet-info p {
