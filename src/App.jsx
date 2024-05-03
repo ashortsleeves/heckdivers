@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Planet from './components/Planet';
 import NewsFeed from './components/NewsFeed';
-import VideoComponent from './components/VideoComponent';
+import StaticBG from './components/StaticBG';
 import DefaultZoomTools from './components/DefaultZoomTools';
 import planetsData from './planets.json';
 import grid from './assets/grid.webp';
@@ -59,7 +59,7 @@ function App() {
 
   return (
     <>
-      <VideoComponent />
+      <StaticBG />
       <div className="wrapWrapper">
         <TransformWrapper>
           <TransformComponent>

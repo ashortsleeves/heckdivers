@@ -71,39 +71,12 @@
   }
 }
 
-@keyframes blink {
-  0% {
-    opacity: 0;
-  }
-  1% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 1;
-  }
-  51% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 body {
   margin: 0;
   position: relative;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-}
-
-.static-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: auto;
-  width: 100%;
-  opacity: 0.02;
 }
 
 .map {
@@ -319,12 +292,6 @@ p {
 
 .button-controls a:hover {
   color: var(--green);
-}
-
-@media screen and (max-width: 1159px) {
-  .button-controls {
-    display: none;
-  }
 }
 
 @media screen and (min-width: 3000px) {
