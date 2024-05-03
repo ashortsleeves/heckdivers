@@ -403,7 +403,7 @@ p {
   right: 0;
   top: 0;
   bottom: 0;
-  opacity: 0.3;
+  opacity: 0.5;
   z-index: 9999999999;
   background-color: var(--green-black-bg);
 }
@@ -411,7 +411,7 @@ p {
 .the-illuminate-are-here span {
   display: inline-block;
   font-size: 60px;
-  opacity: 0.1;
+  opacity: 0.3;
 }
 
 .the-illuminate-are-here .THEY_ARE_HERE {
