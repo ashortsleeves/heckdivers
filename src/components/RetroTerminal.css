@@ -92,6 +92,10 @@ body.retro-active {
     color: var(--green-pale);
 }
 
+/* .retro-active .button-controls button svg {
+    fill: red;
+} */
+
 .retro-active .button-controls a {
     color: var(--green-pale-dark);
 }

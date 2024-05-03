@@ -12,6 +12,11 @@
   src: url(./assets/PixelOperatorMonoHB8.ttf);
 }
 
+@font-face {
+  font-family: fsSinclair;
+  src: url(./assets/hd2.woff);
+}
+
 :root {
   --yellow: rgb(255, 255, 0);
   --white: rgb(255, 255, 255);
