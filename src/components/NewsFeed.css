@@ -4,7 +4,7 @@
   right: 0;
   padding: 30px;
   width: 360px;
-  color: var(--green-pale);
+  color: var(--white);
   box-sizing: border-box;
 }
 
@@ -12,8 +12,8 @@
   font-size: 8px;
   color:#0000;
   background:
-    linear-gradient(-90deg,var(--green-pale) 5px,#0000 0) 10px 0,
-    linear-gradient(var(--green-pale) 0 0) 0 0;
+    linear-gradient(-90deg,var(--white) 5px,#0000 0) 10px 0,
+    linear-gradient(var(--white) 0 0) 0 0;
   background-size:calc(var(--n)*1ch) 200%;
   -webkit-background-clip:padding-box,text;
   background-clip:padding-box,text;
@@ -40,7 +40,6 @@
   position: relative;
   font-size: 18px;
   padding-bottom: 7px;
-  text-shadow: 1px -1px 16px rgba(177,255,174,0.5);
 }
 
 .major-order h2::after {
@@ -50,8 +49,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  border-bottom: solid 2px var(--green-pale);
-  box-shadow: var(--green-box-shadow-2);
+  border-bottom: solid 2px var(--white);
 }
 
 .major-order h2 span {

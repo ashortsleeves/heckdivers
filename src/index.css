@@ -15,6 +15,8 @@
 :root {
   --yellow: rgb(255, 255, 0);
   --white: rgb(255, 255, 255);
+  --offwhite: rgb(161, 161, 161);
+  --black: rgb(0,0,0);
   --green: #b1ffae;
   --green-pale: #c9ffc7;
   --green-pale-dark: #718170;
@@ -35,8 +37,6 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: var(--green-pale);
-  background-color: var(--green-black);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -44,34 +44,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-@keyframes blur {
-  0% {
-    filter:blur(0px);
-  }
-  4% {
-    filter: blur(1px);
-  }
-  4.1% {
-    filter:blur(0px);
-  }
-  100% {
-    filter:blur(0px);
-  }
-}
-
-@keyframes vhsLine {
-  0% {
-    top: calc(100% + 200px);
-  }
-  75% {
-    top: calc(100% + 200px);
-  }
-  100% {
-    top: -200px;
-  }
-}
-
 body {
+  color: var(--white);
+  background-color: var(--black);
   margin: 0;
   position: relative;
   height: 100vh;
@@ -85,28 +60,16 @@ body {
   width: 100vw;
 }
 
-@media screen and (min-width: 1200px) {
-  .map {
-    animation: blur 10s ease-in-out infinite;
-  }
-}
-
 .wrapWrapper:before,
 .wrapWrapper:after {
   display: block;
   content: '';
   position: absolute;
   height: 5px;
-  background-color: var(--green-black-bg);
   left: 0;
   right: 0;
   top: calc(100% + 50px);
-  animation: vhsLine 16s ease-in-out infinite;
   z-index: 1;
-}
-
-.map:after {
-  animation: vhsLine 14s ease-in-out infinite;
 }
 
 h1,
@@ -145,22 +108,6 @@ p {
   height: auto;
   width: 940px;
   opacity: 0.1;
-  filter: blur1(2px);
-}
-
-@keyframes flicker {
-  0% {
-    opacity: 1;
-  }
-  2% {
-    opacity: 0.8;
-  }
-  3% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 @keyframes scaleAnimation {
@@ -188,7 +135,6 @@ p {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: var(--green-black-bg);
   z-index: 99999998;
 }
 
@@ -196,7 +142,6 @@ p {
   font-size: 24px;
   z-index: 999;
   text-align: center;
-  text-shadow: 1px -1px 16px rgba(0,0,0,1);
 }
 
 .planets-loading::before,
@@ -209,7 +154,6 @@ p {
   top: calc(50% - 100px);
   left: calc(50% - 100px);
   border-radius: 180px;
-  box-shadow: var(--green-box-shadow-2);
   z-index: 1;
 }
 
@@ -222,8 +166,7 @@ p {
 
 .planets-loading::after {
   border-radius: 180px;
-  background-color: var(--green-pale);
-  box-shadow: var(--green-box-shadow-2);
+  background-color: var(--black);
   opacity: 0.8;
   z-index: 2;
 }
@@ -241,11 +184,10 @@ p {
 
 .button-controls button {
   background: none;
-  border: solid 2px var(--green-pale);
-  color: var(--green-pale);
+  border: solid 2px var(--white);
+  color: var(--white);
   font-family: easVHSbold;
   margin: 0 2px;
-  box-shadow: var(--green-box-shadow-1);
   height: 21px;
   width: 21px;
   font-size: 12px;
@@ -277,7 +219,7 @@ p {
 
 .button-controls div {
   position: absolute;
-  padding-top: 10px;;
+  padding-top: 10px;
   top: 100%;
   right: 0;
 }
@@ -286,12 +228,12 @@ p {
   display: block;
   font-size: 6px;
   text-align: right;
-  color: var(--green-pale-dark);
+  color: var(--offwhite);
   text-decoration: none;
 }
 
 .button-controls a:hover {
-  color: var(--green);
+  color: var(--white);
 }
 
 @media screen and (min-width: 3000px) {

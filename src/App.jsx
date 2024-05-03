@@ -3,10 +3,10 @@ import Planet from './components/Planet';
 import NewsFeed from './components/NewsFeed';
 import StaticBG from './components/StaticBG';
 import DefaultZoomTools from './components/DefaultZoomTools';
+import ButtonControls from './components/ButtonControls';
+import './components/RetroTerminal.css';
 import planetsData from './planets.json';
 import grid from './assets/grid.webp';
-import reloadImg from './assets/reload.svg'
-import saturnImg from './assets/planet-space-icon.svg';
 
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 const headers = {"X-Super-Client": "Heckdivers", "X-Super-Contact": "gh/ashortsleeves"}
@@ -14,17 +14,6 @@ const headers = {"X-Super-Client": "Heckdivers", "X-Super-Contact": "gh/ashortsl
 function App() {
   const [campaigns, setCampaigns] = useState([]);
   const planets = planetsData;
-  const [isRotating, setIsRotating] = useState(false);
-
-  const toggleRotation = () => {
-    setIsRotating(!isRotating);
-  };
-
-  if (isRotating) {
-    document.body.classList.add('rotate-active');
-  } else {
-    document.body.classList.remove('rotate-active');
-  }
 
   // Fetch data from APIs and update state
   const fetchData = async () => {
@@ -45,17 +34,6 @@ function App() {
     console.log('fetch data attempt')
     return () => clearInterval(intervalId);
   }, []);
-
-
-  function handleZoomClick(targetButtonID) {
-    const secondButton = document.getElementById(targetButtonID);
-
-    if (secondButton) {
-      // Programmatically trigger a click event on the second button
-      secondButton.click();
-      console.log(targetButtonID);
-    }
-  }
 
   return (
     <>
@@ -108,19 +86,8 @@ function App() {
 
       <NewsFeed/>
       {planets.length <= 0 || campaigns.length <= 0 ? <div className='planets-loading'><h2>CONNECTING TO SUPER EARTH</h2></div> : ''}
-      <div className='button-controls'>
-        <button onClick={() => handleZoomClick('zIn')}>+ <span>Zoom In</span></button>
-        <button onClick={() => handleZoomClick('zOut')}>- <span>Zoom Out</span></button>
-        <button onClick={toggleRotation}><img src={saturnImg} alt="Saturn Icon"/> <span>Toggle Rotation</span></button>
-        <button onClick={() => location.reload()}><img src={reloadImg} alt="reload network"/> <span>Reload Network</span></button>
-        
-        <div>
-          <a href="https://heckdivers.net" target="_blank">heckdivers.net</a>
-          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3235505289" target="_blank">wallpaper engine</a>
-          <a href="https://github.com/ashortsleeves" target="_blank">github</a>
-        </div>
 
-      </div>
+      <ButtonControls />
     </>
   );
 }
