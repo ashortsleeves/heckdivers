@@ -1,0 +1,746 @@
+[
+  {
+    "id": 50088,
+    "planet": {
+      "index": 34,
+      "name": "HELLMIRE",
+      "sector": "Mirin",
+      "biome": {
+        "name": "Desolate",
+        "description": "Scorching temperatures, high winds, and low precipitation cause a near-constant cycle of fires to sweep this planet, punctuated by short bursts of lush rebirth between infernos."
+      },
+      "hazards": [
+        {
+          "name": "Intense Heat",
+          "description": "High temperatures increase stamina drain and speed up heat buildup in weapons."
+        },
+        {
+          "name": "Fire Tornadoes",
+          "description": "Planet is ravaged by deadly fire tornadoes."
+        }
+      ],
+      "hash": 3551496165,
+      "position": {
+        "x": 0.5111386,
+        "y": 0.3511805
+      },
+      "waypoints": [
+        125,
+        168,
+        169,
+        211
+      ],
+      "maxHealth": 1000000,
+      "health": 1000000,
+      "disabled": false,
+      "initialOwner": "Terminids",
+      "currentOwner": "Terminids",
+      "regenPerSecond": 6.9444447,
+      "event": null,
+      "statistics": {
+        "missionsWon": 15943265,
+        "missionsLost": 2016461,
+        "missionTime": 31049099387,
+        "terminidKills": 3472627063,
+        "automatonKills": 139,
+        "illuminateKills": 0,
+        "bulletsFired": 19679263710,
+        "bulletsHit": 23497831768,
+        "timePlayed": 31049099387,
+        "deaths": 93533590,
+        "revives": 0,
+        "friendlies": 13049847,
+        "missionSuccessRate": 88,
+        "accuracy": 100,
+        "playerCount": 2239
+      },
+      "attacking": []
+    },
+    "type": 0,
+    "count": 10
+  },
+  {
+    "id": 50110,
+    "planet": {
+      "index": 198,
+      "name": "MARFARK",
+      "sector": "Andromeda",
+      "biome": {
+        "name": "Winter",
+        "description": "Submerged in eternal winter, this world's frosty peaks glimmer in the light of its too-distant star."
+      },
+      "hazards": [
+        {
+          "name": "Extreme Cold",
+          "description": "Icy temperatures reduce rate of fire and delay heat buildup in weapons."
+        },
+        {
+          "name": "Blizzards",
+          "description": "Intense blizzard reduce mobility and moderately reduce visibility for both enemy and friendly units."
+        }
+      ],
+      "hash": 2831860380,
+      "position": {
+        "x": -0.43697178,
+        "y": 0.3259796
+      },
+      "waypoints": [
+        113,
+        199,
+        200
+      ],
+      "maxHealth": 1000000,
+      "health": 1000000,
+      "disabled": false,
+      "initialOwner": "Humans",
+      "currentOwner": "Automaton",
+      "regenPerSecond": 2.7777777,
+      "event": null,
+      "statistics": {
+        "missionsWon": 3382015,
+        "missionsLost": 362479,
+        "missionTime": 12785574481,
+        "terminidKills": 0,
+        "automatonKills": 855848543,
+        "illuminateKills": 0,
+        "bulletsFired": 5392213429,
+        "bulletsHit": 5659570938,
+        "timePlayed": 12785574481,
+        "deaths": 30794853,
+        "revives": 0,
+        "friendlies": 3161268,
+        "missionSuccessRate": 90,
+        "accuracy": 100,
+        "playerCount": 5758
+      },
+      "attacking": []
+    },
+    "type": 0,
+    "count": 4
+  },
+  {
+    "id": 50116,
+    "planet": {
+      "index": 201,
+      "name": "MEISSA",
+      "sector": "Ymir",
+      "biome": {
+        "name": "Jungle",
+        "description": "Abundant with life, this wet planet is covered in deep oceans, thick forests, and tall grasses."
+      },
+      "hazards": [
+        {
+          "name": "Volcanic Activity",
+          "description": "Volcanoes throw burning rocks around this planet."
+        },
+        {
+          "name": "Rainstorms",
+          "description": "Torrential rainstorms reduce visibility."
+        }
+      ],
+      "hash": 996779072,
+      "position": {
+        "x": -0.5683347,
+        "y": 0.4903273
+      },
+      "waypoints": [
+        245
+      ],
+      "maxHealth": 1000000,
+      "health": 1000000,
+      "disabled": false,
+      "initialOwner": "Humans",
+      "currentOwner": "Automaton",
+      "regenPerSecond": 2.7777777,
+      "event": null,
+      "statistics": {
+        "missionsWon": 671713,
+        "missionsLost": 120467,
+        "missionTime": 2513322080,
+        "terminidKills": 97,
+        "automatonKills": 165380008,
+        "illuminateKills": 0,
+        "bulletsFired": 1105373006,
+        "bulletsHit": 1118019562,
+        "timePlayed": 2513322080,
+        "deaths": 7377971,
+        "revives": 0,
+        "friendlies": 763255,
+        "missionSuccessRate": 84,
+        "accuracy": 100,
+        "playerCount": 1968
+      },
+      "attacking": []
+    },
+    "type": 0,
+    "count": 2
+  },
+  {
+    "id": 50119,
+    "planet": {
+      "index": 156,
+      "name": "CHARBAL-VII",
+      "sector": "Andromeda",
+      "biome": {
+        "name": "Toxic",
+        "description": "Dense, toxic fumes from deep within the planet's crust seep out of cracks in the earth and coat the ground in a sickly haze."
+      },
+      "hazards": [
+        {
+          "name": "Intense Heat",
+          "description": "High temperatures increase stamina drain and speed up heat buildup in weapons."
+        },
+        {
+          "name": "Acid Storms",
+          "description": "Violent acid storms reduce visibility."
+        }
+      ],
+      "hash": 3531149629,
+      "position": {
+        "x": -0.6009798,
+        "y": 0.2024094
+      },
+      "waypoints": [
+        154,
+        158
+      ],
+      "maxHealth": 1000000,
+      "health": 1000000,
+      "disabled": false,
+      "initialOwner": "Humans",
+      "currentOwner": "Automaton",
+      "regenPerSecond": 2.7777777,
+      "event": null,
+      "statistics": {
+        "missionsWon": 221882,
+        "missionsLost": 33793,
+        "missionTime": 627902232,
+        "terminidKills": 0,
+        "automatonKills": 42139240,
+        "illuminateKills": 0,
+        "bulletsFired": 275071168,
+        "bulletsHit": 277140866,
+        "timePlayed": 627902232,
+        "deaths": 1851995,
+        "revives": 0,
+        "friendlies": 186008,
+        "missionSuccessRate": 86,
+        "accuracy": 100,
+        "playerCount": 570
+      },
+      "attacking": []
+    },
+    "type": 0,
+    "count": 2
+  },
+  {
+    "id": 50120,
+    "planet": {
+      "index": 158,
+      "name": "CHOEPESSA IV",
+      "sector": "Trigon",
+      "biome": {
+        "name": "Icemoss",
+        "description": "Ice and moss-covered rock can be found across most of the surface of this planet."
+      },
+      "hazards": [
+        {
+          "name": "Extreme Cold",
+          "description": "Icy temperatures reduce rate of fire and delay heat buildup in weapons."
+        }
+      ],
+      "hash": 2564387350,
+      "position": {
+        "x": -0.7044093,
+        "y": 0.25667855
+      },
+      "waypoints": [
+        242,
+        244
+      ],
+      "maxHealth": 1000000,
+      "health": 1000000,
+      "disabled": false,
+      "initialOwner": "Humans",
+      "currentOwner": "Automaton",
+      "regenPerSecond": 2.7777777,
+      "event": null,
+      "statistics": {
+        "missionsWon": 535759,
+        "missionsLost": 64750,
+        "missionTime": 1902797325,
+        "terminidKills": 0,
+        "automatonKills": 135970235,
+        "illuminateKills": 0,
+        "bulletsFired": 833535125,
+        "bulletsHit": 859010142,
+        "timePlayed": 1902797325,
+        "deaths": 4576062,
+        "revives": 0,
+        "friendlies": 452356,
+        "missionSuccessRate": 89,
+        "accuracy": 100,
+        "playerCount": 2109
+      },
+      "attacking": []
+    },
+    "type": 0,
+    "count": 2
+  },
+  {
+    "id": 50129,
+    "planet": {
+      "index": 203,
+      "name": "MENKENT",
+      "sector": "Hydra",
+      "biome": {
+        "name": "Desolate",
+        "description": "Scorching temperatures, high winds, and low precipitation cause a near-constant cycle of fires to sweep this planet, punctuated by short bursts of lush rebirth between infernos."
+      },
+      "hazards": [
+        {
+          "name": "Intense Heat",
+          "description": "High temperatures increase stamina drain and speed up heat buildup in weapons."
+        },
+        {
+          "name": "Fire Tornadoes",
+          "description": "Planet is ravaged by deadly fire tornadoes."
+        }
+      ],
+      "hash": 3161413384,
+      "position": {
+        "x": -0.31501773,
+        "y": 0.4560387
+      },
+      "waypoints": [
+        112,
+        160,
+        194
+      ],
+      "maxHealth": 1000000,
+      "health": 1000000,
+      "disabled": false,
+      "initialOwner": "Humans",
+      "currentOwner": "Automaton",
+      "regenPerSecond": 2.7777777,
+      "event": null,
+      "statistics": {
+        "missionsWon": 6676743,
+        "missionsLost": 1106167,
+        "missionTime": 24112837029,
+        "terminidKills": 1147,
+        "automatonKills": 1619424132,
+        "illuminateKills": 0,
+        "bulletsFired": 10649028314,
+        "bulletsHit": 10962896812,
+        "timePlayed": 24112837029,
+        "deaths": 69389171,
+        "revives": 0,
+        "friendlies": 6247683,
+        "missionSuccessRate": 85,
+        "accuracy": 100,
+        "playerCount": 6038
+      },
+      "attacking": []
+    },
+    "type": 0,
+    "count": 6
+  },
+  {
+    "id": 50132,
+    "planet": {
+      "index": 160,
+      "name": "CHORT BAY",
+      "sector": "Lacaille",
+      "biome": {
+        "name": "Toxic",
+        "description": "Dense, toxic fumes from deep within the planet's crust seep out of cracks in the earth and coat the ground in a sickly haze."
+      },
+      "hazards": [
+        {
+          "name": "Intense Heat",
+          "description": "High temperatures increase stamina drain and speed up heat buildup in weapons."
+        },
+        {
+          "name": "Acid Storms",
+          "description": "Violent acid storms reduce visibility."
+        }
+      ],
+      "hash": 2695598028,
+      "position": {
+        "x": -0.3412379,
+        "y": 0.5515733
+      },
+      "waypoints": [],
+      "maxHealth": 1000000,
+      "health": 1000000,
+      "disabled": false,
+      "initialOwner": "Humans",
+      "currentOwner": "Automaton",
+      "regenPerSecond": 2.7777777,
+      "event": null,
+      "statistics": {
+        "missionsWon": 1462383,
+        "missionsLost": 233335,
+        "missionTime": 5517454921,
+        "terminidKills": 119,
+        "automatonKills": 369732050,
+        "illuminateKills": 0,
+        "bulletsFired": 2404886635,
+        "bulletsHit": 2457727802,
+        "timePlayed": 5517454921,
+        "deaths": 15998443,
+        "revives": 0,
+        "friendlies": 1578657,
+        "missionSuccessRate": 86,
+        "accuracy": 100,
+        "playerCount": 824
+      },
+      "attacking": []
+    },
+    "type": 0,
+    "count": 4
+  },
+  {
+    "id": 50137,
+    "planet": {
+      "index": 168,
+      "name": "ERATA PRIME",
+      "sector": "Umlaut",
+      "biome": {
+        "name": "Desert",
+        "description": "A desert planet prone to unpredictable and dangerous,sand twisters."
+      },
+      "hazards": [
+        {
+          "name": "Intense Heat",
+          "description": "High temperatures increase stamina drain and speed up heat buildup in weapons."
+        },
+        {
+          "name": "Tremors",
+          "description": "Frequent earthquakes stun players and enemies alike."
+        }
+      ],
+      "hash": 3604506896,
+      "position": {
+        "x": 0.4243272,
+        "y": 0.34833485
+      },
+      "waypoints": [],
+      "maxHealth": 1000000,
+      "health": 646358,
+      "disabled": false,
+      "initialOwner": "Terminids",
+      "currentOwner": "Terminids",
+      "regenPerSecond": 11.111111,
+      "event": null,
+      "statistics": {
+        "missionsWon": 5880511,
+        "missionsLost": 598326,
+        "missionTime": 9139293298,
+        "terminidKills": 1210591480,
+        "automatonKills": 0,
+        "illuminateKills": 0,
+        "bulletsFired": 6457274244,
+        "bulletsHit": 7735921665,
+        "timePlayed": 9139293298,
+        "deaths": 31120069,
+        "revives": 0,
+        "friendlies": 4809950,
+        "missionSuccessRate": 90,
+        "accuracy": 100,
+        "playerCount": 105819
+      },
+      "attacking": []
+    },
+    "type": 2,
+    "count": 3
+  },
+  {
+    "id": 50140,
+    "planet": {
+      "index": 78,
+      "name": "CRIMSICA",
+      "sector": "Draco",
+      "biome": {
+        "name": "Crimsonmoor",
+        "description": "A crimson algae has propagated wildly across this entire planet, coating its rocky hills with a constant red that masks the spilt blood of the heroes who defend it from tyranny."
+      },
+      "hazards": [
+        {
+          "name": "Ion Storms",
+          "description": "Ion storms intermittently disable Stratagems."
+        }
+      ],
+      "hash": 1886266372,
+      "position": {
+        "x": 0.6113544,
+        "y": 0.22880854
+      },
+      "waypoints": [
+        169,
+        170
+      ],
+      "maxHealth": 1000000,
+      "health": 1000000,
+      "disabled": false,
+      "initialOwner": "Terminids",
+      "currentOwner": "Terminids",
+      "regenPerSecond": 6.9444447,
+      "event": null,
+      "statistics": {
+        "missionsWon": 14819627,
+        "missionsLost": 1372181,
+        "missionTime": 27222570285,
+        "terminidKills": 3396049789,
+        "automatonKills": 579,
+        "illuminateKills": 0,
+        "bulletsFired": 18966133468,
+        "bulletsHit": 22693238904,
+        "timePlayed": 27222570285,
+        "deaths": 68091013,
+        "revives": 0,
+        "friendlies": 11312404,
+        "missionSuccessRate": 91,
+        "accuracy": 100,
+        "playerCount": 4367
+      },
+      "attacking": []
+    },
+    "type": 0,
+    "count": 9
+  },
+  {
+    "id": 50142,
+    "planet": {
+      "index": 169,
+      "name": "ESTANU",
+      "sector": "Draco",
+      "biome": {
+        "name": "Icemoss",
+        "description": "Ice and moss-covered rock can be found across most of the surface of this planet."
+      },
+      "hazards": [
+        {
+          "name": "Extreme Cold",
+          "description": "Icy temperatures reduce rate of fire and delay heat buildup in weapons."
+        }
+      ],
+      "hash": 356540875,
+      "position": {
+        "x": 0.5803697,
+        "y": 0.29137206
+      },
+      "waypoints": [
+        170
+      ],
+      "maxHealth": 1000000,
+      "health": 1000000,
+      "disabled": false,
+      "initialOwner": "Terminids",
+      "currentOwner": "Terminids",
+      "regenPerSecond": 6.9444447,
+      "event": null,
+      "statistics": {
+        "missionsWon": 20934900,
+        "missionsLost": 2475437,
+        "missionTime": 45420491059,
+        "terminidKills": 5993395168,
+        "automatonKills": 750,
+        "illuminateKills": 0,
+        "bulletsFired": 31080554269,
+        "bulletsHit": 37099796644,
+        "timePlayed": 45420491059,
+        "deaths": 110935809,
+        "revives": 0,
+        "friendlies": 20395152,
+        "missionSuccessRate": 89,
+        "accuracy": 100,
+        "playerCount": 6897
+      },
+      "attacking": []
+    },
+    "type": 0,
+    "count": 17
+  },
+  {
+    "id": 50145,
+    "planet": {
+      "index": 212,
+      "name": "OSHAUNE",
+      "sector": "Mirin",
+      "biome": {
+        "name": "Highlands",
+        "description": "Rocky outcroppings punctuate fields of tall grass in a planet dominated by misty highland terrain."
+      },
+      "hazards": [
+        {
+          "name": "Thick Fog",
+          "description": "Dense fog lightly reduce visibility for both enemy and friendly units."
+        },
+        {
+          "name": "Rainstorms",
+          "description": "Torrential rainstorms reduce visibility."
+        }
+      ],
+      "hash": 1344035939,
+      "position": {
+        "x": 0.633865,
+        "y": 0.3955063
+      },
+      "waypoints": [],
+      "maxHealth": 1000000,
+      "health": 1000000,
+      "disabled": false,
+      "initialOwner": "Terminids",
+      "currentOwner": "Terminids",
+      "regenPerSecond": 6.9444447,
+      "event": null,
+      "statistics": {
+        "missionsWon": 14943981,
+        "missionsLost": 1718409,
+        "missionTime": 32206713512,
+        "terminidKills": 4145586898,
+        "automatonKills": 307,
+        "illuminateKills": 0,
+        "bulletsFired": 21417062066,
+        "bulletsHit": 25600293782,
+        "timePlayed": 32206713512,
+        "deaths": 83936809,
+        "revives": 0,
+        "friendlies": 14311162,
+        "missionSuccessRate": 89,
+        "accuracy": 100,
+        "playerCount": 5352
+      },
+      "attacking": []
+    },
+    "type": 0,
+    "count": 13
+  },
+  {
+    "id": 50146,
+    "planet": {
+      "index": 115,
+      "name": "PENTA",
+      "sector": "Lacaille",
+      "biome": {
+        "name": "Swamp",
+        "description": "The lifeless grey of this planet is interrupted only by the violet flowers that grow from strange, parasitic outcroppings."
+      },
+      "hazards": [
+        {
+          "name": "Thick Fog",
+          "description": "Dense fog lightly reduce visibility for both enemy and friendly units."
+        }
+      ],
+      "hash": 101741274,
+      "position": {
+        "x": -0.27880847,
+        "y": 0.58735436
+      },
+      "waypoints": [
+        160,
+        194
+      ],
+      "maxHealth": 1000000,
+      "health": 673760,
+      "disabled": false,
+      "initialOwner": "Humans",
+      "currentOwner": "Automaton",
+      "regenPerSecond": 2.7777777,
+      "event": null,
+      "statistics": {
+        "missionsWon": 2070319,
+        "missionsLost": 200449,
+        "missionTime": 7617273830,
+        "terminidKills": 101,
+        "automatonKills": 487163524,
+        "illuminateKills": 0,
+        "bulletsFired": 3004112781,
+        "bulletsHit": 3039980722,
+        "timePlayed": 7617273830,
+        "deaths": 21447704,
+        "revives": 0,
+        "friendlies": 2702438,
+        "missionSuccessRate": 91,
+        "accuracy": 100,
+        "playerCount": 4264
+      },
+      "attacking": []
+    },
+    "type": 0,
+    "count": 5
+  },
+  {
+    "id": 50147,
+    "planet": {
+      "index": 170,
+      "name": "FORI PRIME",
+      "sector": "Draco",
+      "biome": {
+        "name": "Canyon",
+        "description": "This arid, rocky biome covering this world has driven the evolution of exceptionally efficient water usage in its various organisms."
+      },
+      "hazards": [
+        {
+          "name": "Tremors",
+          "description": "Frequent earthquakes stun players and enemies alike."
+        }
+      ],
+      "hash": 3087050848,
+      "position": {
+        "x": 0.6880386,
+        "y": 0.30101782
+      },
+      "waypoints": [
+        212
+      ],
+      "maxHealth": 1000000,
+      "health": 1000000,
+      "disabled": false,
+      "initialOwner": "Terminids",
+      "currentOwner": "Humans",
+      "regenPerSecond": 1388.8889,
+      "event": {
+        "id": 4410,
+        "eventType": 1,
+        "faction": "Terminids",
+        "health": 454331,
+        "maxHealth": 500000,
+        "startTime": "2024-05-03T13:32:35.6364888Z",
+        "endTime": "2024-05-04T13:32:35.6364888Z",
+        "campaignId": 50147,
+        "jointOperationIds": [
+          4410
+        ]
+      },
+      "statistics": {
+        "missionsWon": 15035423,
+        "missionsLost": 1621473,
+        "missionTime": 35419650213,
+        "terminidKills": 4438554181,
+        "automatonKills": 214,
+        "illuminateKills": 0,
+        "bulletsFired": 23947865265,
+        "bulletsHit": 28533700940,
+        "timePlayed": 35419650213,
+        "deaths": 86108658,
+        "revives": 0,
+        "friendlies": 14877638,
+        "missionSuccessRate": 90,
+        "accuracy": 100,
+        "playerCount": 13264
+      },
+      "attacking": [
+        78,
+        78,
+        169,
+        169,
+        212
+      ]
+    },
+    "type": 0,
+    "count": 10
+  }
+]

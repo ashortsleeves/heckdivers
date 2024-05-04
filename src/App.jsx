@@ -4,7 +4,7 @@ import NewsFeed from './components/NewsFeed';
 import StaticBG from './components/StaticBG';
 import DefaultZoomTools from './components/DefaultZoomTools';
 import planetsData from './planets.json';
-import campaignData from './TEMP-campaign.json';
+import campaignsData from './campaigns.json';
 import grid from './assets/grid.webp';
 import reloadImg from './assets/reload.svg'
 import saturnImg from './assets/planet-space-icon.svg';
@@ -15,7 +15,7 @@ const headers = {"X-Super-Client": "Heckdivers", "X-Super-Contact": "gh/ashortsl
 function App() {
   // const [campaigns, setCampaigns] = useState([]);
   const planets = planetsData;
-  const campaigns = campaignData;
+  const campaigns = campaignsData;
   const [isRotating, setIsRotating] = useState(false);
 
   const toggleRotation = () => {
