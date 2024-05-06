@@ -114,7 +114,7 @@ function App() {
         <button onClick={() => handleZoomClick('zIn')}>+ <span>Zoom In</span></button>
         <button onClick={() => handleZoomClick('zOut')}>- <span>Zoom Out</span></button>
         <button onClick={toggleRotation}><img src={saturnImg} alt="Saturn Icon"/> <span>Toggle Rotation</span></button>
-        <button onClick={() => location.reload()}><img src={reloadImg} alt="reload network"/> <span>Reload Network</span></button>
+        <button onClick={() => location.reload()}><img src={reloadImg} alt="reload network"/> <span>Reload Network<i>DEV Message 5/6/24:<br/>Importing data into the map is currently being reworked and optimized so that the community-made API is not overloaded. In the meantime, the map will not be live, but will be updated daily to reflect the past 12-24 hours. Thank you for your patience.<br/>-Omar</i></span></button>
         
         <div>
           <a href="https://heckdivers.net" target="_blank">heckdivers.net</a>
