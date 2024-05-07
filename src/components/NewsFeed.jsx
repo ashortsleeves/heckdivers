@@ -5,18 +5,17 @@ export default function NewsFeed() {
     const [newsFeed, setNewsFeed] = useState([]);
     const [majorOrder, setMajorOrder] = useState([]);
     const [activeIndex, setActiveIndex] = useState(0); // Keep track of the index of the active component
-    const headers = {"X-Super-Client": "Heckdivers", "X-Super-Contact": "gh/ashortsleeves"}
 
     const fetchData = async () => {
         try {
-            const majorOrderResponse = await fetch('https://api.helldivers2.dev/api/v1/assignments', {headers: headers});
+            const majorOrderResponse = await fetch('https://raw.githubusercontent.com/ashortsleeves/heckdivers-json/main/assignments.json');
             const majorOrderData = await majorOrderResponse.json();
             setMajorOrder(majorOrderData);
 
-            const newsFeedResponse = await fetch('https://api.helldivers2.dev/raw/api/NewsFeed/801', {headers: headers});
+            const newsFeedResponse = await fetch('https://raw.githubusercontent.com/ashortsleeves/heckdivers-json/main/newsfeed.json');
             const newsFeedData = await newsFeedResponse.json();
             setNewsFeed(newsFeedData);
-      
+            console.log("fetching assignments and newsfeed: " + new Date().toString());
         } catch (error) {
             console.error('Error fetching data:', error);
         }
@@ -25,8 +24,7 @@ export default function NewsFeed() {
       // Fetch data on component mount and every minute
     useEffect(() => {
         fetchData(); // Fetch data initially
-        const intervalId = setInterval(fetchData, 10000); // Fetch data every minute
-        console.log('fetch newsfeed')
+        const intervalId = setInterval(fetchData, 600000); // Fetch data every minute
         return () => clearInterval(intervalId);
     }, []);
 
