@@ -13,7 +13,6 @@ import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 function App() {
   const [campaigns, setCampaigns] = useState([]);
   const planets = planetsData;
-  // const campaigns = campaignsData;
   const [isRotating, setIsRotating] = useState(false);
 
   const toggleRotation = () => {
