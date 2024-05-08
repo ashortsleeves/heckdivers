@@ -9,7 +9,6 @@ import planetsData from './planets.json';
 import grid from './assets/grid.webp';
 
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
-const headers = {"X-Super-Client": "Heckdivers", "X-Super-Contact": "gh/ashortsleeves"}
 
 function App() {
   const [campaigns, setCampaigns] = useState([]);
@@ -18,10 +17,10 @@ function App() {
   // Fetch data from APIs and update state
   const fetchData = async () => {
     try {
-      const campaignsResponse = await fetch('https://api.helldivers2.dev/api/v1/campaigns', {headers: headers});
+      const campaignsResponse = await fetch('https://raw.githubusercontent.com/ashortsleeves/heckdivers-json/main/campaigns.json');
       const campaignsData = await campaignsResponse.json();
       setCampaigns(campaignsData);
-
+      console.log("fetching campaign data: " + new Date().toString());
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -30,8 +29,8 @@ function App() {
   // Fetch data on component mount and every minute
   useEffect(() => {
     fetchData(); // Fetch data initially
-    const intervalId = setInterval(fetchData, 10000); // Fetch data every minute
-    console.log('fetch data attempt')
+    const intervalId = setInterval(fetchData, 600000); // Fetch data every minute
+
     return () => clearInterval(intervalId);
   }, []);
 
