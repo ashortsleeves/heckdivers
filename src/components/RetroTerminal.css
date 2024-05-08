@@ -129,3 +129,7 @@ body.retro-active {
     border-bottom: solid 2px var(--green-pale);
     box-shadow: var(--green-box-shadow-2);
 }
+
+body:not(.retro-active) .button-controls button img {
+    filter: saturate(0);
+}
