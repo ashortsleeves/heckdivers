@@ -13,8 +13,28 @@
 }
 
 @font-face {
-  font-family: fsSinclair;
-  src: url(./assets/hd2.woff);
+  font-family: hd-light;
+  src: url(./assets/hd-light.otf);
+}
+
+@font-face {
+  font-family: hd-regular;
+  src: url(./assets/hd-regular.otf);
+}
+
+@font-face {
+  font-family: hd-medium;
+  src: url(./assets/hd-medium.otf);
+}
+
+@font-face {
+  font-family: hd-bold;
+  src: url(./assets/hd-bold.otf);
+}
+
+@font-face {
+  font-family: hd-title;
+  src: url(./assets/hd-title.otf);
 }
 
 :root {
