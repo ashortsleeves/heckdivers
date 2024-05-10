@@ -6,6 +6,10 @@
     top: calc(50% - 5px);
     left: calc(50% - 5px);
 
+    .name {
+        font-size: 10px;
+    }
+
     .name-hover {
         opacity: 0;
         margin-top: 0;
@@ -52,8 +56,9 @@
             position: absolute;
             top: calc(100% + 15px);
             left: calc(50% - 80px);
-            font-size: 7px;
-            font-family: easVHSbold;
+            font-size: 18px;
+            font-family: hdMedium;
+            // font-family: easVHSbold;
             width: 160px;
             text-align: center;
             color: white;
@@ -147,6 +152,8 @@
         position: relative;
         margin-top: 8px;
         opacity: 0;
+        font-size: 12px;
+        line-height: 1;
     }
 
     &:hover {
@@ -184,7 +191,7 @@
     position: absolute;
     top: 3px;
     left: 2px;
-    width: 250px;
+    width: 300px;
     background-color: $green-black;
     padding: 5px;
     border: solid 1px $green-pale;
@@ -192,6 +199,7 @@
     box-shadow: $green-box-shadow-1;
 
     p {
-        font-size: 6px;
+        font-size: 12px;
+        line-height: 1.4;
     }
 }
