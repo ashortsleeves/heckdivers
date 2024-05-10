@@ -1,3 +1,8 @@
+import automatonIcon from '../assets/media/automaton.webp';
+import terminidIcon from '../assets/media/terminid.png';
+import helmetIcon from '../assets/media/helmet.png';
+import superEarthIcon from '../assets/media/Super_earth.webp';
+
 export default function Planet ({ planetIndex, name, description, owner, playerCount, positionX, positionY, sector, activeCampaign, health, maxHealth, ...props }) {
     const x = positionX * 450;
     const y = -positionY * 450;
@@ -46,9 +51,17 @@ export default function Planet ({ planetIndex, name, description, owner, playerC
                     <span className="pie-chart" style={pieChartStyles}></span>
                         <p className="name" style={nameStyles}>{name}</p>
                         <div className="planet-info">
-                            <h3>{name}</h3>
+                            <h3>
+                                {
+                                    owner === 'Terminids' ? <img src={terminidIcon} alt="Under Terminid Control" /> :
+                                    owner === 'Automaton' ? <img src={automatonIcon} alt="Under Automaton Control" /> :
+                                    owner === 'Humans' ? <img src={superEarthIcon} alt="Under Super Earth Control" /> :
+                                    ''
+                                }
+                                {name}
+                            </h3>
                             <p>Under {owner} control</p>
-                            <p>{playerCount} Helldivers</p>
+                            <p><img src={helmetIcon} alt="Helldiver Count" /> {playerCount}</p>
                             <p>{Math.round(healthPercentage * 10000) / 10000}% Liberated</p>
                             <p>{description}</p>
                         </div>
