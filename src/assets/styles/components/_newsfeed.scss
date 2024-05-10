@@ -1,0 +1,103 @@
+.news-feed {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 30px;
+    width: 360px;
+    color: $white;
+    box-sizing: border-box;
+}
+
+.typewriter {
+    font-size: 8px;
+    color:#0000;
+    background:
+        linear-gradient(-90deg,$white 5px,#0000 0) 10px 0,
+        linear-gradient($white 0 0) 0 0;
+    background-size:calc(var(--n)*1ch) 200%;
+    -webkit-background-clip:padding-box,text;
+    background-clip:padding-box,text;
+    background-repeat:no-repeat;
+    animation: 
+        b .7s infinite steps(1),   
+        t calc(var(--n)*.02s) steps(var(--n)) forwards;
+}
+
+@keyframes t{
+    from {background-size:0 200%}
+}
+
+@keyframes b{
+    50% {background-position:0 -100%,0 0}
+}
+
+.major-order,
+.breaking-news {
+    padding: 15px;
+    margin-bottom: 25px;
+}
+
+.major-order {
+    h2 {
+        position: relative;
+        font-size: 18px;
+        padding-bottom: 7px;
+
+        &::after {
+            display: block;
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-bottom: solid 2px $white;
+        }
+
+        span {
+            animation: blink 1s linear infinite;
+        }
+    }
+
+    p {
+        font-size: 8px;
+        line-height: 1.5rem;
+    }
+}
+
+.breaking-news {
+    p {
+        font-family: monospace;
+        line-height: 1px;
+    }
+    
+    h3 span {
+        animation: blink 1.2s linear infinite;
+    }
+}
+
+@media screen and (max-width: 1159px) {
+    .news-feed {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 3000px) {
+    .news-feed {
+        width: 630px;
+    }
+
+    .major-order p,
+    .breaking-news .typewriter  {
+        font-size: 20px;
+    }
+
+    .major-order {
+        h2 {
+            font-size: 36px;
+        }
+    
+        h3 {
+            font-size: 30px;
+        }
+    }
+}

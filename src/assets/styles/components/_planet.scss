@@ -1,0 +1,197 @@
+.planet {
+    display: block;
+    position: absolute;
+    height: 5px;
+    width: 5px;
+    top: calc(50% - 5px);
+    left: calc(50% - 5px);
+
+    .name-hover {
+        opacity: 0;
+        margin-top: 0;
+        padding-top: 8px;
+        transition: 0.1s ease-in-out;            
+    }
+}
+
+.planet-wrap {
+    display: block;
+    position: absolute;
+    height: 5px;
+    width: 5px;
+    border-radius: 180px;
+    background-color: $green-pale;
+    box-shadow: $green-box-shadow-3;
+}
+
+.planet-inactive .planet-wrap {
+    animation: flicker 15s ease-in-out infinite;
+}
+
+.planet-earth {
+  transition: 1s;
+  color: $green-dark;
+
+    .planet-wrap {
+        display: block;
+        position: absolute;
+        height: 30px;
+        width: 30px;
+        margin-left: -13px;
+        margin-top: -13px;
+        border-radius: 180px;
+        box-shadow: $green-box-shadow-2;
+        background-image: url(./assets/media/earth.gif);
+        background-size: 45px;
+        background-position: center;
+        filter: grayscale($white);
+
+        &::before {
+            display: block;
+            content: 'SUPER EARTH';
+            position: absolute;
+            top: calc(100% + 15px);
+            left: calc(50% - 80px);
+            font-size: 7px;
+            font-family: easVHSbold;
+            width: 160px;
+            text-align: center;
+            color: white;
+            text-shadow: 1px -1px 16px rgba(177,255,174,1);
+            z-index: 1;
+        }
+
+        &::after {
+            display: block;
+            content: '';
+            position: absolute;
+            height: 30px;
+            width: 30px;
+            left: 0;
+            top: 0;
+            border-radius: 180px;
+            background-color: $green-pale;
+            box-shadow: $green-box-shadow-2;
+            opacity: 0.8;
+        }
+        
+    }
+}
+
+.planet-Terminids {
+    box-shadow: $yellow-box-shadow-2;
+}
+
+.planet-Automaton {
+    box-shadow: $red-box-shadow-2;
+}
+
+.planet-Humans {
+    box-shadow: $green-box-shadow-3;
+}
+  
+.planet-active {
+    .planet-wrap {
+        background-color: $red;
+        transition: 0.5s ease-in-out;
+        box-shadow: $red-box-shadow-1;
+
+        .radar, 
+        .pie-chart {
+            display: block;
+            position: absolute;
+            height: 5px;
+            width: 5px;
+            border-radius: 180px;
+            background-color: $red;
+        }
+
+        .radar {
+            animation: scaleAnimation 2s ease-in-out infinite;
+            opacity: 0;
+            transition: 0.2s;  
+        }
+
+        .pie-chart {
+            display: block;
+            position: absolute;
+            transform: scale(2);
+            box-shadow: $red-box-shadow-1;
+            transition: 0.3s ease-in-out;
+        }
+    }
+
+    .planet-Terminids .planet-wrap {
+        .radar,
+        .pie-chart {
+            background-color: $yellow;
+        }
+
+        .pie-chart {
+            box-shadow: $yellow;
+        }
+    }
+
+    .planet-humans {
+        .radar,
+        .pie-chart {
+            background-color: $green;
+        }
+
+        .pie-chart {
+            box-shadow: $green-box-shadow-3;
+        }       
+    }
+
+    .name {
+        position: relative;
+        margin-top: 8px;
+        opacity: 0;
+    }
+
+    &:hover {
+        z-index: 99999999;
+
+        .planet-wrap {
+            .name {
+                display: none;
+            }
+
+            .planet-info {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            .radar {
+                animation: none;
+            }
+
+            .pie-chart {
+                transform: scale(5);
+            }
+        }
+    }
+}
+
+.planet:not(.planet-active):hover > .planet-wrap > .name-hover {
+    opacity: 1;
+}
+
+.planet-info {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+    position: absolute;
+    top: 3px;
+    left: 2px;
+    width: 250px;
+    background-color: $green-black;
+    padding: 5px;
+    border: solid 1px $green-pale;
+    color: $green-pale;
+    box-shadow: $green-box-shadow-1;
+
+    p {
+        font-size: 6px;
+    }
+}

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import './NewsFeed.css';
 
 export default function NewsFeed() {
     const [newsFeed, setNewsFeed] = useState([]);

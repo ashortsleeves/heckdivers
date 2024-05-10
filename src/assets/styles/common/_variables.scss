@@ -1,0 +1,58 @@
+@font-face {
+    font-family: easVHS;
+    src: url(./assets/PixelOperatorMono8.ttf);
+}
+
+@font-face {
+    font-family: easVHSbold;
+    src: url(./assets/PixelOperatorMonoHB8.ttf);
+}
+
+@font-face {
+    font-family: hd-light;
+    src: url(./assets/hd-light.otf);
+}
+
+@font-face {
+    font-family: hd-regular;
+    src: url(./assets/hd-regular.otf);
+}
+
+@font-face {
+    font-family: hd-medium;
+    src: url(./assets/hd-medium.otf);
+}
+
+@font-face {
+    font-family: hd-bold;
+    src: url(./assets/hd-bold.otf);
+}
+
+@font-face {
+    font-family: hd-title;
+    src: url(./assets/hd-title.otf);
+}
+
+// Colors
+$black:              #000;
+$white:              #fff;
+$offwhite:           #a1a1a1;
+$yellow:             #ffff00;
+$red:                #ff0000;
+$green:              #b1ffae;
+$green-pale:         #c9ffc7;
+$green-dark:         #68c665;
+$green-pale-dark:    #718170;
+$green-black:        #181e17;
+$green-black-bg:     rgba(15, 20, 15, 0.7);
+
+// Box Shadows
+$green-box-shadow-1:   0px 0px 15px 3px rgba(201, 255, 199, 0.2);
+$green-box-shadow-2:   0px 0px 15px 3px rgba(201, 255, 199, 0.4);
+$green-box-shadow-3:   0px 0px 15px 2px rgba(215, 255, 213, 0.4);
+$green-box-shadow-4:   0px 0px 15px 2px rgba(215, 255, 213, 0.1);
+$green-text-shadow-1:  1px -1px 16px rgba(177,255,174,0.5);
+$red-box-shadow-1:     0px 0px 15px 3px rgb(255, 0, 0, 0.4);
+$red-box-shadow-2:     0px 0px 77px 38px rgba(255, 0, 0, 0.1);
+$yellow-box-shadow-1:  0px 0px 15px 3px var($yellow);
+$yellow-box-shadow-2:  0px 0px 77px 38px rgba(255, 255, 0, 0.07);

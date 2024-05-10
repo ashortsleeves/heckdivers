@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import './App.scss';
 import Planet from './components/Planet';
 import NewsFeed from './components/NewsFeed';
 import StaticBG from './components/StaticBG';
 import DefaultZoomTools from './components/DefaultZoomTools';
 import ButtonControls from './components/ButtonControls';
-import './components/RetroTerminal.css';
 import planetsData from './planets.json';
-import grid from './assets/grid.webp';
+import grid from './assets/media/grid.webp';
 
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 

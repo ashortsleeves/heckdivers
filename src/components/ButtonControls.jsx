@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import reloadImg from '../assets/reload.svg';
-import saturnImg from '../assets/planet-space-icon.svg';
-import retroImg from '../assets/retro.svg';
+import reloadImg from '../assets/media/reload.svg';
+import saturnImg from '../assets/media/planet-space-icon.svg';
+import retroImg from '../assets/media/retro.svg';
 
 export default function ButtonControls() {
     const [isRotating, setIsRotating] = useState(false);
