@@ -65,14 +65,14 @@ function App() {
                         key={index}
                         planetIndex={planet.index}
                         description={planet.biome.description}
-                        owner={campaign.planet.currentOwner}
+                        owner={campaign.planet.event ? campaign.planet.event.faction : campaign.planet.currentOwner}
                         playerCount={campaign.planet.statistics.playerCount}
                         name={planet.name}
                         positionX={planet.position.x}
                         positionY={planet.position.y}
                         sector={planet.sector}
                         activeCampaign={campaign.planet.name}
-                        health={campaign.planet.health}
+                        health={(campaign.planet.event ? campaign.planet.event.health : campaign.planet.health)}
                         maxHealth={campaign.planet.maxHealth}
                       />
                     ))}

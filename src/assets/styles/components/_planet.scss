@@ -83,18 +83,6 @@
     }
 }
 
-.planet-Terminids {
-    box-shadow: $yellow-box-shadow-2;
-}
-
-.planet-Automaton {
-    box-shadow: $red-box-shadow-2;
-}
-
-.planet-Humans {
-    box-shadow: $green-box-shadow-3;
-}
-  
 .planet-active {
     .planet-wrap {
         background-color: $red;
@@ -191,13 +179,166 @@
     position: absolute;
     top: 3px;
     left: 2px;
-    width: 300px;
+    width: 385px;
     background-color: $black;
-    padding: 5px;
-    border: solid 1px $yellow-pale;
+    padding: 2px;
+    border: solid 2px $yellow-pale;
+    z-index: 999999999;
+    border-radius: 2px;
+
+    .detail-wrap,
+    .detail-wrap-inner,
+    .health-block,
+    p,
+    h3 {
+        border: solid 2px rgba($white, 0.7);
+        padding: 2px;
+        margin: 0;
+        border-radius: 2px;
+    }
+
+    .detail-wrap {
+        border: solid 2px rgba($offwhite, 0.4);
+
+        &:nth-of-type(2) {
+            margin: 3px 0 3px 0;
+        }
+
+        &:nth-of-type(3) {
+            p {
+                padding: 6px;
+            }
+        }
+    }
 
     p {
         font-size: 12px;
         line-height: 1.4;
+        margin-bottom: 0;
+    }
+
+    h3 {
+        font-family: hdRegular;
+        display: flex;
+        align-items: center;
+        margin-bottom: 0;
+        padding: 3px;
+        
+        img {
+            width: 28px;
+            margin-right: 10px;
+        }
+    }
+
+    .health-block {
+        border: solid 3px $white;
+        position: relative;
+        height: 42px;
+
+        &::before,
+        span {
+            display: block;
+            content: "";
+            position: absolute;
+            left: 6px;
+            right: 6px;
+            top: 6px;
+            bottom: 6px;
+            background-color: $blue;
+        }
+
+        span {
+            z-index: 99999999;
+        }
+    }
+
+    .health-percent {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-top: solid 2px rgba($white, 0.7);
+        margin-top: 3px;
+        margin-left: -3px;
+        margin-right: -3px;
+        padding: 0 6px;
+        height: 36px;
+        line-height: 1;
+        font-size: 18px;
+        text-align: center;
+
+        strong {
+            font-size: 32px;
+            color: rgba($white, 0.5);
+        }
+
+        span {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            color: $yellow-pale;
+        }
+
+        img {
+            width: 15px;
+            margin-right: 5px;
+        }
+
+
     }
 }
+
+.planet-Terminids {
+    box-shadow: $yellow-box-shadow-2;
+
+    h3 {
+        color: $yellow-terminid;
+    }
+
+    .health-block {
+        border: solid 3px $yellow-terminid;
+
+        span {
+            background-color: $yellow-terminid;
+        }
+    }
+}
+
+.planet-Automaton {
+    box-shadow: $red-box-shadow-2;
+
+    h3 {
+        color: $red;
+    }
+
+    .health-block {
+        border: solid 3px $red;
+
+        span {
+            background-color: $red;
+        }
+    }
+}
+
+.planet-Humans {
+    box-shadow: $green-box-shadow-3;
+}
+
+
+
+
+
+
+
+
+// .planet-HELLMIRE {
+//     z-index: 99999999;
+
+//     .planet-info {
+//         visibility: visible;
+//         opacity: 1;
+//     }
+// } 
+
+// .news-feed {
+//     display: none!important;
+// }
