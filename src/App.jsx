@@ -7,6 +7,7 @@ import DefaultZoomTools from './components/DefaultZoomTools';
 import ButtonControls from './components/ButtonControls';
 import planetsData from './planets.json';
 import grid from './assets/media/grid.webp';
+import superEarth from './assets/media/Super_earth.webp';
 
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 
@@ -43,6 +44,7 @@ function App() {
             <DefaultZoomTools/>
             <div className="map">
               <img className="helldivers-grid" src={grid} alt="helldivers grid" />
+              <img className="super-earth-icon" src={superEarth} alt="Super Earth icon" />
               {planets.map((planet, index) => (
                 <Planet
                   key={index}
@@ -87,6 +89,7 @@ function App() {
       {planets.length <= 0 || campaigns.length <= 0 ? <div className='planets-loading'><h2>CONNECTING TO SUPER EARTH</h2></div> : ''}
 
       <ButtonControls />
+      <div className='hex-overlay'></div>
     </>
   );
 }

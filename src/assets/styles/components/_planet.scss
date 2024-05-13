@@ -24,8 +24,8 @@
     height: 5px;
     width: 5px;
     border-radius: 180px;
-    background-color: $green-pale;
-    box-shadow: $green-box-shadow-3;
+    background-color: $blue-pale;
+    box-shadow: $blue-box-shadow-1;
 }
 
 .planet-inactive .planet-wrap {
@@ -34,7 +34,6 @@
 
 .planet-earth {
   transition: 1s;
-  color: $green-dark;
 
     .planet-wrap {
         display: block;
@@ -44,43 +43,22 @@
         margin-left: -13px;
         margin-top: -13px;
         border-radius: 180px;
-        box-shadow: $green-box-shadow-2;
         background-image: url(./assets/media/earth.gif);
         background-size: 45px;
         background-position: center;
-        filter: grayscale($white);
-
-        &::before {
-            display: block;
-            content: 'SUPER EARTH';
-            position: absolute;
-            top: calc(100% + 15px);
-            left: calc(50% - 80px);
-            font-size: 18px;
-            font-family: hdMedium;
-            // font-family: easVHSbold;
-            width: 160px;
-            text-align: center;
-            color: white;
-            text-shadow: 1px -1px 16px rgba(177,255,174,1);
-            z-index: 1;
-        }
-
-        &::after {
-            display: block;
-            content: '';
-            position: absolute;
-            height: 30px;
-            width: 30px;
-            left: 0;
-            top: 0;
-            border-radius: 180px;
-            background-color: $green-pale;
-            box-shadow: $green-box-shadow-2;
-            opacity: 0.8;
-        }
-        
+        filter: grayscale(1) invert(1);
+        box-shadow: none;
     }
+}
+
+img.super-earth-icon {
+    display: block;
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    top: calc(50% - 29px);
+    left: calc(50% - 28px);
+    // transform: translate(0px, 0px);
 }
 
 .planet-active {
@@ -298,6 +276,16 @@
         border: solid 3px $yellow-terminid;
 
         span {
+            background-color: $yellow-terminid;
+        }
+    }
+
+    .planet-wrap {
+        .pie-chart {
+            box-shadow: $yellow-box-shadow-2;
+        }
+
+        .radar {
             background-color: $yellow-terminid;
         }
     }

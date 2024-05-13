@@ -59,6 +59,10 @@ p,
     width: 100vw;
 }
 
+.map:after {
+    animation: vhsLine 14s ease-in-out infinite;
+}
+
 .static-bg {
     position: fixed;
     top: 0;
@@ -126,7 +130,7 @@ p,
     }
 
     &::before {
-        background-image: url(./assets/earth.gif);
+        background-image: url(./assets/media/earth.gif);
         background-size: 350px;
         background-position: center;
         filter: grayscale($white);
@@ -139,3 +143,46 @@ p,
         z-index: 2;
     } 
 }
+
+.hex-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    pointer-events: none;
+    filter:invert(1);
+
+    &::before,
+    &::after {
+        display: block;
+        content: '';
+        background-image: url(./assets/media/honeycomb.png);
+        background-repeat: repeat;
+        background-size: 45px;
+        background-attachment: fixed;
+    }
+
+    &::before {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 0.02;
+    }
+
+    &::after {
+        position: relative;
+        border-radius: 100%;
+        width: 0vw;
+        height: 0vw;
+        animation: hexGrid 20s ease-in-out infinite;
+        filter: blur(4px);
+    }
+}
+

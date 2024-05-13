@@ -1,5 +1,5 @@
 @media screen and (min-width: 1200px) {
-    .map {
+    .retro-active .map {
         animation: blur 10s ease-in-out infinite;
     }
 }
@@ -56,6 +56,28 @@
 
         &::after {
             background-color: $green-pale;
+        }
+    }
+
+    .planet-wrap {
+        background-color: $green-pale;
+        box-shadow: $green-box-shadow-3;       
+    }
+
+    .planet-earth {
+        color: $green-dark;
+
+        .planet-wrap {
+            box-shadow: $green-box-shadow-2;
+
+            &::before {
+                text-shadow: 1px -1px 16px rgba(177,255,174,1);
+            }
+
+            &::after {
+                background-color: $green-pale;
+                box-shadow: $green-box-shadow-2;
+            }
         }
     }
 

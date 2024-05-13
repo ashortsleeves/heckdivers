@@ -110,3 +110,26 @@
         opacity: 1;
     }
 }
+
+@keyframes hexGrid {
+    0% {
+        width: 0vw;
+        height: 0vw;
+        opacity: 0.3;
+    }
+    10% {
+        width: 300vw;
+        height: 300vw;
+        opacity: 0.03;
+    }
+    15% {
+        width: 300vw;
+        height: 300vw;
+        opacity: 0.01;       
+    }
+    100% {
+        width: 300vw;
+        height: 300vw;
+        opacity: 0;
+    }
+}
