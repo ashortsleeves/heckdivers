@@ -86,41 +86,73 @@
             }
         }
     
-        span {
+        a {
+            font-family: hdBold;
+        }
+
+        img {
+            position: absolute;
+            right: 100%;
+            bottom: 0;
+        }
+
+        .text {
             width: 170px;
             margin-bottom: 5px;
             font-size: 13px;
         }
-
-        &-web {
-            a {
-                font-size: 14px;
-                margin-top: 5px;
-                opacity: 1;
-                width: 160px;
-            }
-        }
     }
 
+    .links-web {
+        a {
+            font-family: hdRegular;
+            width: 170px;
+            letter-spacing: 0.01rem;
+        }
+
+        .liberTea {
+            font-size: 14px;
+            letter-spacing: 0.05rem;
+            width: 114px;
+            font-family: hdBold;
+            position: relative;
+            margin-left: auto;
+
+            strong {
+                font-size: 16px;
+                letter-spacing: 0.21rem;
+            }
+
+            img {
+                bottom: 7px;
+            }
+        }
+
+        a {
+            font-size: 12px;
+            opacity: 0.2;
+        }
+    }
 
     &:hover,
     &:focus {
         .links {
             span {
                 opacity: 1;
-                font-size: 13px;
             }
 
             a {
                 opacity: 1;
-                font-size: 15px;
+            }
+        }
+
+        .links:not(.links-web) {
+            span {
+                font-size: 13px;
             }
 
-            &-web {
-                a {
-                    font-size: 14px;
-                    margin-bottom: 5px;
-                }
+            a {
+                font-size: 15px;
             }
         }
     }
@@ -159,7 +191,7 @@
     }
 
     .button-controls {
-        opacity: 0.03;
+        opacity: 0.07;
         transition: 0.3s;
     }
 
