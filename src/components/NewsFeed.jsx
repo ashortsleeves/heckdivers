@@ -55,7 +55,7 @@ export default function NewsFeed() {
 
                 {newsFeed.map((news, index) =>
                     index === activeIndex ? (
-                        <span className="typewriter" style={{ '--n': (news && news.message && news.message.length !== undefined ? news.message.length : 700)}} key={index}>
+                        <span className="typewriter" style={{ '--n': (news && news.message && news.message.length !== undefined ? news.message.length+30 : 700)}} key={index}>
                             {news.message}
                         </span>
                     ) : null
