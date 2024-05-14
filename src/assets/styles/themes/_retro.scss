@@ -35,7 +35,6 @@
     .wrapWrapper:before,
     .wrapWrapper:after {
         background-color: $green-black-bg;
-        animation: vhsLine 16s ease-in-out infinite;
     }
 
     .helldivers-grid {
@@ -68,8 +67,6 @@
         color: $green-dark;
 
         .planet-wrap {
-            box-shadow: $green-box-shadow-2;
-
             &::before {
                 text-shadow: 1px -1px 16px rgba(177,255,174,1);
             }
@@ -88,7 +85,8 @@
             color: $green-pale;
         }
 
-        a {
+        a,
+        span {
             color: $green-pale-dark;
 
             &:hover {

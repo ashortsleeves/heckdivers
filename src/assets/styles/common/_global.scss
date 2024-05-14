@@ -16,7 +16,7 @@
 
 body {
     color: $white;
-    background-color: $black;
+    background-color: $offblack;
     margin: 0;
     position: relative;
     height: 100vh;
@@ -59,9 +59,9 @@ p,
     width: 100vw;
 }
 
-.map:after {
-    animation: vhsLine 14s ease-in-out infinite;
-}
+// .map:after {
+//     animation: vhsLine 14s ease-in-out infinite;
+// }
 
 .static-bg {
     position: fixed;
@@ -83,6 +83,12 @@ p,
         right: 0;
         top: calc(100% + 50px);
         z-index: 1;
+        background-color: $black-bg;
+        animation: vhsLine 16s ease-in-out infinite;
+    }
+
+    &::after {
+        animation: vhsLine 18s ease-in-out infinite;
     }
 }
 
@@ -97,9 +103,11 @@ p,
     height: auto;
     width: 940px;
     opacity: 0.1;
+    filter: blur(1px);
 }
 
 .planets-loading {
+    background-color: $black-bg;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -8,6 +8,7 @@
     z-index: 99999999;
     bottom: 90px;
     right: 60px;
+    display: flex;
 
     button {
         background: none;
@@ -23,6 +24,7 @@
         align-items: center;
         justify-content: center;
         opacity: 0.5;
+        box-shadow: $green-box-shadow-1;
 
         &:hover {
             opacity: 1;
@@ -61,22 +63,65 @@
         }
     }
 
-    div {
+    .links {
         position: absolute;
-        padding-top: 10px;
+        padding-top: 8px;
         top: 100%;
         right: 0;
+
+        a,
+        span {
+            display: block;
+            font-size: 1px;
+            text-align: right;
+            color: $offwhite;
+            text-decoration: none;
+            line-height: 1;
+            opacity: 0;
+            letter-spacing: 0.2rem;
+            transition: 0.5s ease-in-out;
+    
+            &:hover {
+                color: $white;
+            }
+        }
+    
+        span {
+            width: 170px;
+            margin-bottom: 5px;
+            font-size: 13px;
+        }
+
+        &-web {
+            a {
+                font-size: 14px;
+                margin-top: 5px;
+                opacity: 1;
+                width: 160px;
+            }
+        }
     }
 
-    a {
-        display: block;
-        font-size: 6px;
-        text-align: right;
-        color: $offwhite;
-        text-decoration: none;
 
-        &:hover {
-            color: $white;
+    &:hover,
+    &:focus {
+        .links {
+            span {
+                opacity: 1;
+                font-size: 13px;
+            }
+
+            a {
+                opacity: 1;
+                font-size: 15px;
+            }
+
+            &-web {
+                a {
+                    font-size: 14px;
+                    margin-bottom: 5px;
+                }
+            }
         }
     }
 }

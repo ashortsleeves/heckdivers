@@ -44,10 +44,15 @@ export default function ButtonControls() {
             <button onClick={() => location.reload()}><img src={reloadImg} alt="reload network"/> <span>Reload Network</span></button>
             <button onClick={toggleRetroStyle}><img src={retroImg} alt="Enable/Disable retro terminal look"/> <span>Toggle retro look</span></button>
 
-            <div>
-                <a href="https://heckdivers.net" target="_blank">heckdivers.net</a>
+            {/* <div className="links links-web">
                 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3235505289" target="_blank">wallpaper engine</a>
                 <a href="https://github.com/ashortsleeves" target="_blank">github</a>
+                <a href="https://www.paypal.com/donate/?hosted_button_id=AVT886QL88AD6" target='_blank'>donate</a>
+            </div> */}
+
+            <div className="links">
+                <span>Get the dev a nice cup of LIBER-TEA<strong>:</strong></span>
+                <a href="https://heckdivers.net" target="_blank">HECKDIVERS.NET</a>   
             </div>
 
         </div>

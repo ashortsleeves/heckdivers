@@ -35,6 +35,8 @@
 
 // Colors
 $black:              #000;
+$black-bg:           rgba(18, 18, 18, 0.7);
+$offblack:           #101010;
 $white:              #fff;
 $offwhite:           #a1a1a1;
 $yellow:             #FCE904;
@@ -43,7 +45,7 @@ $yellow-terminid:    #FCC100;
 $red:                #FC6D6D;
 $blue:               #27A5FC;
 $blue-pale:          #eff8fe;
-$green:              #b1ffae;
+$green:              #aef4ff;
 $green-pale:         #c9ffc7;
 $green-dark:         #68c665;
 $green-pale-dark:    #718170;
@@ -61,3 +63,6 @@ $red-box-shadow-2:     0px 0px 77px 38px rgba(255, 0, 0, 0.1);
 $yellow-box-shadow-1:  0px 0px 15px 3px $yellow;
 $yellow-box-shadow-2:  0px 0px 77px 38px rgba($yellow, 0.05);
 $blue-box-shadow-1: 0px 0px 15px 3px rgba($blue, 0.5);
+$white-box-shadow-1:   0px 0px 15px 3px rgba(255, 255, 255, 0.2);
+$white-box-shadow-2:   0px 0px 15px 3px rgba(255, 255, 255, 0.4);
+$white-text-shadow-1:  1px -1px 16px rgba(255, 255, 255, 0.5);
