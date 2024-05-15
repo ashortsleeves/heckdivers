@@ -45,16 +45,16 @@ export default function ButtonControls() {
             <button onClick={() => location.reload()}><img src={reloadImg} alt="reload network"/> <span>Reload Network</span></button>
             <button onClick={toggleRetroStyle}><img src={retroImg} alt="Enable/Disable retro terminal look"/> <span>Toggle retro look</span></button>
 
-            <div className="links">
+            {/* <div className="links">
                 <span class="text">Give the creator a nice cup of LIBER-TEA<strong>:</strong></span>
                 <a href="https://heckdivers.net" target="_blank"><img src={liberTea} alt="Tea Icon"/> HECKDIVERS.NET</a>   
-            </div>
+            </div> */}
 
-            {/* <div className="links links-web"> 
-                <a className='liberTea' href="https://www.paypal.com/donate/?hosted_button_id=AVT886QL88AD6" target="_blank"><img src={liberTea} alt="Tea Icon"/>Buy me some <strong>LIBER-TEA</strong></a>
+            <div className="links links-web"> 
+                <a className='liberTea' href="https://www.paypal.com/donate/?hosted_button_id=AVT886QL88AD6" target="_blank"><img src={liberTea} alt="Tea Icon"/>Give me some <strong>LIBER-TEA</strong></a>
                 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3235505289" target="_blank">wallpaper engine</a>
                 <a href="https://github.com/ashortsleeves" target="_blank">github</a>
-            </div> */}
+            </div>
 
         </div>
     )
