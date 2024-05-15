@@ -72,7 +72,7 @@ export default function ButtonControls({ toggleSkyFury, toggleVideoMute, isVideo
             </div> */}
 
             <div className="links links-web"> 
-                <a className='liberTea' href="https://www.paypal.com/donate/?hosted_button_id=AVT886QL88AD6" target="_blank"><img src={liberTeaTwo} alt="Tea Icon"/>Get me some <strong>LIBER-TEA</strong></a>
+                <a className='liberTea' href="https://www.paypal.com/donate/?hosted_button_id=AVT886QL88AD6" target="_blank"><img src={liberTeaTwo} alt="Tea Icon"/>Get me a nice cup of <strong>LIBER-TEA</strong></a>
                 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3235505289" target="_blank">wallpaper engine</a>
                 <a href="https://github.com/ashortsleeves" target="_blank">github</a>
             </div>
