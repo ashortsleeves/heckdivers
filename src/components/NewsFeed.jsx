@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import wingLeft from '../assets/media/wing-left.png';
+import wingRight from '../assets/media/wing-right.png';
 
 export default function NewsFeed() {
     const [newsFeed, setNewsFeed] = useState([]);
@@ -41,7 +43,7 @@ export default function NewsFeed() {
             majorOrder.map((order, index) => (
                 <div className="major-order" key="index">
                     <div key={index}>
-                    <h2>MAJOR ORDER</h2>
+                    <h2><img src={wingLeft} alt="Left Wing Icon" />MAJOR ORDER<img src={wingRight} alt="Right Wing Icon" /></h2>
                         <p>{order.briefing}</p>
                     </div>
                 </div>

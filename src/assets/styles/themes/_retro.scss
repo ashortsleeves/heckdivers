@@ -115,6 +115,10 @@
     .major-order h2 {
         text-shadow: $green-text-shadow-1;
 
+        img {
+            filter: sepia(100%) hue-rotate(90deg) saturate(400%);
+        }
+
         &::after {
             border-bottom: solid 2px $green-pale;
             box-shadow: $green-box-shadow-2;
