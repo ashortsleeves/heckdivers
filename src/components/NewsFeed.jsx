@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './NewsFeed.css';
+import wingLeft from '../assets/media/wing-left.png';
+import wingRight from '../assets/media/wing-right.png';
 
 export default function NewsFeed() {
     const [newsFeed, setNewsFeed] = useState([]);
@@ -42,7 +43,7 @@ export default function NewsFeed() {
             majorOrder.map((order, index) => (
                 <div className="major-order" key="index">
                     <div key={index}>
-                    <h2><span>*</span> MAJOR ORDER <span>*</span></h2>
+                    <h2><img src={wingLeft} alt="Left Wing Icon" />MAJOR ORDER<img src={wingRight} alt="Right Wing Icon" /></h2>
                         <p>{order.briefing}</p>
                     </div>
                 </div>
@@ -56,7 +57,7 @@ export default function NewsFeed() {
 
                 {newsFeed.map((news, index) =>
                     index === activeIndex ? (
-                        <span className="typewriter" style={{ '--n': (news && news.message && news.message.length !== undefined ? news.message.length : 700)}} key={index}>
+                        <span className="typewriter" style={{ '--n': (news && news.message && news.message.length !== undefined ? news.message.length+30 : 700)}} key={index}>
                             {news.message}
                         </span>
                     ) : null

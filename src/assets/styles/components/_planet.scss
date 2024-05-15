@@ -1,0 +1,333 @@
+.planet {
+    display: block;
+    position: absolute;
+    height: 5px;
+    width: 5px;
+    top: calc(50% - 5px);
+    left: calc(50% - 5px);
+
+    .name {
+        font-size: 10px;
+    }
+
+    .name-hover {
+        opacity: 0;
+        margin-top: 0;
+        padding-top: 8px;
+        transition: 0.1s ease-in-out;
+        line-height: 1;
+    }
+}
+
+.planet-wrap {
+    display: block;
+    position: absolute;
+    height: 5px;
+    width: 5px;
+    border-radius: 180px;
+    background-color: $blue-pale;
+    box-shadow: $blue-box-shadow-1;
+}
+
+.planet-inactive .planet-wrap {
+    animation: flicker 15s ease-in-out infinite;
+}
+
+.planet-earth {
+  transition: 1s;
+
+    .planet-wrap {
+        display: block;
+        position: absolute;
+        height: 30px;
+        width: 30px;
+        margin-left: -13px;
+        margin-top: -13px;
+        border-radius: 180px;
+        background-image: url(./assets/media/earth.gif);
+        background-size: 45px;
+        background-position: center;
+        filter: grayscale(1) invert(1);
+        box-shadow: none;
+    }
+}
+
+img.super-earth-icon {
+    display: block;
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    top: calc(50% - 29px);
+    left: calc(50% - 28px);
+    // transform: translate(0px, 0px);
+}
+
+.planet-active {
+    .planet-wrap {
+        background-color: $red;
+        transition: 0.5s ease-in-out;
+        box-shadow: $red-box-shadow-1;
+
+        .radar, 
+        .pie-chart {
+            display: block;
+            position: absolute;
+            height: 5px;
+            width: 5px;
+            border-radius: 180px;
+            background-color: $red;
+        }
+
+        .radar {
+            animation: scaleAnimation 2s ease-in-out infinite;
+            opacity: 0;
+            transition: 0.2s;  
+        }
+
+        .pie-chart {
+            display: block;
+            position: absolute;
+            transform: scale(2);
+            box-shadow: $red-box-shadow-1;
+            transition: 0.3s ease-in-out;
+        }
+    }
+
+    .planet-Terminids .planet-wrap {
+        .radar,
+        .pie-chart {
+            background-color: $yellow;
+        }
+
+        .pie-chart {
+            box-shadow: $yellow;
+        }
+    }
+
+    .planet-Humans {
+        .radar,
+        .pie-chart {
+            background-color: $green;
+        }
+
+        .pie-chart {
+            box-shadow: $green-box-shadow-3;
+        }       
+    }
+
+    .name {
+        position: relative;
+        margin-top: 8px;
+        opacity: 0;
+        font-size: 12px;
+        line-height: 1;
+    }
+
+    &:hover {
+        z-index: 99999999;
+
+        .planet-wrap {
+            .name {
+                display: none;
+            }
+
+            .planet-info {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            .radar {
+                animation: none;
+            }
+
+            .pie-chart {
+                transform: scale(5);
+            }
+        }
+    }
+}
+
+.planet:not(.planet-active):hover > .planet-wrap > .name-hover {
+    opacity: 1;
+}
+
+.planet-info {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+    position: absolute;
+    top: 3px;
+    left: 2px;
+    width: 385px;
+    background-color: $black;
+    padding: 2px;
+    border: solid 2px $yellow-pale;
+    z-index: 999999999;
+    border-radius: 2px;
+
+    .detail-wrap,
+    .detail-wrap-inner,
+    .health-block,
+    p,
+    h3 {
+        border: solid 2px rgba($white, 0.7);
+        padding: 2px;
+        margin: 0;
+        border-radius: 2px;
+    }
+
+    .detail-wrap {
+        border: solid 2px rgba($offwhite, 0.4);
+
+        &:nth-of-type(2) {
+            margin: 3px 0 3px 0;
+        }
+
+        &:nth-of-type(3) {
+            p {
+                padding: 6px;
+            }
+        }
+    }
+
+    p {
+        font-size: 12px;
+        line-height: 1.4;
+        margin-bottom: 0;
+    }
+
+    h3 {
+        font-family: hdRegular;
+        display: flex;
+        align-items: center;
+        margin-bottom: 0;
+        padding: 3px;
+        
+        img {
+            width: 28px;
+            margin-right: 10px;
+        }
+    }
+
+    .health-block {
+        border: solid 3px $white;
+        position: relative;
+        height: 42px;
+
+        &::before,
+        span {
+            display: block;
+            content: "";
+            position: absolute;
+            left: 6px;
+            right: 6px;
+            top: 6px;
+            bottom: 6px;
+            background-color: $blue;
+        }
+
+        span {
+            z-index: 99999999;
+        }
+    }
+
+    .health-percent {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-top: solid 2px rgba($white, 0.7);
+        margin-top: 3px;
+        margin-left: -3px;
+        margin-right: -3px;
+        padding: 0 6px;
+        height: 36px;
+        line-height: 1;
+        font-size: 18px;
+        text-align: center;
+
+        strong {
+            font-size: 32px;
+            color: rgba($white, 0.5);
+        }
+
+        span {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            color: $yellow-pale;
+        }
+
+        img {
+            width: 15px;
+            margin-right: 5px;
+        }
+
+
+    }
+}
+
+.planet-Terminids {
+    box-shadow: $yellow-box-shadow-2;
+
+    h3 {
+        color: $yellow-terminid;
+    }
+
+    .health-block {
+        border: solid 3px $yellow-terminid;
+
+        span {
+            background-color: $yellow-terminid;
+        }
+    }
+
+    .planet-wrap {
+        .pie-chart {
+            box-shadow: $yellow-box-shadow-2;
+        }
+
+        .radar {
+            background-color: $yellow-terminid;
+        }
+    }
+}
+
+.planet-Automaton {
+    box-shadow: $red-box-shadow-2;
+
+    h3 {
+        color: $red;
+    }
+
+    .health-block {
+        border: solid 3px $red;
+
+        span {
+            background-color: $red;
+        }
+    }
+}
+
+.planet-Humans {
+    box-shadow: $green-box-shadow-3;
+}
+
+
+
+
+
+
+
+
+// .planet-HELLMIRE {
+//     z-index: 99999999;
+
+//     .planet-info {
+//         visibility: visible;
+//         opacity: 1;
+//     }
+// } 
+
+// .news-feed {
+//     display: none!important;
+// }

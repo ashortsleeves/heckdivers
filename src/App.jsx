@@ -1,29 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import './App.scss';
 import Planet from './components/Planet';
 import NewsFeed from './components/NewsFeed';
 import StaticBG from './components/StaticBG';
 import DefaultZoomTools from './components/DefaultZoomTools';
+import ButtonControls from './components/ButtonControls';
+import SkyFury from './components/SkyFury.jsx';
 import planetsData from './planets.json';
-import grid from './assets/grid.webp';
-import reloadImg from './assets/reload.svg'
-import saturnImg from './assets/planet-space-icon.svg';
+import grid from './assets/media/grid.webp';
+import superEarth from './assets/media/Super_earth.webp';
+import './assets/scripts/wallpaperEngine.js';
 
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 
 function App() {
   const [campaigns, setCampaigns] = useState([]);
+  const [showSkyFury, setShowSkyFury] = useState(false); // State for showing SkyFury
+  const [isVideoMuted, setIsVideoMuted] = useState(false); // State for video mute status
   const planets = planetsData;
-  const [isRotating, setIsRotating] = useState(false);
-
-  const toggleRotation = () => {
-    setIsRotating(!isRotating);
-  };
-
-  if (isRotating) {
-    document.body.classList.add('rotate-active');
-  } else {
-    document.body.classList.remove('rotate-active');
-  }
 
   // Fetch data from APIs and update state
   const fetchData = async () => {
@@ -45,26 +39,27 @@ function App() {
     return () => clearInterval(intervalId);
   }, []);
 
+  // Function to toggle showing SkyFury
+  const toggleSkyFury = () => {
+    setShowSkyFury(!showSkyFury);
+  };
 
-  function handleZoomClick(targetButtonID) {
-    const secondButton = document.getElementById(targetButtonID);
-
-    if (secondButton) {
-      // Programmatically trigger a click event on the second button
-      secondButton.click();
-      console.log(targetButtonID);
-    }
-  }
+  // Function to toggle video mute status
+  const toggleVideoMute = () => {
+    setIsVideoMuted(!isVideoMuted);
+  };
 
   return (
     <>
       <StaticBG />
+      {showSkyFury && <SkyFury isVideoMuted={isVideoMuted} />} {/* Pass isVideoMuted status as prop */}
       <div className="wrapWrapper">
         <TransformWrapper>
           <TransformComponent>
             <DefaultZoomTools/>
             <div className="map">
               <img className="helldivers-grid" src={grid} alt="helldivers grid" />
+              <img className="super-earth-icon" src={superEarth} alt="Super Earth icon" />
               {planets.map((planet, index) => (
                 <Planet
                   key={index}
@@ -87,14 +82,14 @@ function App() {
                         key={index}
                         planetIndex={planet.index}
                         description={planet.biome.description}
-                        owner={campaign.planet.currentOwner}
+                        owner={campaign.planet.event ? campaign.planet.event.faction : campaign.planet.currentOwner}
                         playerCount={campaign.planet.statistics.playerCount}
                         name={planet.name}
                         positionX={planet.position.x}
                         positionY={planet.position.y}
                         sector={planet.sector}
                         activeCampaign={campaign.planet.name}
-                        health={campaign.planet.health}
+                        health={(campaign.planet.event ? campaign.planet.event.health : campaign.planet.health)}
                         maxHealth={campaign.planet.maxHealth}
                       />
                     ))}
@@ -107,19 +102,13 @@ function App() {
 
       <NewsFeed/>
       {planets.length <= 0 || campaigns.length <= 0 ? <div className='planets-loading'><h2>CONNECTING TO SUPER EARTH</h2></div> : ''}
-      <div className='button-controls'>
-        <button onClick={() => handleZoomClick('zIn')}>+ <span>Zoom In</span></button>
-        <button onClick={() => handleZoomClick('zOut')}>- <span>Zoom Out</span></button>
-        <button onClick={toggleRotation}><img src={saturnImg} alt="Saturn Icon"/> <span>Toggle Rotation</span></button>
-        <button onClick={() => location.reload()}><img src={reloadImg} alt="reload network"/> <span>Reload Network<i>DEV Message 5/6/24:<br/>Importing data into the map is currently being reworked and optimized so that the community-made API is not overloaded. In the meantime, the map will not be live, but will be updated daily to reflect the past 12-24 hours. Thank you for your patience.<br/>-Omar</i></span></button>
-        
-        <div>
-          <a href="https://heckdivers.net" target="_blank">heckdivers.net</a>
-          <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3235505289" target="_blank">wallpaper engine</a>
-          <a href="https://github.com/ashortsleeves" target="_blank">github</a>
-        </div>
 
-      </div>
+      <ButtonControls 
+        toggleSkyFury={toggleSkyFury} 
+        toggleVideoMute={toggleVideoMute} 
+        isVideoMuted={isVideoMuted} // Pass isVideoMuted status as prop
+      /> {/* Pass toggleSkyFury and toggleVideoMute functions as props */}
+      <div className='hex-overlay'></div>
     </>
   );
 }

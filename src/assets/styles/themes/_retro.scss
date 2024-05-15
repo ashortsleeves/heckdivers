@@ -1,0 +1,131 @@
+@media screen and (min-width: 1200px) {
+    .retro-active .map {
+        animation: blur 10s ease-in-out infinite;
+    }
+}
+
+.retro-active {
+    color: $green-pale;
+    background-color: $green-black;
+    line-height: 1.5;
+
+    // h1,
+    // h2,
+    // h3,
+    // h4 {
+    //     font-family: easVHSbold;
+    // }
+
+    // h1 {
+    //     text-transform: uppercase;
+    //     font-family: easVHS;
+    // }
+
+    // h2 {
+    //     font-size: 18px;
+    // }
+
+    // h3 {
+    //     font-size: 10px;
+    // }
+    .map:after {
+        animation: vhsLine 14s ease-in-out infinite;
+    }
+
+    .wrapWrapper:before,
+    .wrapWrapper:after {
+        background-color: $green-black-bg;
+    }
+
+    .helldivers-grid {
+        filter: blur(2px);
+    }
+
+    .planets-loading {
+        background-color: $green-black-bg;
+        
+        h2 {
+            text-shadow: 1px -1px 16px rgba($black,1);
+        }
+
+        &::before,
+        &::after {
+            box-shadow: $green-box-shadow-2;
+        }
+
+        &::after {
+            background-color: $green-pale;
+        }
+    }
+
+    .planet-wrap {
+        background-color: $green-pale;
+        box-shadow: $green-box-shadow-3;       
+    }
+
+    .planet-earth {
+        color: $green-dark;
+
+        .planet-wrap {
+            &::before {
+                text-shadow: 1px -1px 16px rgba(177,255,174,1);
+            }
+
+            &::after {
+                background-color: $green-pale;
+                box-shadow: $green-box-shadow-2;
+            }
+        }
+    }
+
+    .button-controls {
+        button {
+            box-shadow: $green-box-shadow-1;
+            border: solid 2px $green-pale;
+            color: $green-pale;
+        }
+
+        a,
+        span {
+            color: $green-pale-dark;
+
+            &:hover {
+                color: $green
+            }
+        }
+    }
+
+    .news-feed {
+        color: $green-pale;
+    }
+
+    .typewriter {
+        background:
+        linear-gradient(-90deg,$green-pale 5px,#0000 0) 10px 0,
+        linear-gradient($green-pale 0 0) 0 0;
+        background-size:calc(var(--n)*1ch) 200%;
+        -webkit-background-clip:padding-box,text;
+        background-clip:padding-box,text;
+        background-repeat:no-repeat;
+        animation: 
+          b .7s infinite steps(1),   
+          t calc(var(--n)*.02s) steps(var(--n)) forwards;
+    }
+
+    .major-order h2 {
+        text-shadow: $green-text-shadow-1;
+
+        img {
+            filter: sepia(100%) hue-rotate(90deg) saturate(400%);
+        }
+
+        &::after {
+            border-bottom: solid 2px $green-pale;
+            box-shadow: $green-box-shadow-2;
+        }
+    }
+}
+
+body:not(.retro-active) .button-controls button img {
+    filter: saturate(0);
+}

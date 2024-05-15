@@ -1,0 +1,68 @@
+@font-face {
+    font-family: easVHS;
+    src: url(./assets/fonts/PixelOperatorMono8.ttf);
+}
+
+@font-face {
+    font-family: easVHSbold;
+    src: url(./assets/fonts/PixelOperatorMonoHB8.ttf);
+}
+
+@font-face {
+    font-family: hdLight;
+    src: url(./assets/fonts/hd-light.otf);
+}
+
+@font-face {
+    font-family: hdRegular;
+    src: url(./assets/fonts/hd-regular.otf);
+}
+
+@font-face {
+    font-family: hdMedium;
+    src: url(./assets/fonts/hd-medium.otf);
+}
+
+@font-face {
+    font-family: hdBold;
+    src: url(./assets/fonts/hd-bold.otf);
+}
+
+@font-face {
+    font-family: hdTitle;
+    src: url(./assets/fonts/hd-title.otf);
+}
+
+// Colors
+$black:              #000;
+$black-bg:           rgba(18, 18, 18, 0.7);
+$offblack:           #101010;
+$white:              #fff;
+$offwhite:           #a1a1a1;
+$yellow:             #FCE904;
+$yellow-pale:        #FAFD68;
+$yellow-terminid:    #FCC100;
+$red:                #FC6D6D;
+$blue:               #27A5FC;
+$blue-pale:          #eff8fe;
+$green:              #aef4ff;
+$green-pale:         #c9ffc7;
+$green-dark:         #68c665;
+$green-pale-dark:    #718170;
+$green-black:        #181e17;
+$green-black-bg:     rgba(15, 20, 15, 0.7);
+
+// Box Shadows
+$green-box-shadow-1:   0px 0px 15px 3px rgba(201, 255, 199, 0.2);
+$green-box-shadow-2:   0px 0px 15px 3px rgba(201, 255, 199, 0.4);
+$green-box-shadow-3:   0px 0px 15px 2px rgba(215, 255, 213, 0.4);
+$green-box-shadow-4:   0px 0px 15px 2px rgba(215, 255, 213, 0.1);
+$green-text-shadow-1:  1px -1px 16px rgba(177,255,174,0.5);
+$red-box-shadow-1:     0px 0px 15px 3px rgb(255, 0, 0, 0.4);
+$red-box-shadow-2:     0px 0px 77px 38px rgba(255, 0, 0, 0.1);
+$yellow-box-shadow-1:  0px 0px 15px 3px $yellow;
+$yellow-box-shadow-2:  0px 0px 77px 38px rgba($yellow, 0.05);
+$blue-box-shadow-1: 0px 0px 15px 3px rgba($blue, 0.5);
+$white-box-shadow-1:   0px 0px 15px 3px rgba(255, 255, 255, 0.2);
+$white-box-shadow-2:   0px 0px 15px 3px rgba(255, 255, 255, 0.4);
+$white-text-shadow-1:  1px -1px 16px rgba(255, 255, 255, 0.5);
