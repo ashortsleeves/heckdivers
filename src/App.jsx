@@ -8,6 +8,7 @@ import ButtonControls from './components/ButtonControls';
 import planetsData from './planets.json';
 import grid from './assets/media/grid.webp';
 import superEarth from './assets/media/Super_earth.webp';
+import './assets/scripts/wallpaperEngine.js';
 
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 
