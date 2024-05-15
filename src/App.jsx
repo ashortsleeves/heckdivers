@@ -5,6 +5,7 @@ import NewsFeed from './components/NewsFeed';
 import StaticBG from './components/StaticBG';
 import DefaultZoomTools from './components/DefaultZoomTools';
 import ButtonControls from './components/ButtonControls';
+import SkyFury from './components/SkyFury.jsx';
 import planetsData from './planets.json';
 import grid from './assets/media/grid.webp';
 import superEarth from './assets/media/Super_earth.webp';
@@ -14,6 +15,8 @@ import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 
 function App() {
   const [campaigns, setCampaigns] = useState([]);
+  const [showSkyFury, setShowSkyFury] = useState(false); // State for showing SkyFury
+  const [isVideoMuted, setIsVideoMuted] = useState(false); // State for video mute status
   const planets = planetsData;
 
   // Fetch data from APIs and update state
@@ -36,9 +39,20 @@ function App() {
     return () => clearInterval(intervalId);
   }, []);
 
+  // Function to toggle showing SkyFury
+  const toggleSkyFury = () => {
+    setShowSkyFury(!showSkyFury);
+  };
+
+  // Function to toggle video mute status
+  const toggleVideoMute = () => {
+    setIsVideoMuted(!isVideoMuted);
+  };
+
   return (
     <>
       <StaticBG />
+      {showSkyFury && <SkyFury isVideoMuted={isVideoMuted} />} {/* Pass isVideoMuted status as prop */}
       <div className="wrapWrapper">
         <TransformWrapper>
           <TransformComponent>
@@ -89,7 +103,11 @@ function App() {
       <NewsFeed/>
       {planets.length <= 0 || campaigns.length <= 0 ? <div className='planets-loading'><h2>CONNECTING TO SUPER EARTH</h2></div> : ''}
 
-      <ButtonControls />
+      <ButtonControls 
+        toggleSkyFury={toggleSkyFury} 
+        toggleVideoMute={toggleVideoMute} 
+        isVideoMuted={isVideoMuted} // Pass isVideoMuted status as prop
+      /> {/* Pass toggleSkyFury and toggleVideoMute functions as props */}
       <div className='hex-overlay'></div>
     </>
   );

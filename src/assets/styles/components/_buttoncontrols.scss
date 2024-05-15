@@ -63,6 +63,18 @@
         }
     }
 
+    .mute-vid i {
+        position: absolute;
+        width: 230px;
+        top: 30px;
+        right: 0;
+        font-family: hdRegular;
+        font-size: 15px;
+        letter-spacing: 0.05rem;
+        opacity: 0.5;
+        z-index: -1;
+    }
+
     .links {
         position: absolute;
         padding-top: 8px;
@@ -124,7 +136,8 @@
             }
 
             img {
-                bottom: 7px;
+                bottom: 0;
+                width: 35px;
             }
         }
 
@@ -136,6 +149,10 @@
 
     &:hover,
     &:focus {
+        .mute-vid i {
+            opacity: 0;
+        }
+
         .links {
             span {
                 opacity: 1;
