@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.scss';
 import Planet from './components/Planet';
 import NewsFeed from './components/NewsFeed';
+import Dispatches from './components/Dispatches';
 import StaticBG from './components/StaticBG';
 import DefaultZoomTools from './components/DefaultZoomTools';
 import ButtonControls from './components/ButtonControls';
@@ -101,6 +102,7 @@ function App() {
       </div>
 
       <NewsFeed/>
+      <Dispatches/>
       {planets.length <= 0 || campaigns.length <= 0 ? <div className='planets-loading'><h2>CONNECTING TO SUPER EARTH</h2></div> : ''}
 
       <ButtonControls 
