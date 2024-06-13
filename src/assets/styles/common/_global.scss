@@ -181,7 +181,8 @@ p,
         bottom: 0;
         left: 0;
         right: 0;
-        opacity: 0.02;
+        opacity: 0.01;
+        z-index: 1;
     }
 
     &::after {
