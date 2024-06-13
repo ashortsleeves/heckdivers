@@ -66,16 +66,16 @@ export default function ButtonControls({ toggleSkyFury, toggleVideoMute, isVideo
             <button onClick={() => location.reload()}><img src={reloadImg} alt="reload network" /> <span>Reload Network</span></button>
             <button onClick={toggleRetroStyle}><img src={retroImg} alt="Enable/Disable retro terminal look" /> <span>Toggle retro look</span></button>
 
-            <div className="links">
+            {/* <div className="links">
                 <span className="text" onClick={handleToggleSkyFury}>Give the creator a nice cup of LIBER-TEA<strong>:</strong></span>
                 <a href="#" onClick={handleToggleSkyFury}><img src={liberTea} alt="Tea Icon" /> HECKDIVERS.NET</a>
-            </div>
+            </div> */}
 
-            {/* <div className="links links-web"> 
+            <div className="links links-web"> 
                 <a className='liberTea' href="https://www.paypal.com/donate/?hosted_button_id=AVT886QL88AD6" target="_blank"><img src={liberTeaTwo} alt="Tea Icon"/>Get me a nice cup of <strong>LIBER-TEA</strong></a>
                 <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3235505289" target="_blank">wallpaper engine</a>
                 <a href="https://github.com/ashortsleeves" target="_blank">github</a>
-            </div> */}
+            </div>
         </div>
     )
 }
