@@ -215,4 +215,13 @@
     .button-controls:hover {
         opacity: 1;
     }
+
+    .dispatches {
+        opacity: 0.1;
+
+        &:hover,
+        &:focus {
+            opacity: 1;
+        }
+    }
 }
