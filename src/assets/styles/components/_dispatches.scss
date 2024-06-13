@@ -1,5 +1,97 @@
 .dispatches {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: fixed;
+    bottom: 100px;
+    left: 60px;
+    overflow-y: scroll;
+    border: solid 15px rgba($blue-grey, 0);
+    border-right: solid 5px rgba($blue-grey, 0);
+    width: 114px;
+    height: 20px;
+    transition: 0.3s ease-in-out;
+
+    &::-webkit-scrollbar {
+        width: 1em;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background-color: $blue-grey;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: $offwhite;
+    }
+
+    .dispatch {
+        position: relative;
+        border-bottom: solid 15px $blue-grey;
+        border-right: solid 8px $blue-grey;
+        padding: 15px;
+        background: rgba($black, 0.7);
+        opacity: 0;
+        transition: 0.3s ease-in-out;
+
+        &::after {
+            display: block;
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0px;
+            height: 0px;
+            border-style: solid;
+            border-width: 0 22px 22px 0;
+            border-color: transparent $yellow transparent transparent;
+            transform: rotate(0deg);
+        }
+
+        h3 {
+            margin-bottom: 0;
+
+            &.yellow {
+                color: $yellow;
+            }
+        }
+
+        span {
+            font-size: 12px;
+        }
+
+        p strong {
+            color: $yellow;
+        }
+    }
+
+    &::after {
+        display: block;
+        content: "Dispatches";
+        position: fixed;
+        bottom: 100px;
+        left: 58px;
+        text-transform: uppercase;
+        z-index: 999;
+        pointer-events: none;
+        opacity: 0.5;
+        border: solid 2px $white;
+        width: 114px;
+        height: 27px;
+        text-align: center;
+        line-height: 1.8;
+    }
+
+    &:hover,
+    &:focus {
+        width: 400px;
+        height: 500px;
+        border: solid 20px rgba($blue-grey, 1);
+        border-right: solid 8px rgba($blue-grey, 1);
+        // border-bottom: solid 30px $blue-grey;
+
+        &::after {
+            opacity: 0;
+        }
+
+        .dispatch {
+            opacity: 1;
+        }
+    }
 }
