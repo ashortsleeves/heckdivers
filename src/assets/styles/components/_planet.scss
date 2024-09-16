@@ -104,6 +104,17 @@ img.super-earth-icon {
         }
     }
 
+    .planet-Illuminate .planet-wrap {
+        .radar,
+        .pie-chart {
+            background-color: $purple;
+        }
+
+        .pie-chart {
+            box-shadow: $purple;
+        }
+    }
+
     .planet-Humans {
         .radar,
         .pie-chart {
@@ -288,6 +299,32 @@ img.super-earth-icon {
 
         .radar {
             background-color: $yellow-terminid;
+        }
+    }
+}
+
+.planet-Illuminate {
+    box-shadow: $purple-box-shadow-1;
+
+    h3 {
+        color: $purple;
+    }
+
+    .health-block {
+        border: solid 3px $purple;
+
+        span {
+            background-color: $purple;
+        }
+    }
+
+    .planet-wrap {
+        .pie-chart {
+            box-shadow: $purple-box-shadow-1;
+        }
+
+        .radar {
+            background-color: $purple;
         }
     }
 }
