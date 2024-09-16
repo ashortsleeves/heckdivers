@@ -34,7 +34,8 @@ export default function NewsFeed() {
             <div className='dispatches'>
                 { dispatches.length > 0 ? (
                     dispatches.slice(0, 5).map((dispatch, index) => {
-                        const dispatchUnHTML = dispatch.message.replace(/<[^>]*>/g, '');
+
+                        const dispatchUnHTML = dispatch.message ? dispatch.message.replace(/<[^>]*>/g, '') :'';
 
                         const dispatchLastCapsIndex = findFirstLowerCaseIndex(dispatchUnHTML);
 
@@ -47,15 +48,14 @@ export default function NewsFeed() {
                         let dispatchContent = dispatchClean.replaceAll(keyWords, function(x) {
                             return '<strong>' + x + '</strong>';
                         });
-
                         return (
-                            <div className="dispatch" key={index}>
+                            <div className={dispatch.message ? 'dispatch' : 'dispatch dispatch__hidden'} key={index}>
                                 <h3 className={
                                     dispatchTitle == 'NEW MAJOR ORDER' ? 'yellow' :
                                     dispatchTitle == 'MAJOR ORDER WON' ? 'yellow' :
                                      ''
                                      }>{ dispatchTitle }</h3>
-                                <span>{ dispatch.published }</span>
+                                <span>{ dispatch.published ? dispatch.published : '' }</span>
                                 <p dangerouslySetInnerHTML={{ __html: dispatchContent }} />
                             </div>
                         );

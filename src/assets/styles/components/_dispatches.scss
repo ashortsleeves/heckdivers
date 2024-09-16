@@ -59,6 +59,10 @@
         p strong {
             color: $yellow;
         }
+
+        &__hidden {
+            display: none;
+        }
     }
 
     &::after {
