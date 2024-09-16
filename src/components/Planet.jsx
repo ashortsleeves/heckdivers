@@ -1,5 +1,6 @@
 import automatonIcon from '../assets/media/automaton.webp';
 import terminidIcon from '../assets/media/terminid.png';
+import illuminateIcon from '../assets/media/illuminate.png';
 import helmetIcon from '../assets/media/helmet.png';
 import superEarthIcon from '../assets/media/Super_earth.webp';
 
@@ -9,8 +10,7 @@ export default function Planet ({ planetIndex, name, description, owner, playerC
     const healthPercentage = health !== '' ? 100 - ((health/maxHealth)*100) : null;
 
     const ownerColor = owner === 'Terminids' ? 'rgb(250, 250, 0)' :
-    owner === 'Humans' ? 'rgb(177, 255, 174)' :
-    'rgb(255, 103, 103)';
+    owner === 'Humans' ? 'rgb(177, 255, 174)' : owner === 'Illuminate' ? 'rgb(223 168 255)' : 'rgb(255, 103, 103)';
 
     const planetStyles = { 
         transform: `translate(${x}px, ${y}px)`,
@@ -58,6 +58,7 @@ export default function Planet ({ planetIndex, name, description, owner, playerC
                                     {
                                         owner === 'Terminids' ? <img src={terminidIcon} alt="Under Terminid Control" /> :
                                         owner === 'Automaton' ? <img src={automatonIcon} alt="Under Automaton Control" /> :
+                                        owner === 'Illuminate' ? <img src={illuminateIcon} alt="Under Illuminate Control" /> :
                                         owner === 'Humans' ? <img src={superEarthIcon} alt="Under Super Earth Control" /> :
                                         ''
                                     }
