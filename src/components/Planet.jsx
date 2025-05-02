@@ -84,7 +84,7 @@ export default function Planet ({ planetIndex, name, description, owner, playerC
                     </>
                 : <p className="name name-hover">{name}</p>}
             </div>
-            {dss ? <img className='dssIcon' src={dssIcon} alt="Democracy Space Station" /> : null }
+            {dss ? <div className='dssIcon'><img  src={dssIcon} alt="Democracy Space Station" /><p>Democracy Space Station</p></div> : null }
         </div>
     );  
 }

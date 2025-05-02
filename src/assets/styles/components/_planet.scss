@@ -351,7 +351,29 @@ img.super-earth-icon {
 .dssIcon {
     display: block;
     position: relative;
-    height: 50px;
     transform: translate(-31px, -37px);
     z-index: 99999999;
+    width: 100px;
+
+    img {
+        height: 50px;
+        transition: 0.5s;
+    }
+
+    p {
+        opacity: 0;
+        text-transform: uppercase;
+        text-align: center;
+        transform: translate( 40px, -80px);
+        line-height: 1;
+    }
+
+    &:hover {
+        img {
+            transform: scale(1.5);
+        }
+        p {
+            opacity: 1;
+        }
+    }
 }

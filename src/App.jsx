@@ -84,7 +84,7 @@ function App() {
                   sector={planet.sector}
                   activeCampaign=""
                   health=""
-                  dss={planet.name === dss[0].planet.name ? true : false}
+                  dss={dss.some((station) => station.planet?.name === planet.name)}
                 />
               ))}
 
