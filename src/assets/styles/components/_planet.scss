@@ -59,7 +59,6 @@ img.super-earth-icon {
     width: 50px;
     top: calc(50% - 29px);
     left: calc(50% - 28px);
-    // transform: translate(0px, 0px);
 }
 
 .planet-active {
@@ -349,22 +348,10 @@ img.super-earth-icon {
     box-shadow: $green-box-shadow-3;
 }
 
-
-
-
-
-
-
-
-// .planet-HELLMIRE {
-//     z-index: 99999999;
-
-//     .planet-info {
-//         visibility: visible;
-//         opacity: 1;
-//     }
-// } 
-
-// .news-feed {
-//     display: none!important;
-// }
+.dssIcon {
+    display: block;
+    position: relative;
+    height: 50px;
+    transform: translate(-31px, -37px);
+    z-index: 99999999;
+}

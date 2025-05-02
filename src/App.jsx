@@ -16,6 +16,7 @@ import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 
 function App() {
   const [campaigns, setCampaigns] = useState([]);
+  const [dss, setDss] = useState([]);
   const [showSkyFury, setShowSkyFury] = useState(false); // State for showing SkyFury
   const [isVideoMuted, setIsVideoMuted] = useState(false); // State for video mute status
   const planets = planetsData;
@@ -32,9 +33,21 @@ function App() {
     }
   };
 
+  const fetchDss = async () => {
+    try {
+      const dssResponse = await fetch('https://raw.githubusercontent.com/ashortsleeves/heckdivers-json/main/space-stations.json');
+      const dssData = await dssResponse.json();
+      setDss(dssData);
+      console.log("fetching dss data: " + new Date().toString());
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
   // Fetch data on component mount and every minute
   useEffect(() => {
     fetchData(); // Fetch data initially
+    fetchDss();
     const intervalId = setInterval(fetchData, 600000); // Fetch data every minute
 
     return () => clearInterval(intervalId);
@@ -71,6 +84,7 @@ function App() {
                   sector={planet.sector}
                   activeCampaign=""
                   health=""
+                  dss={planet.name === dss[0].planet.name ? true : false}
                 />
               ))}
 

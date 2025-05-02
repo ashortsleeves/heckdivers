@@ -3,8 +3,9 @@ import terminidIcon from '../assets/media/terminid.png';
 import illuminateIcon from '../assets/media/illuminate.png';
 import helmetIcon from '../assets/media/helmet.png';
 import superEarthIcon from '../assets/media/Super_earth.webp';
+import dssIcon from '../assets/media/dss.png';
 
-export default function Planet ({ planetIndex, name, description, owner, playerCount, positionX, positionY, sector, activeCampaign, health, maxHealth, ...props }) {
+export default function Planet ({ planetIndex, name, description, owner, playerCount, positionX, positionY, sector, activeCampaign, health, maxHealth, dss, ...props }) {
     const x = positionX * 450;
     const y = -positionY * 450;
     const healthPercentage = health !== '' ? 100 - ((health/maxHealth)*100) : null;
@@ -83,6 +84,7 @@ export default function Planet ({ planetIndex, name, description, owner, playerC
                     </>
                 : <p className="name name-hover">{name}</p>}
             </div>
+            {dss ? <img className='dssIcon' src={dssIcon} alt="Democracy Space Station" /> : null }
         </div>
     );  
 }
