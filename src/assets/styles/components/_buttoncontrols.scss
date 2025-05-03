@@ -181,7 +181,8 @@
         transform-origin: 50% 50%;
     }
 
-    .planet-wrap {
+    .planet-wrap,
+    .dssIcon {
         animation: counterRotate 180s linear infinite!important;
     }
 

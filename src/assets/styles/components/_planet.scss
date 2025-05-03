@@ -350,8 +350,9 @@ img.super-earth-icon {
 
 .dssIcon {
     display: block;
-    position: relative;
-    transform: translate(-31px, -37px);
+    position: absolute;
+    left: -31px;
+    top: -37px;
     z-index: 99999999;
     width: 100px;
 
@@ -376,4 +377,8 @@ img.super-earth-icon {
             opacity: 1;
         }
     }
+}
+
+.planet-dss:hover > .planet-wrap > .name-hover {
+    opacity: 0!important;
 }

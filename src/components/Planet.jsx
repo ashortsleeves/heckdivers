@@ -44,6 +44,7 @@ export default function Planet ({ planetIndex, name, description, owner, playerC
         <div className={
             activeCampaign === name ? 'planet planet-active planet-' + owner + ' planet-' + name
             : name === "SUPER EARTH" ? 'planet planet-earth'
+            : dss ? 'planet planet-inactive planet-dss'
             : 'planet planet-inactive'} style={planetStyles}>
 
             <div className='planet-wrap'>
