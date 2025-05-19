@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import { useState, useContext } from 'react';
+import { ThemeContext } from './ThemeContextProvider';
+
 import reloadImg from '../assets/media/reload.svg';
 import saturnImg from '../assets/media/planet-space-icon.svg';
 import retroImg from '../assets/media/retro.svg';
@@ -16,15 +18,17 @@ export default function ButtonControls({ toggleSkyFury, toggleVideoMute, isVideo
     };
 
     const [isRotating, setIsRotating] = useState(false);
-    const [retroStyle, setRetroStyle] = useState(false);
+    // const [retroStyle, setRetroStyle] = useState(false);
+
+    const themeCtx = useContext(ThemeContext);
 
     const toggleRotation = () => {
         setIsRotating(!isRotating);
     };
 
-    const toggleRetroStyle = () => {
-        setRetroStyle(!retroStyle);
-    };
+    // const toggleRetroStyle = () => {
+    //     setRetroStyle(!retroStyle);
+    // };
 
     if (isRotating) {
         document.body.classList.add('rotate-active');
@@ -32,11 +36,11 @@ export default function ButtonControls({ toggleSkyFury, toggleVideoMute, isVideo
         document.body.classList.remove('rotate-active');
     }
 
-    if (retroStyle) {
-        document.body.classList.add('retro-active');
-    } else {
-        document.body.classList.remove('retro-active');
-    }
+    // if (retroStyle) {
+    //     document.body.classList.add('retro-active');
+    // } else {
+    //     document.body.classList.remove('retro-active');
+    // }
 
     function handleZoomClick(targetButtonID) {
         const secondButton = document.getElementById(targetButtonID);
@@ -64,7 +68,7 @@ export default function ButtonControls({ toggleSkyFury, toggleVideoMute, isVideo
             <button onClick={() => handleZoomClick('zOut')}>- <span>Zoom Out</span></button>
             <button onClick={toggleRotation}><img src={saturnImg} alt="Saturn Icon" /> <span>Toggle Rotation</span></button>
             <button onClick={() => location.reload()}><img src={reloadImg} alt="reload network" /> <span>Reload Network</span></button>
-            <button onClick={toggleRetroStyle}><img src={retroImg} alt="Enable/Disable retro terminal look" /> <span>Toggle retro look</span></button>
+            <button onClick={themeCtx.toggleTheme}><img src={retroImg} alt="Enable/Disable retro terminal look" /> <span>Toggle retro look</span></button>
 
             { window.location.href === 'https://heckdivers.net/' ?
                 <div className="links links-web">
