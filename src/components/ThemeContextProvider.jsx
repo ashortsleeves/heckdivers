@@ -2,11 +2,13 @@ import { createContext, useState } from "react";
 
 export const ThemeContext = createContext({
     theme: 'default',
-    toggleTheme: () => { }
+    toggleTheme: () => { },
+    toggleRotation: () => { }
 });
 
 export default function ThemeContextProvider({ children }) {
     const [theme, setTheme] = useState('default');
+    const [isRotating, setIsRotating] = useState(false);
 
     const toggleTheme = () => {
         setTheme((prevTheme) => {
@@ -19,8 +21,18 @@ export default function ThemeContextProvider({ children }) {
         });
     };
 
+    const toggleRotation = () => {
+        setIsRotating(!isRotating);
+    };
+
+    if (isRotating) {
+        document.body.classList.add('rotate-active');
+    } else {
+        document.body.classList.remove('rotate-active');
+    }
+
     return (
-        <ThemeContext.Provider value={{ theme, toggleTheme }}>
+        <ThemeContext.Provider value={{ theme, toggleTheme, toggleRotation }}>
             {children}
         </ThemeContext.Provider>
     )

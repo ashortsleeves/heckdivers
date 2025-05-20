@@ -10,27 +10,13 @@ import musicIcon from '../assets/media/music-icon.svg';
 
 export default function ButtonControls({ toggleSkyFury, toggleVideoMute, isVideoMuted }) {
     const [showMuteButton, setShowMuteButton] = useState(false); // State for showing mute button
+    const themeCtx = useContext(ThemeContext);
 
     // Function to toggle visibility of mute button when toggleSkyFury is triggered
     const handleToggleSkyFury = () => {
         setShowMuteButton(!showMuteButton);
         toggleSkyFury(); // Call toggleSkyFury function
     };
-
-    const [isRotating, setIsRotating] = useState(false);
-    // const [retroStyle, setRetroStyle] = useState(false);
-
-    const themeCtx = useContext(ThemeContext);
-
-    const toggleRotation = () => {
-        setIsRotating(!isRotating);
-    };
-
-    if (isRotating) {
-        document.body.classList.add('rotate-active');
-    } else {
-        document.body.classList.remove('rotate-active');
-    }
 
     function handleZoomClick(targetButtonID) {
         const secondButton = document.getElementById(targetButtonID);
@@ -56,7 +42,7 @@ export default function ButtonControls({ toggleSkyFury, toggleVideoMute, isVideo
             )}
             <button onClick={() => handleZoomClick('zIn')}>+ <span>Zoom In</span></button>
             <button onClick={() => handleZoomClick('zOut')}>- <span>Zoom Out</span></button>
-            <button onClick={toggleRotation}><img src={saturnImg} alt="Saturn Icon" /> <span>Toggle Rotation</span></button>
+            <button onClick={themeCtx.toggleRotation}><img src={saturnImg} alt="Saturn Icon" /> <span>Toggle Rotation</span></button>
             <button onClick={() => location.reload()}><img src={reloadImg} alt="reload network" /> <span>Reload Network</span></button>
             <button onClick={themeCtx.toggleTheme}><img src={retroImg} alt="Enable/Disable retro terminal look" /> <span>Toggle Theme {themeCtx.theme}</span></button>
 
