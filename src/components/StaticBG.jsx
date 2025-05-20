@@ -1,4 +1,3 @@
-import React from 'react';
 import staticVideo from '../assets/media/Static_with_white_noise.webm';
 
 function StaticBG() {

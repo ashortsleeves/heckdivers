@@ -4,6 +4,7 @@ import Planet from './components/Planet';
 import NewsFeed from './components/NewsFeed';
 import Dispatches from './components/Dispatches';
 import StaticBG from './components/StaticBG';
+import Stars from './components/Stars';
 import DefaultZoomTools from './components/DefaultZoomTools';
 import { ThemeContext } from './components/ThemeContextProvider.jsx';
 import ButtonControls from './components/ButtonControls';
@@ -67,6 +68,7 @@ function App() {
 
   return (
     <div id="map" className={themeCtx.theme}>
+      {themeCtx.showStars && <Stars />}
       <StaticBG />
       {showSkyFury && <SkyFury isVideoMuted={isVideoMuted} />} {/* Pass isVideoMuted status as prop */}
       <div className="wrapWrapper">
