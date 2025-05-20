@@ -1,0 +1,86 @@
+.default {
+    color: $white;
+    background-color: $offblack; 
+}
+
+.static-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: auto;
+    width: 100%;
+    opacity: 0.02;
+}
+
+.wrapWrapper {
+    &::before,
+    &::after {
+        display: block;
+        content: '';
+        position: absolute;
+        height: 5px;
+        left: 0;
+        right: 0;
+        top: calc(100% + 50px);
+        z-index: 1;
+        background-color: $black-bg;
+        animation: vhsLine 16s ease-in-out infinite;
+    }
+
+    &::after {
+        animation: vhsLine 18s ease-in-out infinite;
+    }
+}
+
+.helldivers-grid {
+    position: absolute;
+    left: calc(50% - 474px);
+    top: calc(50% - 471px);
+    height: auto;
+    width: 940px;
+    opacity: 0.1;
+    filter: blur(1px);
+}
+
+.hex-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    pointer-events: none;
+    filter:invert(1);
+
+    &::before,
+    &::after {
+        display: block;
+        content: '';
+        background-image: url(./assets/media/honeycomb.png);
+        background-repeat: repeat;
+        background-size: 45px;
+        background-attachment: fixed;
+    }
+
+    &::before {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        opacity: 0.01;
+        z-index: 1;
+    }
+
+    &::after {
+        position: relative;
+        border-radius: 100%;
+        width: 0vw;
+        height: 0vw;
+        animation: hexGrid 20s ease-in-out infinite;
+        filter: blur(4px);
+    }
+}

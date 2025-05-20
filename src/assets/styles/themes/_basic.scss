@@ -1,0 +1,28 @@
+.basic {
+    color: $white;
+    background-color: $black; 
+
+    .static-bg,
+    .wrapWrapper::before,
+    .wrapWrapper::after,
+    .hex-overlay,
+    .hex-overlay::before,
+    .hex-overlay::after {
+        display: none;
+        animation: none;
+    }
+
+    .helldivers-grid {
+        filter: none;
+    }
+
+    .planet, 
+    .planet-wrap,
+    .planet-active,
+    .planet-active .planet-wrap,
+    .planet-active .planet-wrap .radar,
+    .planet-active .planet-wrap .pie-chart {
+        box-shadow: none!important;
+        animation: none;
+    }
+}

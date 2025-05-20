@@ -2,7 +2,7 @@ import { createContext, useState } from "react";
 
 export const ThemeContext = createContext({
     theme: 'default',
-    toggleTheme: () => {}
+    toggleTheme: () => { }
 });
 
 export default function ThemeContextProvider({ children }) {
@@ -10,13 +10,18 @@ export default function ThemeContextProvider({ children }) {
 
     const toggleTheme = () => {
         setTheme((prevTheme) => {
-            return prevTheme === 'default' ? 'retro-active': 'default';
+            return prevTheme === 'default'
+                ? 'retro-active'
+                : prevTheme === 'retro-active'
+                    ? 'basic'
+                    : 'default';
+
         });
     };
 
     return (
-        <ThemeContext.Provider value={{theme, toggleTheme}}>
-            { children }
+        <ThemeContext.Provider value={{ theme, toggleTheme }}>
+            {children}
         </ThemeContext.Provider>
     )
 }

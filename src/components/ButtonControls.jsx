@@ -26,21 +26,11 @@ export default function ButtonControls({ toggleSkyFury, toggleVideoMute, isVideo
         setIsRotating(!isRotating);
     };
 
-    // const toggleRetroStyle = () => {
-    //     setRetroStyle(!retroStyle);
-    // };
-
     if (isRotating) {
         document.body.classList.add('rotate-active');
     } else {
         document.body.classList.remove('rotate-active');
     }
-
-    // if (retroStyle) {
-    //     document.body.classList.add('retro-active');
-    // } else {
-    //     document.body.classList.remove('retro-active');
-    // }
 
     function handleZoomClick(targetButtonID) {
         const secondButton = document.getElementById(targetButtonID);
@@ -68,7 +58,7 @@ export default function ButtonControls({ toggleSkyFury, toggleVideoMute, isVideo
             <button onClick={() => handleZoomClick('zOut')}>- <span>Zoom Out</span></button>
             <button onClick={toggleRotation}><img src={saturnImg} alt="Saturn Icon" /> <span>Toggle Rotation</span></button>
             <button onClick={() => location.reload()}><img src={reloadImg} alt="reload network" /> <span>Reload Network</span></button>
-            <button onClick={themeCtx.toggleTheme}><img src={retroImg} alt="Enable/Disable retro terminal look" /> <span>Toggle retro look</span></button>
+            <button onClick={themeCtx.toggleTheme}><img src={retroImg} alt="Enable/Disable retro terminal look" /> <span>Toggle Theme {themeCtx.theme}</span></button>
 
             { window.location.href === 'https://heckdivers.net/' ?
                 <div className="links links-web">
@@ -78,8 +68,8 @@ export default function ButtonControls({ toggleSkyFury, toggleVideoMute, isVideo
                 </div>
             :
                 <div className="links">
-                    <span className="text" onClick={handleToggleSkyFury}>Give the creator a nice cup of LIBER-TEA<strong>:</strong></span>
-                    <a href="#" onClick={handleToggleSkyFury}><img src={liberTea} alt="Tea Icon" /> HECKDIVERS.NET</a>
+                    <span className="text" onClick={themeCtx.theme === 'basic' ? null : handleToggleSkyFury}>Give the creator a nice cup of LIBER-TEA<strong>:</strong></span>
+                    <a href="#" onClick={themeCtx.theme === 'basic' ? null : handleToggleSkyFury}><img src={liberTea} alt="Tea Icon" /> HECKDIVERS.NET</a>
                 </div>
             }
         </div>

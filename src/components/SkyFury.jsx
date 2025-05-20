@@ -1,4 +1,3 @@
-import React from 'react';
 import skyFuryVid from '../assets/media/skyfury.webm'
 
 function SkyFury({ isVideoMuted }) {
