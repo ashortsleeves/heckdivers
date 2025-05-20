@@ -54,8 +54,8 @@ export default function ButtonControls({ toggleSkyFury, toggleVideoMute, isVideo
                 </div>
             :
                 <div className="links">
-                    <span className="text" onClick={themeCtx.theme === 'basic' ? null : handleToggleSkyFury}>Give the creator a nice cup of LIBER-TEA<strong>:</strong></span>
-                    <a href="#" onClick={themeCtx.theme === 'basic' ? null : handleToggleSkyFury}><img src={liberTea} alt="Tea Icon" /> HECKDIVERS.NET</a>
+                    <span className="text" onClick={ handleToggleSkyFury }>Give the creator a nice cup of LIBER-TEA<strong>:</strong></span>
+                    <a href="#" onClick={ handleToggleSkyFury }><img src={liberTea} alt="Tea Icon" /> HECKDIVERS.NET</a>
                 </div>
             }
         </div>

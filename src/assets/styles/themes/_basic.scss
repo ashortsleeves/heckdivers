@@ -2,7 +2,7 @@
     color: $white;
     background-color: $black; 
 
-    .static-bg,
+    .static-bg:not(.static-bg-skyfury),
     .wrapWrapper::before,
     .wrapWrapper::after,
     .hex-overlay,
