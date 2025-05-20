@@ -126,6 +126,6 @@
     }
 }
 
-body:not(.retro-active) .button-controls button img {
+#map:not(.retro-active) .button-controls button img {
     filter: saturate(0);
 }

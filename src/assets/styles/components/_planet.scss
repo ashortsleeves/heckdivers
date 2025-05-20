@@ -61,7 +61,7 @@ img.super-earth-icon {
     left: calc(50% - 28px);
 }
 
-.planet-active {
+.planet-active:not(.planet-SUPER) {
     .planet-wrap {
         background-color: $red;
         transition: 0.5s ease-in-out;
@@ -114,7 +114,7 @@ img.super-earth-icon {
         }
     }
 
-    .planet-Humans {
+    .planet-Humans:not(.planet-SUPER) {
         .radar,
         .pie-chart {
             background-color: $green;
@@ -155,6 +155,10 @@ img.super-earth-icon {
             }
         }
     }
+}
+
+.planet-SUPER {
+    display: none;
 }
 
 .planet:not(.planet-active):hover > .planet-wrap > .name-hover {

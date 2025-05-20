@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import './App.scss';
 import Planet from './components/Planet';
 import NewsFeed from './components/NewsFeed';
 import Dispatches from './components/Dispatches';
 import StaticBG from './components/StaticBG';
 import DefaultZoomTools from './components/DefaultZoomTools';
+import { ThemeContext } from './components/ThemeContextProvider.jsx';
 import ButtonControls from './components/ButtonControls';
 import SkyFury from './components/SkyFury.jsx';
 import planetsData from './planets.json';
@@ -15,6 +16,7 @@ import './assets/scripts/wallpaperEngine.js';
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 
 function App() {
+  const themeCtx = useContext(ThemeContext);
   const [campaigns, setCampaigns] = useState([]);
   const [dss, setDss] = useState([]);
   const [showSkyFury, setShowSkyFury] = useState(false); // State for showing SkyFury
@@ -64,7 +66,7 @@ function App() {
   };
 
   return (
-    <>
+    <div id="map" className={themeCtx.theme}>
       <StaticBG />
       {showSkyFury && <SkyFury isVideoMuted={isVideoMuted} />} {/* Pass isVideoMuted status as prop */}
       <div className="wrapWrapper">
@@ -125,7 +127,7 @@ function App() {
         isVideoMuted={isVideoMuted} // Pass isVideoMuted status as prop
       /> {/* Pass toggleSkyFury and toggleVideoMute functions as props */}
       <div className='hex-overlay'></div>
-    </>
+    </div>
   );
 }
 export default App;
