@@ -1,26 +1,37 @@
 window.wallpaperPropertyListener = {
-    applyUserProperties: function(properties) {
-        var bodyElement = document.body;
-        if (properties.spin) {
-            var mySliderValue = properties.spin.value;
+  applyUserProperties: function (properties) {
+    var bodyElement = document.body;
+    var map = document.getElementById("map");
 
-            if (mySliderValue) {
-              bodyElement.classList.add('rotate-active');
-            }
-            else {
-              bodyElement.classList.remove('rotate-active');
-            }
-        }
+    if (properties.spin) {
+      var mySliderValue = properties.spin.value;
 
-        if (properties.retro) {
-            var mySliderValue = properties.retro.value;
+      if (mySliderValue) {
+        bodyElement.classList.add('rotate-active');
+      }
+      else {
+        bodyElement.classList.remove('rotate-active');
+      }
+    }
 
-            if (mySliderValue) {
-              bodyElement.classList.add('retro-active');
-            }
-            else {
-              bodyElement.classList.remove('retro-active');
-            }
-        }
-    },
+    if (properties.theme) {
+      var activeTheme = properties.theme.value;
+
+      if (activeTheme === 'basic') {
+        map.classList.add('basic');
+        map.classList.remove('retro-active');
+        map.classList.remove('default');
+      }
+      else if (activeTheme === 'retro') {
+        map.classList.add('retro-active');
+        map.classList.remove('basic');
+        map.classList.remove('default');
+      }
+      else {
+        map.classList.add('default');
+        map.classList.remove('retro-active');
+        map.classList.remove('basic');
+      }
+    }
+  },
 };
