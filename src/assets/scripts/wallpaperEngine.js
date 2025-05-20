@@ -1,6 +1,8 @@
 window.wallpaperPropertyListener = {
     applyUserProperties: function(properties) {
         var bodyElement = document.body;
+        var map = document.getElementById("map");
+
         if (properties.spin) {
             var mySliderValue = properties.spin.value;
 
@@ -12,15 +14,18 @@ window.wallpaperPropertyListener = {
             }
         }
 
-        if (properties.retro) {
-            var mySliderValue = properties.retro.value;
+        if (properties.theme) {
+          var activeTheme = properties.theme.value;
 
-            if (mySliderValue) {
-              bodyElement.classList.add('retro-active');
-            }
-            else {
-              bodyElement.classList.remove('retro-active');
-            }
+          if (activeTheme === 'basic') {
+            map.classList.add('basic');
+          }
+          else if(activeTheme === 'retro') {
+            map.classList.add('retro-active');
+          }
+          else {
+            map.classList.add('default');
+          }
         }
     },
 };
