@@ -61,7 +61,7 @@ img.super-earth-icon {
     left: calc(50% - 28px);
 }
 
-.planet-active:not(.planet-SUPER) {
+.planet-active {
     .planet-wrap {
         background-color: $red;
         transition: 0.5s ease-in-out;
