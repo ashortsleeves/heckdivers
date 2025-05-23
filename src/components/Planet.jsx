@@ -5,15 +5,17 @@ import helmetIcon from '../assets/media/helmet.png';
 import superEarthIcon from '../assets/media/Super_earth.webp';
 import dssIcon from '../assets/media/dss.png';
 
-export default function Planet ({ planetIndex, name, description, owner, playerCount, positionX, positionY, sector, activeCampaign, health, maxHealth, dss, ...props }) {
+export default function Planet({ planetIndex, name, description, owner, playerCount, positionX, positionY, sector, activeCampaign, health, maxHealth, dss, ...props }) {
     const x = positionX * 450;
     const y = -positionY * 450;
-    const healthPercentage = health !== '' ? 100 - ((health/maxHealth)*100) : null;
+    const healthPercentage = health !== ''
+        ? Math.max(0, Math.min(100, 100 - ((health / maxHealth) * 100)))
+        : null;
 
     const ownerColor = owner === 'Terminids' ? 'rgb(250, 250, 0)' :
-    owner === 'Humans' ? 'rgb(177, 255, 174)' : owner === 'Illuminate' ? 'rgb(223 168 255)' : 'rgb(255, 103, 103)';
+        owner === 'Humans' ? 'rgb(177, 255, 174)' : owner === 'Illuminate' ? 'rgb(223 168 255)' : 'rgb(255, 103, 103)';
 
-    const planetStyles = { 
+    const planetStyles = {
         transform: `translate(${x}px, ${y}px)`,
         animationDelay: `${planetIndex * 10}ms`,
     };
@@ -43,26 +45,26 @@ export default function Planet ({ planetIndex, name, description, owner, playerC
 
         <div className={
             activeCampaign === name ? 'planet planet-active planet-' + owner + ' planet-' + name
-            : name === "SUPER EARTH" ? 'planet planet-earth'
-            : dss ? 'planet planet-inactive planet-dss'
-            : 'planet planet-inactive'} style={planetStyles}>
+                : name === "SUPER EARTH" ? 'planet planet-earth'
+                    : dss ? 'planet planet-inactive planet-dss'
+                        : 'planet planet-inactive'} style={planetStyles}>
 
             <div className='planet-wrap'>
                 {radarStyles ? <span className="radar" style={radarStyles}></span> : ''}
 
-                {activeCampaign === name ? 
+                {activeCampaign === name ?
                     <>
-                    <span className="pie-chart" style={pieChartStyles}></span>
+                        <span className="pie-chart" style={pieChartStyles}></span>
                         <p className="name" style={nameStyles}>{name}</p>
                         <div className="planet-info">
                             <div className="detail-wrap">
                                 <h3>
                                     {
                                         owner === 'Terminids' ? <img src={terminidIcon} alt="Under Terminid Control" /> :
-                                        owner === 'Automaton' ? <img src={automatonIcon} alt="Under Automaton Control" /> :
-                                        owner === 'Illuminate' ? <img src={illuminateIcon} alt="Under Illuminate Control" /> :
-                                        owner === 'Humans' ? <img src={superEarthIcon} alt="Under Super Earth Control" /> :
-                                        ''
+                                            owner === 'Automaton' ? <img src={automatonIcon} alt="Under Automaton Control" /> :
+                                                owner === 'Illuminate' ? <img src={illuminateIcon} alt="Under Illuminate Control" /> :
+                                                    owner === 'Humans' ? <img src={superEarthIcon} alt="Under Super Earth Control" /> :
+                                                        ''
                                     }
                                     {name}
                                 </h3>
@@ -83,10 +85,10 @@ export default function Planet ({ planetIndex, name, description, owner, playerC
                             </div>
                         </div>
                     </>
-                : <p className="name name-hover">{name}</p>}
+                    : <p className="name name-hover">{name}</p>}
             </div>
-            {dss ? <div className='dssIcon'><img  src={dssIcon} alt="Democracy Space Station" /><p>Democracy Space Station</p></div> : null }
+            {dss ? <div className='dssIcon'><img src={dssIcon} alt="Democracy Space Station" /><p>Democracy Space Station</p></div> : null}
         </div>
-    );  
+    );
 }
 

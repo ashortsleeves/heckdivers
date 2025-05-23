@@ -161,7 +161,22 @@ img.super-earth-icon {
 }
 
 .planet-SUPER {
-    display: none;
+    z-index: 999;
+    box-shadow: none!important;
+
+    .planet-wrap {
+        background-color: transparent;
+        box-shadow: none!important;
+
+        .planet-info {
+            left: -150px;
+        }
+
+        .pie-chart,
+        .radar {
+            display: none;
+        }
+    }
 }
 
 .planet:not(.planet-active):hover > .planet-wrap > .name-hover {
