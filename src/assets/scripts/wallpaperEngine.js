@@ -33,5 +33,21 @@ window.wallpaperPropertyListener = {
         map.classList.remove('basic');
       }
     }
+
+    if (properties.stars) {
+      var starButton = document.getElementById('starButton');
+      var starButtonValue = properties.stars.value;
+
+      if (starButtonValue) {
+        if (!document.querySelector('div.stars-1')) {
+          starButton.click();
+        }
+      }
+      else {
+        if (document.querySelector('div.stars-1')) {
+          starButton.click();
+        }
+      }
+    }
   },
 };

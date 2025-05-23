@@ -31,6 +31,7 @@
         z-index: 1;
         background-color: $black-bg;
         animation: vhsLine 16s ease-in-out infinite;
+        pointer-events: none;
     }
 
     &::after {

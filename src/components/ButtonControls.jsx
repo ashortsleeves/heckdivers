@@ -44,7 +44,7 @@ export default function ButtonControls({ toggleSkyFury, toggleVideoMute, isVideo
             <button onClick={() => handleZoomClick('zIn')}>+ <span>Zoom In</span></button>
             <button onClick={() => handleZoomClick('zOut')}>- <span>Zoom Out</span></button>
             <button onClick={themeCtx.toggleRotation}><img src={saturnImg} alt="Saturn Icon" /> <span>Toggle Rotation</span></button>
-            <button onClick={themeCtx.toggleStars}><img src={starIcon} alt="Stars"/><span>Toggle Stars</span></button>
+            <button id="starButton" onClick={themeCtx.toggleStars}><img src={starIcon} alt="Stars"/><span>Toggle Stars</span></button>
             <button onClick={() => location.reload()}><img src={reloadImg} alt="reload network" /> <span>Reload Network</span></button>
             <button onClick={themeCtx.toggleTheme}><img src={retroImg} alt="Enable/Disable retro terminal look" /> <span>Toggle Theme {themeCtx.theme}</span></button>
 
