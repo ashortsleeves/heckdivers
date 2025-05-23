@@ -114,7 +114,7 @@
         &:focus {
             z-index: 9999999999;
             width: calc(100% - 30px);
-            height: calc(100vh - 90px);
+            height: calc(100% - 90px);
             bottom: 30px;
 
             .dispatch {
