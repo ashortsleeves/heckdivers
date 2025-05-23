@@ -72,7 +72,9 @@ function App() {
       <StaticBG />
       {showSkyFury && <SkyFury isVideoMuted={isVideoMuted} />} {/* Pass isVideoMuted status as prop */}
       <div className="wrapWrapper">
-        <TransformWrapper>
+        <TransformWrapper
+          limitToBounds={false}
+        >
           <TransformComponent>
             <DefaultZoomTools/>
             <div className="map">

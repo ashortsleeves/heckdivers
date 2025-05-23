@@ -91,3 +91,12 @@
         filter: blur(4px);
     }
 }
+
+@media screen and (max-width: 767px) {
+    .static-bg,
+    .wrapWrapper::before,
+    .wrapWrapper::after,
+    .stars {
+        display: none;
+    }
+}

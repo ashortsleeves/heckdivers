@@ -2,6 +2,7 @@ import { useState, useContext } from 'react';
 import { ThemeContext } from './ThemeContextProvider';
 
 import reloadImg from '../assets/media/reload.svg';
+import centerImg from '../assets/media/center.svg';
 import saturnImg from '../assets/media/planet-space-icon.svg';
 import starIcon from '../assets/media/star.svg';
 import retroImg from '../assets/media/retro.svg';
@@ -41,12 +42,13 @@ export default function ButtonControls({ toggleSkyFury, toggleVideoMute, isVideo
                     {isVideoMuted ? '' : <i><img src={musicIcon} alt="Music Icon" /> SKYFURY - A Cup of Liber-tea</i>}
                 </button>
             )}
-            <button onClick={() => handleZoomClick('zIn')}>+ <span>Zoom In</span></button>
-            <button onClick={() => handleZoomClick('zOut')}>- <span>Zoom Out</span></button>
-            <button onClick={themeCtx.toggleRotation}><img src={saturnImg} alt="Saturn Icon" /> <span>Toggle Rotation</span></button>
+            <button id="zoomIn" onClick={() => handleZoomClick('zIn')}>+ <span>Zoom In</span></button>
+            <button id="zoomOut" onClick={() => handleZoomClick('zOut')}>- <span>Zoom Out</span></button>
+            <button id="zoomReset" onClick={() => handleZoomClick('zReset')}><img src={centerImg} alt="Recenter" /> <span>Recenter</span></button>
+            <button id="toggleRotation" onClick={themeCtx.toggleRotation}><img src={saturnImg} alt="Saturn Icon" /> <span>Toggle Rotation</span></button>
             <button id="starButton" onClick={themeCtx.toggleStars}><img src={starIcon} alt="Stars"/><span>Toggle Stars</span></button>
-            <button onClick={() => location.reload()}><img src={reloadImg} alt="reload network" /> <span>Reload Network</span></button>
-            <button onClick={themeCtx.toggleTheme}><img src={retroImg} alt="Enable/Disable retro terminal look" /> <span>Toggle Theme {themeCtx.theme}</span></button>
+            <button id="reloadPage" onClick={() => location.reload()}><img src={reloadImg} alt="reload network" /> <span>Reload Network</span></button>
+            <button id="toggleTheme" onClick={themeCtx.toggleTheme}><img src={retroImg} alt="Enable/Disable retro terminal look" /> <span>Toggle Theme {themeCtx.theme}</span></button>
 
             { window.location.href === 'https://heckdivers.net/' ?
                 <div className="links links-web">

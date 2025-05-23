@@ -226,3 +226,41 @@
         }
     }
 }
+
+@media screen and (max-width: 767px) {
+    .button-controls {
+        right: 15px;
+        bottom: 55px;
+
+        .links-web {
+            opacity: 1;
+            
+            a:not(.liberTea) {
+                display: none;
+            }
+
+            .liberTea {
+                opacity: 1;
+            }
+        }
+    }
+
+    #toggleRotation,
+    #reloadPage,
+    #starButton,
+    #toggleTheme {
+        display: none;
+    }
+
+    #zoomIn,
+    #zoomOut,
+    #zoomReset {
+        height: 32px;
+        width: 32px;
+        margin: 0 4px;
+        background-color: $black;
+        opacity: 0.9;
+    }
+
+
+}

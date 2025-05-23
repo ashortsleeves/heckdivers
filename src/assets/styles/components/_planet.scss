@@ -179,6 +179,10 @@ img.super-earth-icon {
     z-index: 999999999;
     border-radius: 2px;
 
+    @media screen and (max-width: 767px) {
+        width: 300px;
+    }
+
     .detail-wrap,
     .detail-wrap-inner,
     .health-block,
