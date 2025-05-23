@@ -142,3 +142,25 @@
         }
     }
 }
+
+@supports (-webkit-touch-callout: none) {
+    .dispatches {
+        overflow-y: visible;
+    }
+
+    .dispatches:hover,
+    .dispatches:focus {
+        overflow-y: scroll;
+    }
+}
+
+@supports (-webkit-overflow-scrolling: touch) {
+    .dispatches {
+        overflow-y: visible;
+    }
+
+    .dispatches:hover,
+    .dispatches:focus {
+        overflow-y: scroll;
+    }
+}
