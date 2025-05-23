@@ -28,9 +28,10 @@
     background-color: $blue-pale;
     box-shadow: $blue-box-shadow-1;
 }
-
-.planet-inactive .planet-wrap {
-    animation: flicker 15s ease-in-out infinite;
+@media screen and (min-width: 768px) {
+    .planet-inactive .planet-wrap {
+        animation: flicker 15s ease-in-out infinite;
+    }
 }
 
 .planet-earth {
@@ -77,10 +78,12 @@ img.super-earth-icon {
             background-color: $red;
         }
 
-        .radar {
-            animation: scaleAnimation 2s ease-in-out infinite;
-            opacity: 0;
-            transition: 0.2s;  
+        @media screen and (min-width: 768px) {
+            .radar {
+                animation: scaleAnimation 2s ease-in-out infinite;
+                opacity: 0;
+                transition: 0.2s;
+            }
         }
 
         .pie-chart {
@@ -389,4 +392,16 @@ img.super-earth-icon {
 
 .planet-dss:hover > .planet-wrap > .name-hover {
     opacity: 0!important;
+}
+
+@media screen and (max-width: 767px) {
+    .planet,
+    .planet-wrap,
+    .planet-active,
+    .planet-active .planet-wrap,
+    .planet-active .planet-wrap .radar,
+    .planet-active .planet-wrap .pie-chart {
+        box-shadow: none!important;
+        animation: none!important;
+    }
 }
