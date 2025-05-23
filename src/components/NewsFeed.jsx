@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import wingLeft from '../assets/media/wing-left.png';
 import wingRight from '../assets/media/wing-right.png';
 

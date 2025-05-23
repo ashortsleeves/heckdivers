@@ -76,7 +76,7 @@ function App() {
           limitToBounds={false}
         >
           <TransformComponent>
-            <DefaultZoomTools/>
+            <DefaultZoomTools />
             <div className="map">
               <img className="helldivers-grid" src={grid} alt="helldivers grid" />
               <img className="super-earth-icon" src={superEarth} alt="Super Earth icon" />
@@ -96,24 +96,27 @@ function App() {
 
               {campaigns.map((campaign, index) => (
                 <div key={index}>
-                  {planets
-                    .filter((planet) => planet.name === campaign.planet.name)
-                    .map((planet, index) => (
-                      <Planet
-                        key={index}
-                        planetIndex={planet.index}
-                        description={planet.biome.description}
-                        owner={campaign.planet.event ? campaign.planet.event.faction : campaign.planet.currentOwner}
-                        playerCount={campaign.planet.statistics.playerCount}
-                        name={planet.name}
-                        positionX={planet.position.x}
-                        positionY={planet.position.y}
-                        sector={planet.sector}
-                        activeCampaign={campaign.planet.name}
-                        health={(campaign.planet.event ? campaign.planet.event.health : campaign.planet.health)}
-                        maxHealth={campaign.planet.maxHealth}
-                      />
-                    ))}
+                  {Array.isArray(planets) && planets.length > 0 && campaign.planet &&
+                    planets
+                      .filter((planet) => planet.name === campaign.planet.name)
+                      .map((planet, index) => (
+                        <Planet
+                          key={index}
+                          planetIndex={planet.index}
+                          description={planet.biome.description}
+                          owner={campaign.planet.event ? campaign.planet.event.faction : campaign.planet.currentOwner}
+                          playerCount={campaign.planet.statistics?.playerCount}
+                          name={planet.name}
+                          positionX={planet.position.x}
+                          positionY={planet.position.y}
+                          sector={planet.sector}
+                          activeCampaign={campaign.planet.name}
+                          health={(campaign.planet.event ? campaign.planet.event.health : campaign.planet.health)}
+                          maxHealth={campaign.planet.maxHealth}
+                        />
+                      ))
+                  }
+
                 </div>
               ))}
             </div>
@@ -121,13 +124,13 @@ function App() {
         </TransformWrapper>
       </div>
 
-      <NewsFeed/>
-      <Dispatches/>
+      <NewsFeed />
+      <Dispatches />
       {planets.length <= 0 || campaigns.length <= 0 ? <div className='planets-loading'><h2>CONNECTING TO SUPER EARTH</h2></div> : ''}
 
-      <ButtonControls 
-        toggleSkyFury={toggleSkyFury} 
-        toggleVideoMute={toggleVideoMute} 
+      <ButtonControls
+        toggleSkyFury={toggleSkyFury}
+        toggleVideoMute={toggleVideoMute}
         isVideoMuted={isVideoMuted} // Pass isVideoMuted status as prop
       /> {/* Pass toggleSkyFury and toggleVideoMute functions as props */}
       <div className='hex-overlay'></div>

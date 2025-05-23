@@ -15,6 +15,7 @@ export default function NewsFeed() {
     const fetchData = async () => {
         try {
             const dispatchesResponse = await fetch('https://raw.githubusercontent.com/ashortsleeves/heckdivers-json/main/dispatches.json');
+
             const dispatchesData = await dispatchesResponse.json();
             setDispatches(dispatchesData);
             console.log("fetching dispatches: " + new Date().toString());
@@ -28,6 +29,8 @@ export default function NewsFeed() {
         const intervalId = setInterval(fetchData, 600000); // Fetch data every minute
         return () => clearInterval(intervalId);
     }, []);
+
+    if (!dispatches || dispatches.length === 0) return null;
 
     return (
         <>

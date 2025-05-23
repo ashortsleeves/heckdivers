@@ -99,6 +99,46 @@
     }
 
     @media screen and (max-width: 767px) {
-        display: none;
+        bottom: 55px;
+        left: 15px;
+
+        &::after {
+            height: 28px;
+            bottom: 55px;
+            left: 15px;
+            background-color: $black;
+            opacity: 0.8;
+        }
+
+        &:hover,
+        &:focus {
+            z-index: 9999999999;
+            width: calc(100% - 30px);
+            height: calc(100vh - 90px);
+            bottom: 30px;
+
+            .dispatch {
+                background-color: $black;
+            }
+
+            &::before {
+                display: block;
+                content: "Close";
+                position: fixed;
+                top: 15px;
+                right: 15px;
+                text-transform: uppercase;
+                z-index: 999;
+                pointer-events: none;
+                opacity: 1;
+                background-color: $black;
+                border: solid 2px $white;
+                width: 114px;
+                height: 27px;
+                text-align: center;
+                line-height: 1.8;
+                pointer-events: none;
+            }
+        }
     }
 }
