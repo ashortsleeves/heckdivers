@@ -22,6 +22,7 @@ function App() {
   const [dss, setDss] = useState([]);
   const [showSkyFury, setShowSkyFury] = useState(false); // State for showing SkyFury
   const [isVideoMuted, setIsVideoMuted] = useState(false); // State for video mute status
+  const [limitBounds, setLimitBounds] = useState(false);
   const planets = planetsData;
 
   // Fetch data from APIs and update state
@@ -73,7 +74,7 @@ function App() {
       {showSkyFury && <SkyFury isVideoMuted={isVideoMuted} />} {/* Pass isVideoMuted status as prop */}
       <div className="wrapWrapper">
         <TransformWrapper
-          limitToBounds={false}
+          limitToBounds={limitBounds}
         >
           <TransformComponent>
             <DefaultZoomTools />
@@ -131,8 +132,10 @@ function App() {
       <ButtonControls
         toggleSkyFury={toggleSkyFury}
         toggleVideoMute={toggleVideoMute}
-        isVideoMuted={isVideoMuted} // Pass isVideoMuted status as prop
-      /> {/* Pass toggleSkyFury and toggleVideoMute functions as props */}
+        isVideoMuted={isVideoMuted}
+        limitBounds={limitBounds}
+        setLimitBounds={setLimitBounds}
+      /> {/* Pass toggleSkyFury, toggleVideoMute, and limitBounds functions as props */}
       <div className='hex-overlay'></div>
     </div>
   );

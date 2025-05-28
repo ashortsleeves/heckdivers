@@ -10,7 +10,7 @@ import liberTea from '../assets/media/tea-cup-tea.svg';
 import liberTeaTwo from '../assets/media/liber-tea-2.png';
 import musicIcon from '../assets/media/music-icon.svg';
 
-export default function ButtonControls({ toggleSkyFury, toggleVideoMute, isVideoMuted }) {
+export default function ButtonControls({ toggleSkyFury, toggleVideoMute, isVideoMuted, limitBounds, setLimitBounds }) {
     const [showMuteButton, setShowMuteButton] = useState(false); // State for showing mute button
     const themeCtx = useContext(ThemeContext);
 
@@ -30,6 +30,11 @@ export default function ButtonControls({ toggleSkyFury, toggleVideoMute, isVideo
         }
     }
 
+    const handleBoundsAndReset = () => {
+        setLimitBounds(!limitBounds);
+        handleZoomClick('zReset');
+    };
+
     return (
         <div className='button-controls'>
             {showMuteButton && ( // Conditionally render mute button
@@ -44,7 +49,10 @@ export default function ButtonControls({ toggleSkyFury, toggleVideoMute, isVideo
             )}
             <button id="zoomIn" onClick={() => handleZoomClick('zIn')}>+ <span>Zoom In</span></button>
             <button id="zoomOut" onClick={() => handleZoomClick('zOut')}>- <span>Zoom Out</span></button>
-            <button id="zoomReset" onClick={() => handleZoomClick('zReset')}><img src={centerImg} alt="Recenter" /> <span>Recenter</span></button>
+            <button id="boundsAndReset" onClick={handleBoundsAndReset}>
+                <img src={centerImg} alt="Recenter" />
+                <span>{limitBounds ? 'Disable' : 'Enable'} Map Recenter</span>
+            </button>
             <button id="toggleRotation" onClick={themeCtx.toggleRotation}><img src={saturnImg} alt="Saturn Icon" /> <span>Toggle Rotation</span></button>
             <button id="starButton" onClick={themeCtx.toggleStars}><img src={starIcon} alt="Stars"/><span>Toggle Stars</span></button>
             <button id="reloadPage" onClick={() => location.reload()}><img src={reloadImg} alt="reload network" /> <span>Reload Network</span></button>
