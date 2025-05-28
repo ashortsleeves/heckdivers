@@ -25,6 +25,16 @@ function App() {
   const [limitBounds, setLimitBounds] = useState(false);
   const planets = planetsData;
 
+  // Add effect to handle bounded-map class
+  useEffect(() => {
+    const mapElement = document.getElementById('map');
+    if (limitBounds) {
+      mapElement.classList.add('bounded-map');
+    } else {
+      mapElement.classList.remove('bounded-map');
+    }
+  }, [limitBounds]);
+
   // Fetch data from APIs and update state
   const fetchData = async () => {
     try {

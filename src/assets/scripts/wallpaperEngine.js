@@ -49,5 +49,22 @@ window.wallpaperPropertyListener = {
         }
       }
     }
+
+    if (properties.bounds) {
+      var boundsButton = document.getElementById('boundsAndReset');
+      var boundsValue = properties.bounds.value;
+      var isBounded = map.classList.contains('bounded-map');
+
+      if (boundsValue) {
+        if (!isBounded) {
+          boundsButton.click();
+        }
+      }
+      else {
+        if (isBounded) {
+          boundsButton.click();
+        }
+      }
+    }
   },
 };
