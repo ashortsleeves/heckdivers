@@ -44,14 +44,15 @@ See it here: [HECKDIVERS.NET](https://heckdivers.net/)
 
 
 ## Building for Wallpaper Engine
-1. Run `npm run build`
 
-2. In the generated index-XXXX.css file, remove all instances of `/assets/`.
+1. Run `npm run build:wallpaper`
 
-3. In the generated index-XXXX.js and generated index.html file, replace all instances of `/assets/` with `assets/`.
-
-4. In the generated index.html file, remove `crossorigin`. Replace `type="module"` with `defer="defer"`
-
+This command will:
+- Build the project
+- Automatically remove all instances of `/assets/` from the CSS file
+- Replace all instances of `/assets/` with `assets/` in the JS and HTML files
+- Remove `crossorigin` and replace `type="module"` with `defer="defer"` in the HTML file
+- Rename `index.html` to `heckdivers.html`
 
 ## Contributing
 
