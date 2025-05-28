@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import automatonIcon from '../assets/media/automaton.webp';
 import terminidIcon from '../assets/media/terminid.png';
 import illuminateIcon from '../assets/media/illuminate.png';
@@ -6,6 +7,39 @@ import superEarthIcon from '../assets/media/Super_earth.webp';
 import dssIcon from '../assets/media/dss.png';
 
 export default function Planet({ planetIndex, name, description, owner, playerCount, positionX, positionY, sector, activeCampaign, health, maxHealth, dss, ...props }) {
+    const [transformScale, setTransformScale] = useState(1);
+
+    useEffect(() => {
+        const updateScale = () => {
+            const transformComponent = document.querySelector('.react-transform-component');
+            if (transformComponent) {
+                const style = window.getComputedStyle(transformComponent);
+                const transform = style.transform;
+                const matrix = new DOMMatrix(transform);
+                setTransformScale(matrix.m11); // m11 is the scale factor in the transformation matrix
+            }
+        };
+
+        // Initial check
+        updateScale();
+
+        // Set up observer to watch for transform changes
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.attributeName === 'style') {
+                    updateScale();
+                }
+            });
+        });
+
+        const transformComponent = document.querySelector('.react-transform-component');
+        if (transformComponent) {
+            observer.observe(transformComponent, { attributes: true });
+        }
+
+        return () => observer.disconnect();
+    }, []);
+
     const x = positionX * 450;
     const y = -positionY * 450;
     const healthPercentage = health !== ''
@@ -41,8 +75,12 @@ export default function Planet({ planetIndex, name, description, owner, playerCo
         animation: `blink ${planetIndex / 5}s linear infinite`
     }
 
-    return (
+    const planetInfoStyles = {
+        transform: `scale(${1 / transformScale})`,
+        transformOrigin: 'top left'
+    };
 
+    return (
         <div className={
             activeCampaign === name ? 'planet planet-active planet-' + owner + ' planet-' + name
                 : name === "SUPER EARTH" ? 'planet planet-earth'
@@ -56,7 +94,7 @@ export default function Planet({ planetIndex, name, description, owner, playerCo
                     <>
                         <span className="pie-chart" style={pieChartStyles}></span>
                         <p className="name" style={nameStyles}>{name}</p>
-                        <div className="planet-info">
+                        <div className="planet-info" style={planetInfoStyles}>
                             <div className="detail-wrap">
                                 <h3>
                                     {
@@ -68,7 +106,6 @@ export default function Planet({ planetIndex, name, description, owner, playerCo
                                     }
                                     {name}
                                 </h3>
-
                             </div>
                             <div className="detail-wrap">
                                 <div className="detail-wrap-inner">
