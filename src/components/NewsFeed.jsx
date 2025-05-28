@@ -15,7 +15,13 @@ export default function NewsFeed() {
 
             const newsFeedResponse = await fetch('https://raw.githubusercontent.com/ashortsleeves/heckdivers-json/main/newsfeed.json');
             const newsFeedData = await newsFeedResponse.json();
-            setNewsFeed(newsFeedData);
+            // Sort newsFeed by timestamp, newest first
+            const sortedNewsFeed = newsFeedData.sort((a, b) => {
+                const dateA = a.published ? new Date(a.published) : new Date(0);
+                const dateB = b.published ? new Date(b.published) : new Date(0);
+                return dateB - dateA;
+            });
+            setNewsFeed(sortedNewsFeed);
             console.log("fetching assignments and newsfeed: " + new Date().toString());
         } catch (error) {
             console.error('Error fetching data:', error);
@@ -55,13 +61,14 @@ export default function NewsFeed() {
                     <h3>BREAKING NEWS<span>:</span></h3>
                 ) : ''}
 
-                {newsFeed.map((news, index) =>
-                    index === activeIndex ? (
-                        <span className="typewriter" style={{ '--n': (news && news.message && news.message.length !== undefined ? news.message.length+30 : 700)}} key={index}>
-                            {news.message}
+                {newsFeed.map((news, index) => {
+                    const newsUnHTML = news.message ? news.message.replace(/<[^>]*>/g, '') : '';
+                    return index === activeIndex ? (
+                        <span className="typewriter" style={{ '--n': (newsUnHTML.length + 30)}} key={index}>
+                            {newsUnHTML}
                         </span>
                     ) : null
-                )}
+                })}
             </div>
         </div>
     );
