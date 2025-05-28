@@ -80,6 +80,11 @@ export default function Planet({ planetIndex, name, description, owner, playerCo
         transformOrigin: 'top left'
     };
 
+    // Add custom description for Super Earth
+    const planetDescription = name === "SUPER EARTH" 
+        ? "The cradle of Managed Democracy and the heart of human civilization, where every citizen enjoys the freedom to serve Super Earth."
+        : description;
+
     return (
         <div className={
             activeCampaign === name ? 'planet planet-active planet-' + owner + ' planet-' + name
@@ -118,7 +123,7 @@ export default function Planet({ planetIndex, name, description, owner, playerCo
                                 </div>
                             </div>
                             <div className="detail-wrap">
-                                <p>{description}</p>
+                                <p>{planetDescription}</p>
                             </div>
                         </div>
                     </>
