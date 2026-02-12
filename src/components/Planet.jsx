@@ -81,8 +81,8 @@ export default function Planet({ planetIndex, name, description, owner, playerCo
     };
 
     // Add custom description for Super Earth
-    const planetDescription = name === "SUPER EARTH" 
-        ? "The cradle of Managed Democracy and the heart of human civilization, where every citizen enjoys the freedom to serve Super Earth."
+    const planetDescription = name === "SUPER EARTH"
+    ? "The cradle of Managed Democracy and the heart of human civilization, where every citizen enjoys the freedom to serve Super Earth."
         : description;
 
     return (
